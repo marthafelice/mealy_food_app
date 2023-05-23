@@ -3,7 +3,7 @@
 - Clone the repo
 - Create and switch your custom branch
 - Make changes in your branch
-- git add,git commit and git push your branch **git push --set-upstream origin YourBranch**
+- **git add git commit git push* your branch **git push --set-upstream origin YourBranch**
 - Make a pull request to the dev branch
 
 ## Working with the styles folder
