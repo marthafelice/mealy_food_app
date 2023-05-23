@@ -1,5 +1,5 @@
 # Getting Started with the mealy-app repo
-![mealy](../src/images/mealy.jpeg)
+![mealy](./src/images/mealy.jpeg)
 - Clone the repo
 - Create and switch your custom branch
 - Make changes in your branch
