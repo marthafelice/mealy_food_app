@@ -3,6 +3,7 @@
 ![mealy](./src/images/mealy.jpeg)
 - Clone the repo
 - Create and switch your custom branch
+- run **npm install** to install neccessary dependencies
 - Make changes in your branch
 - ***git add*** and ***git commit***
 - ***git push*** your branch **git push --set-upstream origin YourBranch**
@@ -35,7 +36,7 @@ E.g
 - By default, Jest comes installed with create-react-app
 - For better testing we will be using **React testing Library** to find our **components and manipulate them** while **Jest** will determine **assertions(passing and failing tests and testing coverage)** because the keywords are designed to be intuitive and self explanatory.
 
-- check here for examples of [matchers](https://jestjs.io/docs/using-matchers)(used for assertions) in jest 
+- check here for examples of [matchers](https://jestjs.io/docs/using-matchers) (used for assertions) in jest 
 
 ```
 import { render, screen } from "@testing-library/react"
