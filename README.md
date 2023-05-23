@@ -1,11 +1,10 @@
 # Getting Started with the mealy-app repo
-
-- Clone the repo
+![mealy]( repo
 - Create and switch your custom branch
 - Make changes in your branch
-- git add,git commit and git push your branch *git push --set-upstream origin YourBranch*
+- git add,git commit and git push your branch **git push --set-upstream origin YourBranch**
 
-## Working with the style folder
+## Working with the styles folder
 
 - In the **styles** folder,create a folder and name it 
 
