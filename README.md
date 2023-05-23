@@ -32,5 +32,23 @@ E.g
 
 ## Testing using React-Testing-Library and Jest
 
-For better testing we will be using **React testing Library** to find our **components and manipulate them**
-while **Jest** will determine **passing and failing tests and testing coverage**
+- By default, Jest comes installed with create-react-app
+- For better testing we will be using **React testing Library** to find our **components and manipulate them** while **Jest** will determine **assertions(passing and failing tests and testing coverage)** because the keywords are designed to be intuitive and self explanatory.
+
+- check here for examples of [matchers](https://jestjs.io/docs/using-matchers)(used for assertions) in jest 
+
+```
+import { render, screen } from "@testing-library/react"
+
+import App from './App'
+
+
+test('find  text', () => {
+    render(<App />) 
+    let myApp=screen.getByTestId("app")
+        
+    //Assertion (passing and failing tests) using jest matchers
+    expect(myApp).toHaveTextContent("THIS IS THE MASTER BRANCH")
+})
+
+```
