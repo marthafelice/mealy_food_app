@@ -29,3 +29,8 @@ E.g
         - Button.css
          
 ```
+
+## Testing using React-Testing-Library and Jest
+
+For better testing we will be using **React testing Library** to find our **components and manipulate them**
+while **Jest** will determine **passing and failing tests and testing coverage**
