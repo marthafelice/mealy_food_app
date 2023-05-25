@@ -35,6 +35,7 @@ function NewPassword() {
             placeholder="password"
             type="text"
           />
+          <p className="error-message">{errors.newPassword?.message}</p>
         </div>
 
         <div className="form-group">
@@ -45,6 +46,7 @@ function NewPassword() {
             placeholder="password"
             type="text"
           />
+          <p className="error-message">{errors.confirmPassword?.message}</p>
         </div>
 
         <ButtonLarge text="SAVE" />
