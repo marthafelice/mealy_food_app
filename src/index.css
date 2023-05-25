@@ -1,13 +1,58 @@
-body {
+
+html{
+  font-size: 62.5%;
+}
+*,*::after,*::before{
+  padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  box-sizing: border-box;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+body{
+  font-family: 'Roboto', sans-serif;
+  font-weight: 400;
+  font-size: 62.5%;
+}
+h2{
+  font-weight: 500;
+  font-size: 3rem;
+}
+form{
+  margin-top: 3rem;
+  width: 100%;
+  display:flex;
+  flex-direction: column;
+}
+form .form-group{
+margin-bottom: 2rem;
+display: flex;
+flex-direction: column; 
+width: 100%;
+font-size: 1.2rem;
+font-weight: 500;
+
+}
+form .form-group .error-message{
+  align-self: flex-start;
+  color: red;
+  margin-top: 1rem;
+}
+form input{
+  margin-top: .5rem;
+  padding-left: 2rem;
+  height: 3rem;
+  border: 1px solid black;
+}
+button.button-large{
+  background-color:#6750A4 ;
+  width: 60%;
+  align-self:center;
+  color: white;
+  border-color: transparent;
+  padding: .5rem 0;
+}
+@media (max-width:465px){
+  html{
+    font-size: 50%;
+  }
 }

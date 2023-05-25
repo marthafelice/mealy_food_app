@@ -1,70 +1,56 @@
-# Getting Started with Create React App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Getting Started with the mealy-app repo
+![mealy](./src/images/mealy.jpeg)
+- Clone the repo
+- Create and switch your custom branch
 
-## Available Scripts
+- run **npm install** to install neccessary dependencies
+- Make changes in your branch
+- ***git add*** and ***git commit***
+- ***git push*** your branch **git push --set-upstream origin YourBranch**
+- Make a pull request to the dev branch
 
-In the project directory, you can run:
+## Working with the styles folder
 
-### `npm start`
+- In the **styles** folder,create a folder and name it 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- In your named folder,start creating your needed css files
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+**The folder structure is below**
 
-### `npm test`
+```
+- styles
+    - teamMemberName-styles
+        - Header.css
+        - Button.css
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+E.g
+- styles
+    -pamela-styles
+        - Header.css
+        - Button.css
+         
+```
 
-### `npm run build`
+## Testing using React-Testing-Library and Jest
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- By default, Jest comes installed with create-react-app
+- For better testing we will be using **React testing Library** to find our **components and manipulate them** while **Jest** will determine **assertions(passing and failing tests and testing coverage)** because the keywords are designed to be intuitive and self explanatory.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- check here for examples of [matchers](https://jestjs.io/docs/using-matchers) (used for assertions) in jest 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```
+import { render, screen } from "@testing-library/react"
 
-### `npm run eject`
+import App from './App'
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+test('find  text', () => {
+    render(<App />) 
+    let myApp=screen.getByTestId("app")
+        
+    //Assertion (passing and failing tests) using jest matchers
+    expect(myApp).toHaveTextContent("THIS IS THE MASTER BRANCH")
+})
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+```

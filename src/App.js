@@ -1,10 +1,10 @@
 
-import './App.css';
-
+import "./App.css"
+import NewPassword from "./components/NewPassword";
 function App() {
   return (
-    <div className="App">
-      THIS IS THE DEVELOPMENT BRANCH 
+    <div className="app">
+    <NewPassword/>
     </div>
   );
 }
