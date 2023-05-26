@@ -3,6 +3,7 @@
 ![mealy](./src/images/mealy.jpeg)
 - Clone the repo
 - Create and switch your custom branch
+
 - run **npm install** to install neccessary dependencies
 - Make changes in your branch
 - ***git add*** and ***git commit***

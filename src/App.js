@@ -1,10 +1,12 @@
 
-import './App.css';
-
+import "./App.css"
+import NewPassword from "./components/NewPassword";
 function App() {
   return (
-    <div className="App" data-testid="app">
-      THIS IS THE MASTER BRANCH 
+
+    <div className="app">
+    <NewPassword/>
+
     </div>
   );
 }

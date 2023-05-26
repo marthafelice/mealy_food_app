@@ -1,12 +1,12 @@
-import { render, fireEvent, screen } from "@testing-library/react"
+import { render, screen } from "@testing-library/react"
 
 import App from './App'
 
-//test block
-test('find a text', () => {
-    render(<App />)
-    
+
+test('find  text', () => {
+    render(<App />) 
     let myApp=screen.getByTestId("app")
-// 
-    fireEvent.click
+        
+    //Assertions(passing and failing tests)
+    expect(myApp).toHaveTextContent("THIS IS THE MASTER BRANCH")
 })
