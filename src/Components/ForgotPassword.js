@@ -1,9 +1,9 @@
 import React from "react";
 import logo from "../images/forgot-password-img.png";
 import close from "../images/close-button.png";
-import ForgotPasswordForm from "../Components/ForgotPasswordForm";
-import CustomHeader from "../Components/CustomHeader";
-import "../App.css";
+import ForgotPasswordForm from "./ForgotPasswordForm";
+import CustomHeader from "./ForgotPasswordHeader";
+import '../styles/forgotpassword.css'
 export default function ForgotPassword() {
   return (
     <div className="main-container">

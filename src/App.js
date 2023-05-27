@@ -1,9 +1,12 @@
 import './App.css';
-import ForgotPassword from './Pages/ForgotPassword';
+// import NewPassword from "./components/NewPassword";
+import ForgotPassword from './components/ForgotPassword';
 function App() {
   return (
-    <div className='App'>
+    <div className='app'>
    <ForgotPassword/>
+
+    {/* <NewPassword/> */}
     </div>
   );
 }
