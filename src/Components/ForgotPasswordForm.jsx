@@ -1,3 +1,4 @@
+import '../styles/email.css'
 import React from "react";
 import mail from "../images/mail-icon.png";
 import { useForm } from "react-hook-form";

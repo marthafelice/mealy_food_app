@@ -1,3 +1,4 @@
+import '../styles/email.css'
 import React from 'react'
 
 export default function CustomHeader({heading,subtitle}) {
