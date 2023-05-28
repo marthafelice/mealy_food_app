@@ -2,7 +2,7 @@ import React from "react";
 import ReactModal from "react-modal";
 import { useContext } from "react";
 
-import { homepageContext } from "../App";
+import { homepageContext } from "../App.js";
 
 
 function EditProfileModal() {
@@ -16,7 +16,7 @@ function EditProfileModal() {
   return (
     <ReactModal
       isOpen={displayEditModal}
-      onRequestClose={displayEditModal}
+      onRequestClose={()=>displayEditModal}
       contentLabel="editprofilemodal"
     >
 

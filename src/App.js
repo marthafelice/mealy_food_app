@@ -1,11 +1,9 @@
 import "./App.css";
-import { useState } from "react";
-import { createContext } from "react";
 // import NewPassword from "./components/NewPassword";
-import Homepage from "./components/Homepage.js";
-
+import { createContext } from "react";
+import { useState } from "react";
+import Homepage from "./components/Homepage";
 export const homepageContext = createContext();
-
 function App() {
   const [displayProfile, setDisplayProfile] = useState(false);
   const [displayEditModal, setDisplayEditModal] = useState(false);
@@ -19,9 +17,11 @@ function App() {
     displayPasswordModal,
     setDisplayPasswordModal,
   };
+
   return (
     <div className="app">
-      {/* <NewPassword/> */}
+      {/* {/* <NewPassword /> */}
+
       <homepageContext.Provider value={contextValues}>
         <Homepage />
       </homepageContext.Provider>
