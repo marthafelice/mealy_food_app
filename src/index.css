@@ -1,11 +1,6 @@
-body{
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-  font-size: 62.5%;
-}
 
 
-/* 
+
 html{
   font-size: 62.5%;
 }
@@ -66,4 +61,4 @@ button.button-large{
   html{
     font-size: 50%;
   }
-} */
+} 

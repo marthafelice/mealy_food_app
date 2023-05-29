@@ -5,23 +5,23 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  value: 0,
+  displayProfile: false,
+  displayEdit: false,
 };
-export const counterSlice = createSlice({
-  name: "counter",
+export const profileSlice = createSlice({
+  name: "profile",
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1;
+    toggleProfile: (state) => {
+      state.displayProfile = !state.displayProfile;
     },
-    decrement: (state) => {
-      state.value -= 1;
+    displayedProfileEdit: (state) => {
+      state.displayEdit = !state.displayEdit;
     },
   },
 });
 //increment and decrement are your action creators
 
+export const { toggleProfile, displayedProfileEdit } = profileSlice.actions;
 
-export const{increment,decrement} =counterSlice.actions
-
-export default counterSlice.reducer
+export default profileSlice.reducer;
