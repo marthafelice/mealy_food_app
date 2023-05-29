@@ -4,16 +4,13 @@ import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import Cart from "../images/cart.svg";
 import Profile from "../images/profile.svg";
-// import { useState } from "react";
-import { useContext } from "react";
-import { homepageContext } from "../App";
+import { useDispatch } from "react-redux";
+import { toggleProfile } from "../redux/slices/profileSlice";
 
 function HomepageNav() {
-  const navContext=useContext(homepageContext)
-  const {displayProfile,setDisplayProfile}=navContext
-
-  function showProfile() {
-    setDisplayProfile(!displayProfile);
+  let dispatch = useDispatch();
+  function toggle() {
+    dispatch(toggleProfile());
   }
   return (
     <nav className="homepage-nav">
@@ -40,7 +37,7 @@ function HomepageNav() {
           src={Profile}
           alt="profile icon"
           className="nav-section_profile-icon"
-          onClick={showProfile}
+          onClick={toggle}
         />
       </div>
     </nav>

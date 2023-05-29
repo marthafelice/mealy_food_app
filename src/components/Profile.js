@@ -4,15 +4,15 @@ import ReactDOM from "react-dom";
 import Card from "../images/card.svg";
 import Logout from "../images/logout.svg";
 import { AiOutlineRight } from "react-icons/ai";
-import { useContext } from "react";
-import { homepageContext } from "../App";
+import {useDispatch } from "react-redux";
+import { displayedProfileEdit } from "../redux/slices/profileSlice";
+
 function Profile() {
-  const profileContext = useContext(homepageContext);
-  const { setDisplayEditModal, setDisplayPasswordModal,setDisplayProfile } = profileContext;
-  const handleClick = () => {
-    setDisplayEditModal(true);
-    setDisplayProfile(false);
-  };
+ 
+ const dispatch=useDispatch();
+ function showEdit(){
+  dispatch(displayedProfileEdit())
+ }
   return ReactDOM.createPortal(
     <section className="profile">
       <h2>Hello, Mariam!</h2>
@@ -25,7 +25,7 @@ function Profile() {
             <p className="profile-title">Email</p>
             <p className="profile-title_text">Marmtee@gmail.com</p>
           </div>
-          <p className="edit" onClick={handleClick}>
+          <p className="edit" onClick={showEdit}>
             Edit
           </p>
         </div>
@@ -35,9 +35,9 @@ function Profile() {
             <p className="profile-title">Password</p>
             <p className="profile-title_password">........</p>
           </div>
-          <p className="edit" onClick={() => (setDisplayPasswordModal(true))}>
+          {/* <p className="edit" onClick={() => (setDisplayPasswordModal(true))}> */}
             Edit
-          </p>
+          {/* </p> */}
         </div>
         <hr></hr>
 

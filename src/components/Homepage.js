@@ -1,20 +1,18 @@
 import "../styles/homepage.css";
 import "../styles/homepagenav.css";
 import Profile from "./Profile";
-import EditProfileModal from "./EditProfileModal";
+import { useSelector } from "react-redux";
 
 import React from "react";
 import HomepageNav from "./HomepageNav";
-import { homepageContext } from "../App.js";
-import { useContext } from "react";
+import EditProfileName from "./EditProfileName";
 function Homepage() {
-  const HomepageContext = useContext(homepageContext);
-  const { displayProfile } = HomepageContext;
+  const { displayProfile } = useSelector((state) => state.profile);
   return (
     <div className="homepage-container">
       <HomepageNav />
       {displayProfile && <Profile />}
-      <EditProfileModal />
+      <EditProfileName />
       <p>
         HOMEPAGE CONTENT Հայերեն Shqip ‫العربية Български Català 中文简体
         Hrvatski Česky Dansk Nederlands English Eesti Filipino Suomi Français
