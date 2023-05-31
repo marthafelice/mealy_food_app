@@ -1,4 +1,6 @@
 
+
+
 html{
   font-size: 62.5%;
 }
@@ -51,8 +53,12 @@ button.button-large{
   border-color: transparent;
   padding: .5rem 0;
 }
+.logo-dark{
+  width: 10rem;
+  
+}
 @media (max-width:465px){
   html{
     font-size: 50%;
   }
-}
+} 
