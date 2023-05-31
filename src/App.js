@@ -4,8 +4,8 @@ import NewPassword from "./components/NewPassword";
 function App() {
   return (
     <div className='app'>
-      <NewPassword/>
-      {/* <SignUp /> */}
+      {/* <NewPassword/> */}
+      <SignUp />
     </div>
   );
 }
