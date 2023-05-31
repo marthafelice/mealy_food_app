@@ -4,6 +4,7 @@ import Biker from "../images/bike.png";
 import Name from "../images/name.png";
 import Password from "../images/password.png";
 import Email from "../images/email.png";
+import "../styles/SignUp.css"
 
 const SignUp = () => {
   const {
@@ -20,7 +21,7 @@ const SignUp = () => {
           <h1 className='text-4xl font-bold text-center'>Sign Up to Mealy</h1>
           <p className='text-2xl text-center'>
             Already have an Account?{" "}
-            <a href='' className='text-[#6750A4]'>
+            <a href='#' className='text-[#6750A4]'>
               Login
             </a>
           </p>
@@ -29,7 +30,7 @@ const SignUp = () => {
 
         <form
           onSubmit={handleSubmit(onSubmit)}
-          className='text-2xl md:w-[40rem]'
+          className='text-2xl w-40rem'
         >
           <div className='flex items-center border-b-2 mb-6 border-[#67646A]'>
             <img src={Name} alt='' />
