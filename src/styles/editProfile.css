@@ -1,0 +1,36 @@
+.editProfile_input_container {
+  position: relative;
+}
+.editProfile_input {
+  color: #dfdedf;
+  border: none;
+  border-bottom: 1px solid #1d1b20;
+  margin-bottom: 2rem;
+  padding-left: 4rem;
+
+  width: 100%;
+}
+
+.editProfile_input[type="text"]::placeholder {
+  color: #dfdedf;
+}
+.editProfile_heading {
+  font-weight: 600;
+}
+.editProfile_title {
+  color: #dfdedf;
+  font-size: 1.5rem;
+}
+.icon-end,
+.icon-start {
+  top: 50%;
+  transform: translateY(-50%);
+  position: absolute;
+  width: 2rem;
+}
+.icon-start {
+  left: 1rem;
+}
+.icon-end {
+  right: 1rem;
+}
