@@ -4,7 +4,7 @@ import Biker from "../images/bike.png";
 import Name from "../images/name.png";
 import Password from "../images/password.png";
 import Email from "../images/email.png";
-import "../styles/SignUp.css"
+import "../styles/SignUp.css";
 
 const SignUp = () => {
   const {
@@ -20,7 +20,7 @@ const SignUp = () => {
         <div className='flex justify-center items-center flex-col'>
           <h1 className='text-4xl font-bold text-center'>Sign Up to Mealy</h1>
           <p className='text-2xl text-center'>
-            Already have an Account?{" "}
+            Already have an Account?
             <a href='#' className='text-[#6750A4]'>
               Login
             </a>
@@ -28,10 +28,7 @@ const SignUp = () => {
           <img src={Biker} alt='' className='w-64' />
         </div>
 
-        <form
-          onSubmit={handleSubmit(onSubmit)}
-          className='text-2xl w-40rem'
-        >
+        <form onSubmit={handleSubmit(onSubmit)} className='text-2xl w-40rem'>
           <div className='flex items-center border-b-2 mb-6 border-[#67646A]'>
             <img src={Name} alt='' />
             <input
@@ -42,7 +39,7 @@ const SignUp = () => {
           </div>
 
           <div className='flex items-center border-b-2 mb-6 border-[#67646A]'>
-            <img src={Email} alt='' className="w-7" />
+            <img src={Email} alt='' className='w-7' />
             <input
               {...register("mail", { required: "Email Address is required" })}
               aria-invalid={errors.mail ? "true" : "false"}
@@ -61,7 +58,11 @@ const SignUp = () => {
               className='border-0 focus:!outline-none'
             />
           </div>
-          <input type='submit' className='bg-[#6750A4] border-0 text-white' value='Sign up' />
+          <input
+            type='submit'
+            className='bg-[#6750A4] border-0 text-white'
+            value='Sign up'
+          />
         </form>
       </div>
     </div>

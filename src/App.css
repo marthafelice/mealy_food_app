@@ -2,14 +2,13 @@
   min-height: 100vh;
   max-width: 100%;
   background-color: #6750a4;
-
   color: white;
   display: flex;
   justify-content: center;
   align-items: center;
   letter-spacing: 1;
 }
-
+h1{}
 /* .main-container {
   display: grid;
   flex-direction: column;
