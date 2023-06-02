@@ -17,12 +17,11 @@ export default function ForgotPasswordForm() {
   return (
     <div>
       <form className="form-component" onSubmit={handleSubmit(onSubmit)}>
-        <div>
           <div>
           <input name="email" type="text" {...register('email')} className={`email-input ${errors.email ? 'is-invalid' : ''}`} placeholder='email address'/>
                             <div className="invalid-feedback">{errors.email?.message}</div>
-              </div>
-        </div>
+          </div>
+       
         <div>
           <button className="primary-button" type="submit">
             SEND

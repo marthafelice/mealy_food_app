@@ -1,7 +1,6 @@
 import React from "react";
-import logo from "../images/forgot-password-img.png";
-import close from "../images/close-button.png";
 import ForgotPasswordForm from "./ForgotPasswordForm";
+import logo from '../images/forgot-password-img.png'
 import CustomHeader from "./ForgotPasswordHeader";
 import '../styles/forgotpassword.css'
 export default function ForgotPassword() {
@@ -9,15 +8,18 @@ export default function ForgotPassword() {
     <div className="main-container">
       <div className='header-container'>
       <div><CustomHeader heading="Forgot Password" /></div>
-      <div><img src={close} className="close-icon" alt="close" /></div>
-      
       </div>
-      <img src={logo} className="App-logo" alt="logo" />
 
-      <div className="enter-email-placeholder">
+      <div className="app-logo">
+    <img src ={logo} alt="forgot-email"/>
+      </div>
+
+      <div className="enter-email-text">
         <CustomHeader subtitle="Please Enter Your Email Address To Receive A Verification Code" />
       </div>
+      <div>
       <ForgotPasswordForm />
+      </div>
     </div>
   );
 }
