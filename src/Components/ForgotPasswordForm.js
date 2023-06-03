@@ -1,4 +1,4 @@
-import '../styles/forgotpassword.css'
+import "../styles/forgotpassword.css";
 import React from "react";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -10,24 +10,28 @@ export default function ForgotPasswordForm() {
   });
   const formOptions = { resolver: yupResolver(validationSchema) };
 
-  const { register, handleSubmit,formState } = useForm(formOptions);
+  const { register, handleSubmit, formState } = useForm(formOptions);
   const { errors } = formState;
 
   const onSubmit = (data) => console.log(data);
   return (
-    <div>
-      <form className="form-component" onSubmit={handleSubmit(onSubmit)}>
-          <div>
-          <input name="email" type="text" {...register('email')} className={`email-input ${errors.email ? 'is-invalid' : ''}`} placeholder='email address'/>
-                            <div className="invalid-feedback">{errors.email?.message}</div>
-          </div>
-       
-        <div>
-          <button className="primary-button" type="submit">
-            SEND
-          </button>
-        </div>
-      </form>
-    </div>
+    <form className="forgot-password_form" onSubmit={handleSubmit(onSubmit)}>
+      <div className="forgot-password_input-container">
+        <input
+          name="email"
+          type="text"
+          {...register("email")}
+          className={`forgot-password_email-input ${
+            errors.email ? "is-invalid" : ""
+          }`}
+          placeholder="email address"
+        />
+        <p className="invalid-feedback">{errors.email?.message}</p>
+      </div>
+
+      <button className="forgot-password_btn" type="submit">
+        SEND
+      </button>
+    </form>
   );
 }
