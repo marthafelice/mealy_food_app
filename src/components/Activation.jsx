@@ -14,7 +14,7 @@ const Activation = () => {
           <div className="code-box"><p>*</p></div>
           <div className="code-box"><p>*</p></div>
         </div>
-        <p>Did not receive code? <span>Resend Code</span></p>
+        <p className='receive-code'>Did not receive code? <span>Resend Code</span></p>
       <button className="verify-proceed-button">verify and proceed</button>
       </div>
     </React.Fragment>
