@@ -1,5 +1,6 @@
 import React from 'react'
 import Image from "../images/activation.svg"
+import "../styles/activation.css";
 
 const Activation = () => {
   return (
