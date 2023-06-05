@@ -5,10 +5,10 @@ const Activation = () => {
   return (
    <React.Fragment>
       <div className="activation-container">
-        <img src={Image} alt="activation" />
-        <h1>activation code</h1>
-        <p className='sent-email'>An email was sent to *****@gmail.com with <br></br> an active code</p>
-        <div className="code-box-container">
+        <img src={Image} alt="activation" className='activation-img' />
+        <h1 className='activation-title'>Activation code</h1>
+        <p className='activation-email-notify'>An email was sent to *****@gmail.com with an active code</p>
+        <div className="activation-code-box-container">
           <div className="code-box"><p>*</p></div>
           <div className="code-box"><p>*</p></div>
           <div className="code-box"><p>*</p></div>
