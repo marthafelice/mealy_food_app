@@ -2,7 +2,7 @@ import React from "react";
 import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
-import Cart from "../images/cart.svg";
+import Filter from "../images/filterIcon.svg";
 import Profile from "../images/profile.svg";
 import { useDispatch } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
@@ -37,7 +37,7 @@ function HomepageNav() {
         <input className="homepage-nav_search" placeholder="search"></input>
         </div>
         <div className="cart-profile ">
-          <img src={Cart} alt="cart icon" className="nav-section_cart-icon" />
+          <img src={Filter} alt="cart icon" className="nav-section_filter-icon" />
           <img
             src={Profile}
             alt="profile icon"

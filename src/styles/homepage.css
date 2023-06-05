@@ -1,10 +1,14 @@
 .homepage-container {
-  background-color: rgb(253, 181, 181);
+  background-color: rgb(195, 80, 80);
   color: black;
-  min-height: 100vh;
   display: block;
   font-size: 3rem;
   padding: 10rem 8rem 5rem 8rem;
   position: relative;
-
+  
+}
+@media(max-width:992px){
+  .homepage-container{
+    padding: 15rem  3rem 5rem 3rem ;
+  }
 }

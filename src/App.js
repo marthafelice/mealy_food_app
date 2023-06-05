@@ -9,9 +9,8 @@ function App() {
     <div className="app">
       {/* <NewPassword /> */}
       {/* <SignUp/> */}
-      {/* <Homepage /> */}
-      <ForgotPassword/>
-  
+      <Homepage />
+  ANOTHER CONTENT
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
   

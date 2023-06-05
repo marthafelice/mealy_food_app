@@ -1,44 +1,45 @@
-
-html{
+html {
   font-size: 62.5%;
 }
-*,*::after,*::before{
+*,
+*::after,
+*::before {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
 }
 
-body{
-  font-family: 'Roboto', sans-serif;
+body {
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 62.5%;
+  
 }
-h2{
+h2 {
   font-weight: 500;
   font-size: 3rem;
 }
-form{
+form {
   margin-top: 3rem;
   width: 100%;
-  display:flex;
+  display: flex;
   flex-direction: column;
 }
-form .form-group{
-margin-bottom: 2rem;
-display: flex;
-flex-direction: column; 
-width: 100%;
-font-size: 1.2rem;
-font-weight: 500;
-
+form .form-group {
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  font-size: 1.2rem;
+  font-weight: 500;
 }
-form .form-group .error-message{
+form .form-group .error-message {
   align-self: flex-start;
   color: red;
   margin-top: 1rem;
 }
-form input{
-  margin-top: .5rem;
+form input {
+  margin-top: 0.5rem;
   padding-left: 2rem;
   height: 3rem;
   border: 1px solid black;
@@ -55,16 +56,18 @@ form input{
   justify-content: center;
   align-items: center;
 }
-.logo-dark{
+.logo-dark {
   width: 10rem;
-  
 }
-
-@media (max-width:465px){
-  html{
+h3 {
+  font-weight: 600;
+  font-size: 2.5rem;
+}
+@media (max-width: 465px) {
+  html {
     font-size: 50%;
   }
-  .logo-dark{
+  .logo-dark {
     width: 7rem;
   }
-} 
+}
