@@ -1,3 +1,13 @@
-footer{
-    background-color: orangered;
+footer {
+  background-color: #6750a4;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  color: white;
+  /* padding-bottom: 0; */
+}
+.footer-title {
+  font-weight: 600;
 }

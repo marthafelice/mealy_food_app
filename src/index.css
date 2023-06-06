@@ -35,6 +35,9 @@ form {
   max-width: 80rem;
   width: 90%;
 }
+.homepage-padding{
+  padding: 10rem 8rem 0rem 8rem;
+}
 form .form-group {
   margin-bottom: 2rem;
   display: flex;
@@ -75,6 +78,11 @@ h3 {
 }
 a {
   text-decoration: none;
+}
+@media (max-width:992px){
+  .homepage-padding{
+    padding: 15rem  3rem 0rem 3rem ;
+  }
 }
 @media (max-width: 465px) {
   html {

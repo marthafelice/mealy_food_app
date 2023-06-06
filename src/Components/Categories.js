@@ -4,7 +4,7 @@ import MealCategory from "./MealCategory";
 import OrderCategory from "./OrderCategory";
 function Categories() {
   return (
-    <section className="categories-section">
+    <section className="categories-section homepage-padding">
       <h3>All Categories</h3>
       <div className="categories-section_meal">
         <MealCategory categoryName="Chinese" />
