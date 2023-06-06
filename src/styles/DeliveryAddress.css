@@ -1,0 +1,82 @@
+.DeliveryAddress {
+  display: flex;
+}
+
+.text {
+  flex: 1;
+  background-color: white;
+}
+
+.map {
+  flex: 1;
+}
+
+.map img {
+  max-width: 100%;
+  height: auto;
+}
+
+.search-bar {
+  display: flex;
+  align-items: center;
+  width: 400px;
+  margin: 0 auto;
+  padding-top: 65px;
+}
+
+.search-input {
+  flex: 1;
+  height: 20px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 30px;
+}
+
+.search-input:focus {
+  outline: none;
+  border-color: #4285f4;
+  box-shadow: 0 0 0 2px rgba(66, 133, 244, 0.25);
+}
+
+.DeliveryAddress h2 {
+  text-align: center;
+}
+
+.EE {
+  padding-top: 350px;
+  padding-left: 57.5px;
+}
+
+a {
+  color: #381e72;
+  font-size: 24px;
+  font-weight: 600px;
+  cursor: pointer;
+}
+
+.loc {
+  display: flex;
+  align-items: center;
+  padding-top: 50px;
+  padding-left: 48px;
+}
+
+.text1 {
+  margin-right: 10px;
+}
+
+.icon {
+  fill: #000;
+}
+
+.a:hover {
+  text-decoration: underline;
+}
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
