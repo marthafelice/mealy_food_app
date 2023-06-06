@@ -13,17 +13,27 @@ body {
   font-family: "Roboto", sans-serif;
   font-weight: 400;
   font-size: 62.5%;
-  
+  color: black;
 }
 h2 {
-  font-weight: 500;
+  font-weight: 600;
   font-size: 3rem;
+}
+h2.auth-title {
+  text-align: center;
 }
 form {
   margin-top: 3rem;
   width: 100%;
   display: flex;
   flex-direction: column;
+}
+.auth-padding {
+  padding: 2rem 2.5rem;
+}
+.auth-width {
+  max-width: 80rem;
+  width: 90%;
 }
 form .form-group {
   margin-bottom: 2rem;
@@ -63,11 +73,19 @@ h3 {
   font-weight: 600;
   font-size: 2.5rem;
 }
+a {
+  text-decoration: none;
+}
 @media (max-width: 465px) {
   html {
     font-size: 50%;
   }
   .logo-dark {
     width: 7rem;
+  }
+}
+@media (max-width: 375px) {
+  h2.auth-title {
+    font-size: 2.5rem;
   }
 }

@@ -1,5 +1,7 @@
+/* ....................................MEAL CATEGORY....................... */
+
 .categories-section_meal {
-  margin-top: 2rem;
+  margin: 2rem 0 4rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
   grid-template-rows: auto;
@@ -15,15 +17,53 @@
   height: auto;
 }
 .category-meal_name {
-  font-size: 4rem;
+  font-size: 3rem;
   font-weight: 500;
 }
-.categories-section_order{
+/* ....................................ORDER CATEGORY....................... */
+.categories-section_order {
   margin-top: 3rem;
 }
+.order-types {
+  display: flex;
+  align-items: center;
+  border-top: 1px solid #ebebeb;
+  border-bottom: 1px solid #ebebeb;
+  padding: 2rem 0;
+}
+.order-type {
+  font-size: 2rem;
+  color: black;
+
+  font-weight: 500;
+  border-radius: 4rem;
+  margin-right: 2rem;
+  padding: 1em 0;
+  transition: all ease-in 0.2s;
+}
+.order-type.active {
+  background-color: #6750a4;
+  color: white;
+  padding: 0.8em 1.5em;
+}
+.order-category_delivery,
+.order-category_bulk-order {
+  font-size: 5rem;
+}
 @media (max-width: 992px) {
-  
   .category-meal_name {
     font-size: 2rem;
+  }
+}
+@media (max-width: 345px) {
+  .order-types {
+    width: 100%;
+  }
+  .order-type {
+    margin-right: 1rem;
+    font-size: 1.5rem;
+  }
+  .order-types {
+    padding: 1rem 0;
   }
 }
