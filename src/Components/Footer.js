@@ -5,7 +5,7 @@ import LogoWhite from "../images/logowhite.svg";
 function Footer() {
   return (
     <footer className="homepage-padding">
-      <img src={LogoWhite} alt="white logo" />
+      <img src={LogoWhite} alt="white logo" className="logo-white" />
       <div className="footer-links">
         <p className="footer-title">Links of interest</p>
         <p className="footer-link">About us</p>
