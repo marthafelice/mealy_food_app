@@ -1,13 +1,12 @@
-import './App.css'
-import DeliveryAddress from './Components/DeliveryAddress'
-import ForgotPassword from './Pages/ForgotPassword'
+import "./App.css";
+import DeliveryAddress from "./Components/DeliveryAddress";
+
 function App() {
   return (
     <div className="App">
-      <ForgotPassword />
       <DeliveryAddress />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

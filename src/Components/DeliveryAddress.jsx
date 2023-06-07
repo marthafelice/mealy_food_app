@@ -1,6 +1,6 @@
 import React from 'react'
 import map from '../images/Map.jpg'
-import '../styles/DeliveryAddress.css'
+import '../styles/deliveryAddress.css'
 const DeliveryAddress = () => {
   return (
     <div className="DeliveryAddress">
