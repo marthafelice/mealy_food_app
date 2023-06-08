@@ -47,14 +47,19 @@
   padding: 0.8em 1.5em;
 }
 .order-category_delivery,
-.order-category_bulk-order {
-  font-size: 5rem;
+.order-category_bulk-order,
+.order-category_pickup {
+  font-size: 2rem;
+  color: black;
+  z-index: 1000;
 }
 @media (max-width: 992px) {
   .category-meal_name {
     font-size: 2rem;
   }
 }
+
+
 @media (max-width: 345px) {
   .order-types {
     width: 100%;

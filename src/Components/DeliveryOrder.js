@@ -4,7 +4,7 @@ import "../styles/categories.css"
 function DeliveryOrder() {
   return (
     <div className='order-category_delivery'>
-      Delivery
+      Deliveryccccccccccccccccc
     </div>
   )
 }

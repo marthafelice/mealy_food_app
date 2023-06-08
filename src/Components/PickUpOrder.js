@@ -2,7 +2,7 @@ import React from 'react'
 
 function PickUpOrder() {
   return (
-    <div>
+    <div className='order-category_pickup'>
       PickUpOrder
     </div>
   )

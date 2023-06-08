@@ -24,8 +24,7 @@ function App() {
 
       {/* ROUTES */}
       <Routes>
-        <Route index element={<Homepage />} />
-        <Route path="orderCategory" element={<Homepage />}>
+        <Route path="/" element={<Homepage />}>
           <Route path="deliveryOrder" element={<DeliveryOrder />} />
           <Route path="bulkOrder" element={<BulkOrder />} />
           <Route path="pickupOrder" element={<PickUpOrder />} />
