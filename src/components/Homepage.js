@@ -11,9 +11,10 @@ import Categories from "./Categories";
 import Footer from "./Footer";
 function Homepage() {
   const { displayProfile } = useSelector((state) => state.profile);
+  
   return (
     <div className="homepage-container">
-      <HomepageNav />
+      <HomepageNav address="Add Address" />
       {displayProfile && <Profile />}
       <EditNameEmailModal />
       <EditPasswordModal />

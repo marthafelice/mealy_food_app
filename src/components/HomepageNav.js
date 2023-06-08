@@ -6,8 +6,10 @@ import Filter from "../images/filterIcon.svg";
 import Profile from "../images/profile.svg";
 import { useDispatch } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
+import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
 
-function HomepageNav() {
+function HomepageNav({ address }) {
+  const authUser = true;
   let dispatch = useDispatch();
   function toggle() {
     dispatch(toggleProfile());
@@ -27,7 +29,9 @@ function HomepageNav() {
             alt="location icon"
             className="nav-section_location-icon"
           />
-          <p className="address">32,Kingston street</p>
+          <p className="address">
+            {authUser ? "32, Kingston street" : "Add Address"}
+          </p>
           <img
             src={ArrowDown}
             alt="arrow icon"
@@ -35,17 +39,30 @@ function HomepageNav() {
           />
         </div>
         <input className="homepage-nav_search" placeholder="search"></input>
-        </div>
-        <div className="cart-profile ">
-          <img src={Filter} alt="cart icon" className="nav-section_filter-icon" />
+      </div>
+      <div className="cart-profile ">
+        {authUser ? (
+          <>
+            <img
+              src={Filter}
+              alt="cart icon"
+              className="nav-section_filter-icon"
+            />
+            <img
+              src={Profile}
+              alt="profile icon"
+              className="nav-section_profile-icon"
+              onClick={toggle}
+            />
+          </>
+        ) : (
           <img
-            src={Profile}
-            alt="profile icon"
-            className="nav-section_profile-icon"
-            onClick={toggle}
+            src={unAuthProfileIcon}
+            alt="unathourized user profile icon"
+            className="unAuthprofile-icon"
           />
-        </div>
-
+        )}
+      </div>
     </nav>
   );
 }

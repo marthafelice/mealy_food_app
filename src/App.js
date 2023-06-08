@@ -11,14 +11,13 @@ import BulkOrder from "./components/BulkOrder";
 import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
 
+
 function App() {
   return (
     <div className="app">
       {/* <NewPassword /> */}
       {/* <SignUp/> */}
       {/* <Homepage /> */}
-      {/* <ForgotPassword/> */}
-      {/* <Activation /> */}
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
 

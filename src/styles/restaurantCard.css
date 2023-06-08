@@ -1,0 +1,33 @@
+.restaurant-card {
+  border: 1px solid #cac4d0;
+
+  box-shadow: 0 0 2px 0rem black;
+  border-radius: 10px;
+}
+.restaurant-name-container {
+  display: flex;
+  align-items: center;
+}
+.restaurant-card_top-section,
+.restaurant-card_bottom-section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding: 2rem 1rem 0 1rem;
+}
+.restaurant-name {
+  margin-left: 1rem;
+}
+.restaurant-img {
+  object-fit: cover;
+  width: 100%;
+  height: auto;
+}
+.rating {
+  display: flex;
+  align-items: center;
+}
+.star {
+  margin-right: 0.4rem;
+}

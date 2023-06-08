@@ -49,6 +49,10 @@
   width: 2.5rem;
   margin-left: 2rem;
 }
+.unAuthprofile-icon{
+  width: 4rem;
+  margin-left: 2rem;
+}
 .address {
   margin: 0 1rem;
 }
@@ -71,6 +75,9 @@
   .nav-section_filter-icon,
   .nav-section_profile-icon {
     margin-top: 1rem;
+  }
+  .unAuthprofile-icon{
+    margin-top: .5rem;
   }
 }
 @media (max-width: 375px) {
