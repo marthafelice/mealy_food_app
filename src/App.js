@@ -20,7 +20,7 @@ function App() {
       {/* <SignUp/> */}
       {/* <Homepage /> */}
       {/* <ForgotPassword/> */}
-      <DeliveryAddress/>
+      {/* <DeliveryAddress /> */}
       {/* <Activation /> */}
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
