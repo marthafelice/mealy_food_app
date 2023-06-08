@@ -4,6 +4,7 @@ import Homepage from "./components/Homepage";
 import SignUp from "./components/SignUp";
 import ForgotPassword from "./components/ForgotPassword";
 import Activation from "./components/Activation";
+import DeliveryAddress from "./components/DeliveryAddress";
 
 import "./styles/activation.css";
 
@@ -14,6 +15,7 @@ function App() {
       {/* <SignUp/> */}
       {/* <Homepage /> */}
       {/* <ForgotPassword/> */}
+      <DeliveryAddress/>
       {/* <Activation /> */}
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
