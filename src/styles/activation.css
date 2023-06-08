@@ -1,55 +1,36 @@
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+.activation-container {
 
-body{
-width: 100%;
-}
-
-.activation-container{
-    max-width: 43.75rem;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
-    padding: 10px 0;
+
+    background-color: white;
 }
 
-img{
-    width: 400px;
-    height: 300px;
+.activation-img {
+    width: 50%;
+    height: auto;
 }
 
-h1{
-    text-transform: capitalize;
-    font-size: 2.75rem;
-}
 
-.sent-email{
-    line-height: 1;
+
+.activation-email-notify {
     font-size: 1.5rem;
+    text-align: center;
 }
 
-.code-box-container {
+.activation-code-box-container {
+    display: flex;
+    justify-content: space-between;
     width: 100%;
-    height: 5.625rem;
-    padding: 0 1.25rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1.875rem;
+    gap: 1rem;
 }
 
-.code-box{
-    width: 9.375rem;
-    height: 100%;
+.code-box {
+    padding: 3em 5.5em;
     background-color: #e0e0e0;
-    display: flex;
-    align-items: center;
-    justify-content: center;
 }
 
 .receive-code {
@@ -57,16 +38,16 @@ h1{
     font-size: 1.25rem;
 }
 
-span{
-    color: #6750A4;
+span {
+    color: #6750a4;
     cursor: pointer;
     font-size: 1.25rem;
 }
 
-.verify-proceed-button{
+.verify-proceed-button {
     width: 31.25rem;
     height: 2.5rem;
-    background-color: #6750A4;
+    background-color: #6750a4;
     color: white;
     padding: 10px 0;
     text-transform: uppercase;
@@ -74,4 +55,10 @@ span{
     font-weight: bold;
     cursor: pointer;
     font-size: 1.25rem;
+}
+
+@media (max-width: 425px) {
+    .activation-img {
+        width: 90%;
+    }
 }
