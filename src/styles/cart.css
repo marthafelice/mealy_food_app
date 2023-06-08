@@ -6,9 +6,6 @@
 
 body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: yellow;
-    
-
 }
 
 .cart-container{
@@ -27,24 +24,54 @@ img{
     height: 300px;
 }
 
-.order-qty-add-to-cart{
-    border: 1px solid red;
+h1{
+    text-transform: capitalize;
+    font-size: 40px;
+}
+
+.food-description{
+    font-size: 24px;
+}
+
+.price {
+    font-weight: bold;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.order-quantity-add-to-cart{
     width: 90%;
     height: 60px;
     display: flex;
     align-items: center;
-justify-content: space-between;
+    justify-content: space-between;
 
 }
 
-.increase-decrease-order-quantity{
+.order-quantity-container{
     width: 30%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 30px;
+    padding: 30px 10px;
     border: 1px solid #6750A4;
+}
+
+.increase-order, .decrease-order{
+    color: #6750A4;
+    font-size: 40px;
+    padding: 0 5px;
+    font-weight: bold;
+    color: black;
+    cursor: pointer;
+    border: none;
+    background-color: white;
+}
+
+.quantity{
+    font-weight: bold;
+    font-size: 32px;
 }
 
 .add-to-cart{
@@ -52,6 +79,9 @@ justify-content: space-between;
     background-color: #6750A4;;
     color: white;
     text-transform: capitalize;
+    font-size: 18px;
     padding: 10px 0;
     height: 50px;
+    border: none;
+    cursor: pointer;
 }
