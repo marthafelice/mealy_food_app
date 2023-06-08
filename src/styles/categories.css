@@ -46,6 +46,9 @@
   color: white;
   padding: 0.8em 1.5em;
 }
+.order-category{
+  margin-top: 2rem;
+}
 .order-category_delivery,
 .order-category_bulk-order,
 .order-category_pickup {
