@@ -19,14 +19,14 @@ function App() {
     <div className="app">
        {/* <NewPassword /> */}
       {/* <SignUp/> */}
-      {/* <Homepage /> */}
+      <Homepage />
       {/* <ForgotPassword/> */}
       {/* <DeliveryAddress /> */}
       {/* <Activation /> */}
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
       {/* <DeliveryAddress /> */}
-      <Login/>
+      {/* <Login/> */}
       {/* ROUTES */}
       {/* <Routes>
         <Route path="/" element={<Homepage />}>
