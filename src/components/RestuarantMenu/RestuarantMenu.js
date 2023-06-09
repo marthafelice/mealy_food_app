@@ -74,7 +74,6 @@ const Tab = () => {
         ))}
       </div>
       <div>
-        {/* <div className="tab-heading">{menu.category}</div> */}
         {filteredMenus.map((menu, index) => (
           <div className='menu-box' key={index}>
             <div>
