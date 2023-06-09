@@ -14,7 +14,7 @@ function Homepage() {
   
   return (
     <div className="homepage-container">
-      <HomepageNav address="Add Address" />
+      <HomepageNav/>
       {displayProfile && <Profile />}
       <EditNameEmailModal />
       <EditPasswordModal />
