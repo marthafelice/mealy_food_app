@@ -9,7 +9,7 @@ function RestaurantCard({ name, rating, price }) {
     <div className="restaurant-card">
       <div className=" restaurant-card_top-section">
         <div className="restaurant-name-container">
-          <img src={Monogram} alt="a small restaurant photo" />
+          <img src={Monogram} alt="a small restaurant" />
           <p className="restaurant-name">{name}</p>
         </div>
         <BsThreeDotsVertical />
@@ -17,7 +17,7 @@ function RestaurantCard({ name, rating, price }) {
       <img
         src={BreakFastHub}
         className="restaurant-img"
-        alt="photo of a restaurant meal"
+        alt="restaurant meal"
       />
       <div className="restaurant-card_bottom-section">
         <div className="rating">

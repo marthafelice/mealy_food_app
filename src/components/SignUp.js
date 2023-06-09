@@ -21,7 +21,7 @@ const SignUp = () => {
           <h1 className='text-4xl font-bold text-center'>Sign Up to Mealy</h1>
           <p className='text-2xl text-center'>
             Already have an Account?{" "}
-            <a href='#' className='text-[#6750A4]'>
+            <a href='/' className='text-[#6750A4]'>
               Login
             </a>
           </p>
