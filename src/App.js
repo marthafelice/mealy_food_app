@@ -16,7 +16,7 @@ import PickUpOrder from "./components/PickUpOrder";
 function App() {
   return (
     <div className="app">
-      {/* <NewPassword /> */}
+       {/* <NewPassword /> */}
       {/* <SignUp/> */}
       {/* <Homepage /> */}
       {/* <ForgotPassword/> */}
@@ -35,6 +35,12 @@ function App() {
       </Routes> */}
     </div>
   );
-}
+};
 
 export default App;
+
+
+
+
+
+

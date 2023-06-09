@@ -50,7 +50,15 @@ form .form-group {
 form .form-group .error-message {
   align-self: flex-start;
   color: red;
-  margin-top: 1rem;
+  font-size: 14px;
+}
+.close-button{
+  color: black;
+  background-color: #fff;
+  width: 100%;
+  display: inline-flex;
+  justify-content: flex-end;
+  font-size: 20px;
 }
 form input {
   margin-top: 0.5rem;
