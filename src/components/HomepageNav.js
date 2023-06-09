@@ -8,8 +8,8 @@ import { useDispatch } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
 
-function HomepageNav({ address }) {
-  const authUser = true;
+function HomepageNav() {
+  const authUser = false;
   let dispatch = useDispatch();
   function toggle() {
     dispatch(toggleProfile());
