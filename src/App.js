@@ -24,15 +24,15 @@ function App() {
       {/* <Activation /> */}
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
-      {/* <DeliveryAddress /> */}
+      <DeliveryAddress />
       {/* ROUTES */}
-      <Routes>
+      {/* <Routes>
         <Route path="/" element={<Homepage />}>
           <Route path="deliveryOrder" element={<DeliveryOrder />} />
           <Route path="bulkOrder" element={<BulkOrder />} />
           <Route path="pickupOrder" element={<PickUpOrder />} />
         </Route>
-      </Routes>
+      </Routes> */}
     </div>
   );
 }
