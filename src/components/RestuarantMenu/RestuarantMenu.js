@@ -7,9 +7,10 @@ import Search from "../../images/search.png";
 import Menus from "./Menu";
 import Cart from "./Cart";
 import { useDispatch } from 'react-redux';
-import { addToCart } from '../../redux/slices/cartSlice';
+import { addToCart} from '../../redux/slices/cartSlice';
 
 const RestuarantMenu = () => {
+  
   return (
     <>
       <HomepageNav />
@@ -37,8 +38,8 @@ const RestuarantMenu = () => {
             <Tab />
           </div>
         </div>
-        <Cart/>
-      </div>
+      <Cart/>
+    </div>
     </>
   );
 };
@@ -47,23 +48,25 @@ const Tab = () => {
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
-  const categories = [...new Set(Menus.map((menu) => menu.category))]; // Get unique categories
+  const categories = ["All", ...new Set(Menus.map((menu) => menu.category))]; // Get unique categories
   const filteredMenus =
     activeTab === 0
       ? Menus
       : Menus.filter((menu) => menu.category === categories[activeTab]);
       const dispatch = useDispatch();
-
-    const handleAddToCart = (menu) => {
-      dispatch(addToCart(menu));
-    };
+    
+      const handleAddToCart = (menuItem) => {
+        dispatch(addToCart(menuItem));
+      };
+    
+      
   return (
     <div>
-      <div>
+      <div className="category">
         {categories.map((category, index) => (
           <div
             key={index}
-            className={` ${index === activeTab ? "" : ""}`}
+            className={` ${index === activeTab ? "activeTab" : ""}`}
             onClick={() => handleTabClick(index)}
           >
             {category}
@@ -78,7 +81,7 @@ const Tab = () => {
               <h2>{menu.type}</h2>
               <p>{menu.description}</p>
               <p className="price">$ {menu.price}</p>
-              <button onClick={handleAddToCart(menu)}>Add to Cart</button>
+              <button onClick={() => handleAddToCart(menu)} className="add-to-cart-btn">Add to Cart</button>
             </div>
             <img src={menu.img} alt='' />
           </div>

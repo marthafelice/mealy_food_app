@@ -1,41 +1,64 @@
 import React from "react";
-import { useSelector } from "react-redux";
-import toast from "../../images/toast.png"
-import rice from "../../images/rice.png"
-import add from "../../images/add.png"
-import minus from "../../images/minus.png"
+import { useDispatch, useSelector } from "react-redux";
+import add from "../../images/add.png";
+import minus from "../../images/minus.png";
+import {
+  removeFromCart,
+  incrementQuantity,
+  decrementQuantity,
+} from "../../redux/slices/cartSlice";
 
 const Cart = () => {
-  const cartItems = useSelector((state) => state.cart.menu);
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart);
+  const handleRemoveFromCart = (itemId) => {
+    dispatch(removeFromCart(itemId));
+  };
 
+  const handleIncrementQuantity = (itemId) => {
+    dispatch(incrementQuantity(itemId));
+  };
+
+  const handleDecrementQuantity = (itemId) => {
+    dispatch(decrementQuantity(itemId));
+  };
   return (
-    <div>
-      {/* {cartItems?.length === 0 ? (
-        <div><h1>Your Cart</h1><div><img src="" alt="" /><div><h5>French Toast</h5><p>$ 3,000</p></div><div><img src="" alt="" /><span> 1 </span><img src="" alt="" /></div></div> Your cart is empty.</div>
-      ) : (
-        <ul>
-          {cartItems?.map(item => (
-            <li key={item.id}>{item.name}</li>
-          ))}
-        </ul>
-      )} */}
-      <div>
+      <div className='cart-wrapper'>
         <h1>Your Cart</h1>
-        <div className="cart-row">
-          <img src={toast} alt='' />
-          <div className="cart-desc">
-            <h5>French Toast</h5>
-            <p>$ 3,000</p>
+        {cartItems.length === 0 ? (
+          <p>Nothing added yet</p>
+        ) : (
+          <div>
+            {cartItems.map((cartItem) => (
+            
+                <div className='cart-row' key={cartItem.id}>
+                  <img src={cartItem.img} alt='cartimage' />
+                  <div className='cart-desc'>
+                    <h5>{cartItem.type}</h5>
+                    <p>${cartItem.price}</p>
+                  </div>
+                  <div className='counter'>
+                    <img
+                      src={minus}
+                      alt=''
+                      onClick={() => handleDecrementQuantity(cartItem.id)}
+                    />
+                    <span> {cartItem.quantity} </span>
+                    <img
+                      src={add}
+                      alt=''
+                      onClick={() => handleIncrementQuantity(cartItem.id)}
+                    />
+                  </div>
+                  <button onClick={() => handleRemoveFromCart(cartItem.id)} className="remove">
+                    Remove
+                  </button>
+                </div>
+            ))}
+            <button>Checkout</button>
           </div>
-          <div className="counter">
-            <img src={minus} alt='' />
-            <span> 1 </span>
-            <img src={add} alt='' />
-          </div>
-        </div>{" "}
-        Your cart is empty.
+        )}
       </div>
-    </div>
   );
 };
 
