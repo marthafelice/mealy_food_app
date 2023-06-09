@@ -3,8 +3,8 @@ import NewPassword from "./components/NewPassword";
 import Homepage from "./components/Homepage";
 import SignUp from "./components/SignUp";
 // import ForgotPassword from "./components/ForgotPassword";
-import Activation from "./components/Activation";
-import DeliveryAddress from "./components/DeliveryAddress";
+// import Activation from "./components/Activation";
+// import DeliveryAddress from "./components/DeliveryAddress";
 
 import "./styles/activation.css";
 import { Route, Routes } from "react-router";
