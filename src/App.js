@@ -13,7 +13,6 @@ import BulkOrder from "./components/BulkOrder";
 import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
 
-
 function App() {
   return (
     <div className="app">
@@ -25,7 +24,7 @@ function App() {
       {/* <Activation /> */}
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
-
+      {/* <DeliveryAddress /> */}
       {/* ROUTES */}
       <Routes>
         <Route path="/" element={<Homepage />}>

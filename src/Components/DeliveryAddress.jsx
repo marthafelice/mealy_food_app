@@ -3,8 +3,8 @@ import map from "../images/Map.jpg";
 import "../styles/deliveryAddress.css";
 const DeliveryAddress = () => {
   return (
-    <div className="delivery-address">
-      <div className="address-section">
+    <div className="delivery-address auth-width ">
+      <div className="address-section auth-padding">
         <h2>Add a delivery address</h2>
 
         <div class="deliver-address_search-container">
@@ -26,7 +26,7 @@ const DeliveryAddress = () => {
         </div>
       </div>
 
-      <div className="map">
+      <div className="map-section">
         <img src={map} className="" alt="map" />
       </div>
     </div>
