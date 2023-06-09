@@ -7,7 +7,7 @@ import { closedProfileEdit } from "../redux/slices/profileSlice";
 import { ButtonPill } from "./Buttons";
 import { useForm } from "react-hook-form";
 import editNameIcon from "../images/editname.svg";
-import editMailIcon from "../images/mail-icon.png";
+import editMailIcon from "../images/email.svg";
 import clearEdit from "../images/clearEdit.svg";
 import close from "../images/close.svg";
 import * as profileConst from "../redux/constants/profile";
