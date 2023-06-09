@@ -12,7 +12,7 @@ import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
 import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
-import LoginForm from "./components/LoginForm"
+import Login from "./components/Login"
 
 function App() {
   return (
@@ -26,7 +26,7 @@ function App() {
       {/* <p>{value}</p>
       <button onClick={incrementValue}>increment</button> */}
       {/* <DeliveryAddress /> */}
-      <LoginForm/>
+      <Login/>
       {/* ROUTES */}
       {/* <Routes>
         <Route path="/" element={<Homepage />}>
