@@ -24,7 +24,7 @@ function Activation() {
       className="activation-container auth-padding auth-width"
       onRequestClose={closeActivationModal}
     >
-      <img src={close} className="close-icon" onClick={closeActivationModal}/>
+      <img src={close}alt="close icon" className="close-icon" onClick={closeActivationModal}/>
       <img src={Image} alt="activation" className="activation-img" />
       <h2 className="activation-title auth-title">Activation Code</h2>
       <p className="activation-email-notify">

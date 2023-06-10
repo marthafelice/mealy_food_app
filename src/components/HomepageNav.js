@@ -8,7 +8,7 @@ import { useDispatch } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
 import { toggledSignUp } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
-import { NavLink } from "react-router-dom";
+
 function HomepageNav() {
   const authUser = false;
   let dispatch = useDispatch();

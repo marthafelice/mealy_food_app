@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { useForm } from "react-hook-form";
 import Biker from "../images/bike.png";
 import Name from "../images/name.png";
