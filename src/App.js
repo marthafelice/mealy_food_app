@@ -1,7 +1,7 @@
 import "./App.css";
 // import NewPassword from "./components/NewPassword";
 import Homepage from "./components/Homepage";
-// import SignUp from "./components/SignUp";
+import SignUp from "./components/SignUp";
 // import ForgotPassword from "./components/ForgotPassword";
 // import Activation from "./components/Activation";
 // import DeliveryAddress from "./components/DeliveryAddress";
@@ -17,7 +17,7 @@ import PickUpOrder from "./components/PickUpOrder";
 function App() {
   return (
     <div className="app">
-       {/* <NewPassword /> */}
+      {/* <NewPassword /> */}
       {/* <SignUp/> */}
       {/* <Homepage /> */}
       {/* <ForgotPassword/> */}
@@ -33,16 +33,11 @@ function App() {
           <Route path="deliveryOrder" element={<DeliveryOrder />} />
           <Route path="bulkOrder" element={<BulkOrder />} />
           <Route path="pickupOrder" element={<PickUpOrder />} />
+          
         </Route>
       </Routes>
     </div>
   );
-};
+}
 
 export default App;
-
-
-
-
-
-

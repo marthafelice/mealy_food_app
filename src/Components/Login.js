@@ -10,6 +10,9 @@ import google_logo from "../images/logos_google-icon.svg";
 import "../styles/login.css";
 import close from "../images/close.svg";
 import ButtonLarge from "./Buttons";
+import ReactModal from "react-modal";
+import { useDispatch, useSelector } from "react-redux";
+import { closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
 
 const LoginForm = () => {
   const {
@@ -17,19 +20,27 @@ const LoginForm = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-  // const [isModalOpen, setIsModalOpen] = useState(false);
-
-  // const closeModal = () => {
-  //   setIsModalOpen(false);
-  // };
 
   const onSubmit = (data) => {
     console.log(data); // You can perform your login logic here
   };
-
+  const dispatch = useDispatch();
+  const { displayLoginModal } = useSelector((state) => state.auth);
+  function closeLogin() {
+    dispatch(closedAuthModal("login"));
+  }
+  function displayMap(){
+    dispatch(displayedAuthModal("map"))
+  }
   return (
-    <div className="login-container auth-padding auth-width">
-      <img src={close} alt="close modal icon" className="login-close-icon" />
+    <ReactModal
+      isOpen={displayLoginModal}
+      contentLabel="loginmodal"
+      overlayClassName="overlay"
+      className="login-container auth-width auth-padding"
+      onRequestClose={closeLogin}
+    >
+      <img src={close} alt="close modal icon" className="login-close-icon" onClick={closeLogin} />
       <h3 className="login-title">Login to Mealy</h3>
       <p className="login-instruction">
         Don't have an account? <Link>Sign up</Link>
@@ -43,7 +54,9 @@ const LoginForm = () => {
             placeholder="Email"
             {...register("email", { required: true })}
           />
-          {errors.email && <span className="error-message">Email is required</span>}
+          {errors.email && (
+            <span className="error-message">Email is required</span>
+          )}
         </div>
 
         <div className="login-input-container">
@@ -63,14 +76,14 @@ const LoginForm = () => {
           {" "}
           <Link>Forgot password?</Link>
         </p>
-        <ButtonLarge text="LOGIN" classname="login-btn" />
+        <ButtonLarge text="LOGIN" onclick={displayMap} classname="login-btn" />
       </form>
 
       <button className="google-btn">
         <img className="google_icon" src={google_logo} alt="google" />
         <p>Continue with Gmail</p>
       </button>
-    </div>
+    </ReactModal>
   );
 };
 

@@ -28,7 +28,6 @@ function EditNameEmailModal() {
       isOpen={displayNameEdit}
       contentLabel="editprofilemodal"
       onRequestClose={closeProfileEdit}
-      // style={editprofileNameModal}
       overlayClassName="overlay"
       className="overlay-content_edit"
     >

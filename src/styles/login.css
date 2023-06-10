@@ -8,28 +8,30 @@
 .login-form {
   display: flex;
   flex-direction: column;
-  
-  width: 100%;
+
+  /* width: 100%; */
 }
 .login-input-container input {
-    border-top: 0;
-    border-right: 0;
-    border-left: 0;
-    width: 100%;
-    padding-left: 5rem;
-    font-size: 1.5rem;
-   height: 4rem;
-  }
-  .login-input-container img {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    left: 3%;
-  }
-  .login-forgot-password {
-   align-self: flex-end;
-   margin-top: 1rem;
-  }
+  border-top: 0;
+  border-right: 0;
+  border-left: 0;
+  width: 100%;
+  padding-left: 4rem;
+  font-size: 1.5rem;
+  height: 4rem;
+  outline: none;
+}
+
+.login-input-container img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 2%;
+}
+.login-forgot-password {
+  align-self: flex-end;
+  margin-top: 1rem;
+}
 .login-close-icon {
   align-self: flex-end;
 }
@@ -37,43 +39,43 @@
   margin-top: 1rem;
 }
 .cuate-img {
-  /* width: 90%; */
-  height: 22rem;
+  width: 100%;
+  height: 17rem;
 }
 .login-input-container {
   position: relative;
 }
-.login-btn{
-    margin-top: 3rem;
+.login-btn {
+  margin-top: 3rem;
 }
-.google-btn{
-    background-color: white;
-    color: black;
-    display: flex;
-    align-items: center;
-    border: 1px solid black;
-    margin-top: 2rem;
-    width: 60%;
-    justify-content: center;
-   
+.google-btn {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: center;
+  border: 1px solid black;
+  margin-top: 2rem;
+  width: 60%;
+  justify-content: center;
 }
-.google-btn img{
-margin-right: .5rem;
+.google-btn img {
+  margin-right: 0.5rem;
 }
 @media (max-width: 456px) {
   .cuate-img {
     width: 100%;
   }
-  .login-input-container img{
+  .login-input-container img {
     width: 1.5rem;
   }
 }
-@media(max-width:320px){
-    .login-container{
-        font-size: 1.5rem;
-    }
-  
-    .google-btn img{
-        width: 1.2rem;
-    }
+@media (max-width: 320px) {
+  .login-container {
+    font-size: 1.5rem;
+    width: 90%;
+  }
+
+  .google-btn img {
+    width: 1.2rem;
+  }
 }

@@ -1,74 +1,48 @@
-.bg-white {
+.signup-container {
   background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 2rem;
+  border: none;
 }
-.text-black {
-  color: #000;
+.close-signup-icon {
+  align-self: flex-end;
 }
-.text-white {
-    color: #fff;
-  }
-.px-14 {
-  padding-left: 3.5rem;
-  padding-right: 3.5rem;
+.signup-instruction{
+    margin-top: 1rem;
 }
-.py-14 {
-  padding-top: 3.5rem;
-  padding-bottom: 3.5rem;
+.signup-input-container {
+  position: relative;
+ 
 }
-.items-center {
-    align-items: center;
+.signup-input-container img {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 1.5rem;
 }
-.justify-center {
-    justify-content: center;
+.signup-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 4rem;
+  padding-left: 4rem;
+  outline: none;
+ 
 }
-.flex-col {
-    flex-direction: column;
+.biker-img{
+    height: 20rem;
 }
 
-.flex {
-    display: flex;
+@media(max-width:425px){
+    .biker-img{
+        width: 60%;
+        height: auto;
+    }
+    .signup-input-container img{
+        width: 1.5rem;
+    }
 }
-.border-\[\#67646A\] {
-    border-bottom: 2px solid #67646A;
-}
-.bg-\[\#6750A4\] {
-    --tw-bg-opacity: 1;
-    background-color: rgb(103 80 164 / var(--tw-bg-opacity));
-}
-.border-b-2 {
-    border-bottom-width: 2px;
-}
-.mb-6 {
-    margin-bottom: 1.5rem;
-}
-.border-0 {
-    border-width: 0px;
-}
-.focus\:\!outline-none:focus {
-    outline: 2px solid transparent !important;
-    outline-offset: 2px !important;
-}
-.text-\[\#6750A4\] {
-    color: #6750A4;
-}
-.font-bold {
-    font-weight: 700;
-}
-.text-2xl {
-    font-size: 1.5rem;
-    line-height: 2rem;
-}
-.text-4xl {
-    font-size: 2.25rem;
-    line-height: 2.5rem;
-}
-.text-center {
-    text-align: center;
-}
-.w-64 {
-    width: 16rem;
-}
-@media (min-width: 768px){
-.w-40rem {
-    width: 40rem;
-}}
