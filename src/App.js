@@ -8,7 +8,7 @@ import Homepage from "./components/Homepage";
 
 import "./styles/activation.css";
 import { Route, Routes } from "react-router";
-import DeliveryOrder from "./components/DeliveryOrder";
+import DeliveryOrdr from "./components/DeliveryOrdr";
 import BulkOrder from "./components/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
@@ -30,10 +30,9 @@ function App() {
       {/* ROUTES */}
       <Routes>
         <Route path="/" element={<Homepage />}>
-          <Route path="deliveryOrder" element={<DeliveryOrder />} />
+          <Route path="deliveryOrder" element={<DeliveryOrdr />} />
           <Route path="bulkOrder" element={<BulkOrder />} />
           <Route path="pickupOrder" element={<PickUpOrder />} />
-          
         </Route>
       </Routes>
     </div>

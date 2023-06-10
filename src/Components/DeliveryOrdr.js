@@ -2,7 +2,7 @@ import React from "react";
 import "../styles/categories.css";
 import RestaurantCard from "./RestaurantCard";
 
-function DeliveryOrder() {
+function DeliveryOrdr() {
   return (
     <div className="order-category_delivery order-category">
       <h3>African Restaurants</h3>
@@ -23,4 +23,4 @@ function DeliveryOrder() {
   );
 }
 
-export default DeliveryOrder;
+export default DeliveryOrdr;
