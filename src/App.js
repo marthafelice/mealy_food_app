@@ -6,19 +6,17 @@ import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 
 function App() {
   return (
-    
-
-<div className="app">
-{/* <NewPassword /> */}
-{/* <SignUp/> */}
-<Homepage />
-
-{/* <p>{value}</p>
-<button onClick={incrementValue}>increment</button> */}
-
+    <div className="app">
+      {/* <NewPassword /> */}
+      {/* <SignUp/> */}
+      <Homepage />
+      
+      {/* <p>{value}</p>
+      <button onClick={incrementValue}>increment</button> */}
   
+        
 
-</div>
+    </div>
   );
 }
 
