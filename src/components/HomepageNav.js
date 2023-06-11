@@ -8,6 +8,7 @@ import { useDispatch } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
 import { toggledSignUp } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
+import { NavLink } from "react-router-dom";
 
 function HomepageNav() {
   const authUser = false;
@@ -15,17 +16,19 @@ function HomepageNav() {
   function toggle() {
     dispatch(toggleProfile());
   }
-  function toggleSignup(){
-    dispatch(toggledSignUp())
-    console.log('signup-triggered')
+  function toggleSignup() {
+    dispatch(toggledSignUp());
+    console.log("signup-triggered");
   }
   return (
     <nav className="homepage-nav">
-      <img
-        src={LogoDark}
-        alt="mealy dark logo"
-        className="logo-dark nav-logo"
-      />
+      <NavLink to="/">
+        <img
+          src={LogoDark}
+          alt="mealy dark logo"
+          className="logo-dark nav-logo"
+        />
+      </NavLink>
 
       <div className="address-input">
         <div className="address-container">
@@ -62,14 +65,12 @@ function HomepageNav() {
             />
           </>
         ) : (
-          
-            <img
-              src={unAuthProfileIcon}
-              alt="unathourized user profile icon"
-              className="unAuthprofile-icon"
-              onClick={toggleSignup}
-            />
-    
+          <img
+            src={unAuthProfileIcon}
+            alt="unathourized user profile icon"
+            className="unAuthprofile-icon"
+            onClick={toggleSignup}
+          />
         )}
       </div>
     </nav>

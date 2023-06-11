@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+
+html,
+body {
+  height: 100%;
+}
+body {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.LandingPage {
+  background-color: white;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+.links a {
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+  color: #6750a4;
+}
+
+.links img {
+  width: 70px;
+  height: 70px;
+}
+.cart {
+  width: 70px;
+  height: 70px;
+}
+.Logo {
+  margin-right: 195px;
+  padding-top: 20px;
+}
+
+.links {
+  margin-left: 300px;
+  padding-left: 30px;
+  padding-bottom: 20px;
+}
+
+.links a {
+  color: #000000;
+  width: 65px;
+  height: 28px;
+
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-size: 24px;
+  line-height: 28px;
+
+  color: #000000;
+
+  margin-right: 10px;
+}
+
+.hero {
+  display: flex;
+  align-items: center;
+}
+
+.img1 {
+  width: 730px;
+  height: 590px;
+  margin-left: 80px;
+}
+
+.hero-text {
+  margin-left: 20px;
+  margin-left: 90px;
+}
+.hero-text h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 57px;
+}
+
+.hero-text p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+}
+/* .hero-text img {
+  width: 730px;
+  height: 590px;
+  margin-left: -150px;
+} */
+
+.hero-text button {
+  background-color: #6750a4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 200px;
+}
+
+.heading {
+  margin: 0;
+  padding: 3px;
+}
+
+.highlight {
+  color: #6750a4;
+}
+.About {
+  display: flex;
+  align-items: center;
+}
+.About-text {
+  margin-left: 40px;
+}
+.About-text p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+.About-text h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 67px;
+}
+
+.About-text img {
+  width: 526px;
+  height: 454px;
+}
+.food-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  /* width: 366.88px;
+  height: 258px; */
+}
+
+.food-item {
+  text-align: center;
+  border: 1px solid #cac4d0;
+  border-radius: 12px;
+}
+
+.food-name {
+  margin: 10px 0;
+}
+
+.food-rating {
+  color: gray;
+}
+
+.popular h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 67px;
+  text-align: center;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-collapse: collapse;
+  margin-left: 90px;
+  margin-right: 90px;
+}
+
+.grid-box {
+  padding: 10px;
+  margin: 0;
+  border: 1px solid #6750a4;
+}
+.grid h2 {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 37px;
+  text-align: center;
+  padding-right: 80px;
+}
+.grid p {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 50px;
+  padding-left: 40px;
+}
