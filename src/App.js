@@ -8,7 +8,7 @@ import Homepage from "./components/Homepage";
 
 import "./styles/activation.css";
 import { Route, Routes } from "react-router";
-import OrderDeliver from "./components/OrderDeliver";
+import {OrderDeliver} from "./components/DeliveryAddress";
 import BulkOrder from "./components/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
