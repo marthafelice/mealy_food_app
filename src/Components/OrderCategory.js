@@ -17,7 +17,7 @@ function OrderCategory() {
           Bulk Order
         </NavLink>
       </div>
-    <Outlet/>
+      <Outlet />
     </section>
   );
 }

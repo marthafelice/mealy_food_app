@@ -13,30 +13,43 @@ import BulkOrder from "./components/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
 // import Login from "./components/Login"
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
+import Layout from "./utilities/Layout";
+const router = createBrowserRouter([
+  {
+    element: <Layout />,
+    children: [
+      {
+        path: "/",
+        element: <Homepage />,
+        children: [
+          { path: "deliveryOrder", element: <DeliveryOrder /> },
+          { path: "bulkOrder", element: <BulkOrder /> },
+          { path: "pickupOrder", element: <PickUpOrder /> },
+        ],
+      },
+    ],
+  },
+]);
 function App() {
-  return (
-    <div className="app">
-      {/* <NewPassword /> */}
-      {/* <SignUp/> */}
-      {/* <Homepage /> */}
-      {/* <ForgotPassword/> */}
-      {/* <DeliveryAddress /> */}
-      {/* <Activation /> */}
-      {/* <p>{value}</p>
-      <button onClick={incrementValue}>increment</button> */}
-      {/* <DeliveryAddress /> */}
-      {/* <Login/> */}
-      {/* ROUTES */}
-      <Routes>
-        <Route path="/" element={<Homepage />}>
-          <Route path="deliveryOrder" element={<DeliveryOrder />} />
-          <Route path="bulkOrder" element={<BulkOrder />} />
-          <Route path="pickupOrder" element={<PickUpOrder />} />
-        </Route>
-      </Routes>
-    </div>
-  );
+  return <RouterProvider router={router} />;
+  // return (
+  //   <div className="app">
+  //     {/* <NewPassword /> */}
+  //     {/* <SignUp/> */}
+  //     {/* <Homepage /> */}
+  //     {/* <ForgotPassword/> */}
+  //     {/* <DeliveryAddress /> */}
+  //     {/* <Activation /> */}
+  //     {/* <p>{value}</p>
+  //     <button onClick={incrementValue}>increment</button> */}
+  //     {/* <DeliveryAddress /> */}
+  //     {/* <Login/> */}
+  //     {/* ROUTES */}
+  //
+  //   </div>
+  // );
 }
 
 export default App;

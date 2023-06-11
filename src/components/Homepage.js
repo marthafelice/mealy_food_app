@@ -4,7 +4,7 @@ import Profile from "./Profile";
 import { useSelector } from "react-redux";
 
 import React from "react";
-import HomepageNav from "./HomepageNav";
+
 import EditNameEmailModal from "./EditNameEmail";
 import EditPasswordModal from "./EditPassword";
 import Categories from "./Categories";
@@ -18,7 +18,7 @@ function Homepage() {
 
   return (
     <div className="homepage-container">
-      <HomepageNav />
+      
       <SignUp />
       <Activation />
       <Login />
@@ -28,7 +28,7 @@ function Homepage() {
       <EditPasswordModal />
 
       <Categories />
-      <Footer />
+   
     </div>
   );
 }
