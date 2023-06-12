@@ -1,10 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
+import * as auth from "../constants/auth";
 
 const initialState = {
+  authUser: false,
   displaySignUpModal: false,
   displayActivationModal: false,
   displayLoginModal: false,
   displayDeliveryMap: false,
+  displayForgotPwd: false,
+  displayCreateNewPwd: false,
 };
 
 export const authSlice = createSlice({
@@ -14,35 +18,46 @@ export const authSlice = createSlice({
     toggledSignUp: (state) => {
       state.displaySignUpModal = !state.displaySignUpModal;
     },
+    authedHomepage: (state) => {
+      state.authUser = true;
+    },
     displayedAuthModal: (state, action) => {
-      if (action.payload === "activation") {
+      if (action.payload === auth.activation) {
         state.displayActivationModal = true;
-        state.displaySignUpModal = false;
       }
-      if (action.payload === "login") {
-        state.displayActivationModal = false;
+      if (action.payload === auth.login) {
         state.displayLoginModal = true;
       }
-      if (action.payload === "map") {
+      if (action.payload === auth.map) {
         state.displayDeliveryMap = true;
-        state.displayLoginModal = false;
+      }
+      if (action.payload === auth.forgotPwd) {
+        state.displayForgotPwd = true;
+      }
+      if (action.payload === auth.CreateNewPwd) {
+        state.displayCreateNewPwd = true;
       }
     },
     closedAuthModal: (state, action) => {
-      if (action.payload === "activation") {
+      if (action.payload === auth.activation) {
         state.displayActivationModal = false;
       }
-      if (action.payload === "login") {
+      if (action.payload === auth.login) {
         state.displayLoginModal = false;
-        state.displayActivationModal = false;
       }
-      if (action.payload === "map") {
+      if (action.payload === auth.map) {
         state.displayDeliveryMap = false;
+      }
+      if (action.payload === auth.forgotPwd) {
+        state.displayForgotPwd = false;
+      }
+      if (action.payload === auth.CreateNewPwd) {
+        state.displayCreateNewPwd = false;
       }
     },
   },
 });
 
-export const { toggledSignUp, displayedAuthModal, closedAuthModal } =
+export const { toggledSignUp, displayedAuthModal, closedAuthModal ,authedHomepage} =
   authSlice.actions;
 export default authSlice.reducer;

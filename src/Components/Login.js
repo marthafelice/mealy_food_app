@@ -12,8 +12,8 @@ import close from "../images/close.svg";
 import ButtonLarge from "./Buttons";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import { closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
-
+import { authedHomepage, closedAuthModal, displayedAuthModal, toggledSignUp } from "../redux/slices/authSlice";
+import * as auth from "../redux/constants/auth"
 const LoginForm = () => {
   const {
     register,
@@ -27,10 +27,22 @@ const LoginForm = () => {
   const dispatch = useDispatch();
   const { displayLoginModal } = useSelector((state) => state.auth);
   function closeLogin() {
-    dispatch(closedAuthModal("login"));
+    dispatch(closedAuthModal(auth.login));
+
   }
   function displayMap(){
-    dispatch(displayedAuthModal("map"))
+    dispatch(closedAuthModal(auth.login))
+    dispatch(displayedAuthModal(auth.map))
+    dispatch(authedHomepage())
+    
+  }
+  function displaySignupModal(){
+    dispatch(closedAuthModal(auth.login))
+    dispatch(toggledSignUp())
+  }
+  function displayForgotPwdModal(){
+    dispatch(displayedAuthModal(auth.forgotPwd))
+    dispatch(closedAuthModal(auth.login))
   }
   return (
     <ReactModal
@@ -42,9 +54,9 @@ const LoginForm = () => {
     >
       <img src={close} alt="close modal icon" className="login-close-icon" onClick={closeLogin} />
       <h3 className="login-title">Login to Mealy</h3>
-      <p className="login-instruction">
-        Don't have an account? <Link>Sign up</Link>
-      </p>
+      <div className="login-instruction">
+        Don't have an account? <p onClick={displaySignupModal}>Sign up</p>
+      </div>
       <img src={cuate} alt="mealy" className="cuate-img" />
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <div className="login-input-container">
@@ -72,9 +84,9 @@ const LoginForm = () => {
           {/* <img src={eye} alt='eye'/> */}
         </div>
 
-        <p className="login-forgot-password">
-          {" "}
-          <Link>Forgot password?</Link>
+        <p className="forgot-password" onClick={displayForgotPwdModal}>
+          
+          Forgot password?
         </p>
         <ButtonLarge text="LOGIN" onclick={displayMap} classname="login-btn" />
       </form>

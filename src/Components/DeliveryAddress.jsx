@@ -25,7 +25,7 @@ const DeliveryAddress = () => {
         <div className="input-container">
           <input
             type="text"
-            class="delivery-address_search-input"
+            className="delivery-address_search-input"
             placeholder="Search street, city, district....."
           />
 

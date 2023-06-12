@@ -37,6 +37,11 @@
 }
 .login-instruction {
   margin-top: 1rem;
+  display: flex;
+}
+.login-instruction p {
+  color: #6750a4;
+  margin-left: 0.5rem;
 }
 .cuate-img {
   width: 100%;

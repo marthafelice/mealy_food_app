@@ -11,6 +11,12 @@
 }
 .signup-instruction{
     margin-top: 1rem;
+    display: flex;
+}
+.signup-instruction p{
+  margin-left: .5rem;
+  color: #6750A4;
+  
 }
 .signup-input-container {
   position: relative;

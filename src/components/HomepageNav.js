@@ -4,14 +4,14 @@ import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import Filter from "../images/filterIcon.svg";
 import Profile from "../images/profile.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
 import { toggledSignUp } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
 import { NavLink } from "react-router-dom";
 
 function HomepageNav() {
-  const authUser = false;
+  const {authUser}=useSelector((state)=>state.auth)
   let dispatch = useDispatch();
   function toggle() {
     dispatch(toggleProfile());

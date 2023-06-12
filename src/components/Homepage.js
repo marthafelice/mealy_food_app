@@ -13,6 +13,8 @@ import SignUp from "./SignUp";
 import Activation from "./Activation";
 import Login from "./Login";
 import DeliveryAddress from "./DeliveryAddress";
+import ForgotPassword from "./ForgotPassword"
+import NewPassword from "./NewPassword";
 function Homepage() {
   const { displayProfile } = useSelector((state) => state.profile);
 
@@ -23,6 +25,8 @@ function Homepage() {
       <Activation />
       <Login />
       <DeliveryAddress />
+      <ForgotPassword/>
+      <NewPassword/>
       {displayProfile && <Profile />}
       <EditNameEmailModal />
       <EditPasswordModal />

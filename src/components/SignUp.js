@@ -9,7 +9,11 @@ import "../styles/SignUp.css";
 import ReactModal from "react-modal";
 import close from "../images/close.svg";
 import { useDispatch, useSelector } from "react-redux";
-import { displayedAuthModal, toggledSignUp } from "../redux/slices/authSlice";
+import {
+  closedAuthModal,
+  displayedAuthModal,
+  toggledSignUp,
+} from "../redux/slices/authSlice";
 import ButtonLarge from "./Buttons";
 
 function SignUp() {
@@ -23,10 +27,15 @@ function SignUp() {
   function closeSignUp() {
     dispatch(toggledSignUp());
   }
-  function openActivationModal(){
-    dispatch(displayedAuthModal("activation"))
+  function openActivationModal() {
+    dispatch(displayedAuthModal("activation"));
+    dispatch(toggledSignUp());
   }
-  
+  function openLoginModal() {
+    dispatch(toggledSignUp());
+    dispatch(displayedAuthModal("login"));
+  }
+
   const { displaySignUpModal } = useSelector((state) => state.auth);
   return (
     <ReactModal
@@ -44,10 +53,10 @@ function SignUp() {
       />
 
       <h3>Sign Up to Mealy</h3>
-      <p className="signup-instruction">
+      <div className="signup-instruction">
         Already have an Account?
-        <a href="/">Login</a>
-      </p>
+        <p onClick={openLoginModal}>Login</p>
+      </div>
       <img src={Biker} alt="a biker" className="biker-img" />
 
       <form onSubmit={handleSubmit(onSubmit)} className="text-2xl w-40rem">
@@ -89,8 +98,7 @@ function SignUp() {
           />
         </div>
 
-          <ButtonLarge text="SIGNUP" onclick={openActivationModal} />
-    
+        <ButtonLarge text="SIGNUP" onclick={openActivationModal} />
       </form>
     </ReactModal>
   );

@@ -4,7 +4,10 @@ import "../styles/newpassword.css";
 import Privacy from "../images/privacy.svg";
 import { useForm } from "react-hook-form";
 import ButtonLarge from "./Buttons";
-
+import { useDispatch, useSelector } from "react-redux";
+import ReactModal from "react-modal";
+import { closedAuthModal } from "../redux/slices/authSlice";
+import * as auth from "../redux/constants/auth";
 function NewPassword() {
   const {
     register,
@@ -13,8 +16,18 @@ function NewPassword() {
   } = useForm();
 
   console.log(errors);
+  const { displayCreateNewPwd } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  function closeCreateNewPwd() {
+    dispatch(closedAuthModal(auth.CreateNewPwd));
+  }
   return (
-    <div className="newpassword-container auth-padding auth-width">
+    <ReactModal
+      isOpen={displayCreateNewPwd}
+      className="newpassword-container auth-padding auth-width"
+      overlayClassName="overlay"
+      onRequestClose={closeCreateNewPwd}
+    >
       <h2 className="auth-title">Create New Password</h2>
       <img src={Privacy} alt="encryption illustration" />
       <p>
@@ -50,9 +63,9 @@ function NewPassword() {
           <p className="error-message">{errors.confirmPassword?.message}</p>
         </div>
 
-        <ButtonLarge text="SAVE" />
+        <ButtonLarge text="SAVE" onclick={closeCreateNewPwd} />
       </form>
-    </div>
+    </ReactModal>
   );
 }
 

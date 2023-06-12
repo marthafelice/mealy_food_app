@@ -4,17 +4,18 @@ import ButtonLarge from "./Buttons";
 import ReactModal from "react-modal";
 import { displayedAuthModal, closedAuthModal } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
-import close from "../images/close.svg"
-
+import close from "../images/close.svg";
+import * as auth from "../redux/constants/auth";
 function Activation() {
   const dispatch = useDispatch();
 
   const { displayActivationModal } = useSelector((state) => state.auth);
   function closeActivationModal() {
-    dispatch(closedAuthModal("activation"));
+    dispatch(closedAuthModal(auth.activation));
   }
-  function openLoginModal(){
-    dispatch(displayedAuthModal('login'))
+  function openLoginModal() {
+    dispatch(displayedAuthModal(auth.login));
+    dispatch(closedAuthModal(auth.activation));
   }
   return (
     <ReactModal
@@ -24,7 +25,12 @@ function Activation() {
       className="activation-container auth-padding auth-width"
       onRequestClose={closeActivationModal}
     >
-      <img src={close}alt="close icon" className="close-icon" onClick={closeActivationModal}/>
+      <img
+        src={close}
+        alt="close icon"
+        className="close-icon"
+        onClick={closeActivationModal}
+      />
       <img src={Image} alt="activation" className="activation-img" />
       <h2 className="activation-title auth-title">Activation Code</h2>
       <p className="activation-email-notify">
@@ -48,7 +54,11 @@ function Activation() {
         Did not receive code? <span>Resend Code</span>
       </p>
 
-      <ButtonLarge text="VERIFY AND PROCEED" onclick={openLoginModal} classname="verify-proceed-btn"/>
+      <ButtonLarge
+        text="VERIFY AND PROCEED"
+        onclick={openLoginModal}
+        classname="verify-proceed-btn"
+      />
     </ReactModal>
   );
 }

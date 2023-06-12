@@ -4,8 +4,16 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as Yup from "yup";
 import ButtonLarge from "./Buttons";
+import * as auth from "../redux/constants/auth";
+import { useDispatch } from "react-redux";
+import { closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
 
 export default function ForgotPasswordForm() {
+  const dispatch = useDispatch();
+  function displayCreateNewPwd() {
+    dispatch(closedAuthModal(auth.forgotPwd));
+    dispatch(displayedAuthModal(auth.CreateNewPwd));
+  }
   const validationSchema = Yup.object().shape({
     email: Yup.string().required("Email is required").email("Email is invalid"),
   });
@@ -27,10 +35,10 @@ export default function ForgotPasswordForm() {
           }`}
           placeholder="email address"
         />
-        <p className="invalid-feedback">{errors.email?.message}</p>
+        <p className="error-message">{errors.email?.message}</p>
       </div>
 
-     <ButtonLarge text="SEND"/>
+      <ButtonLarge text="SEND" onclick={displayCreateNewPwd} />
     </form>
   );
 }
