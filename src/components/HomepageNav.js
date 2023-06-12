@@ -46,7 +46,7 @@ function HomepageNav() {
             className="nav-section_arrow-icon"
           />
         </div>
-        <input className="homepage-nav_search" placeholder="search"></input>
+        <input className="homepage-nav_search" placeholder="search"  autoComplete="current-password"></input>
       </div>
       <div className="cart-profile ">
         {authUser ? (

@@ -78,9 +78,9 @@ const LandingPage = () => {
             Most Popular <span className="highlight">Restaurant</span>{" "}
           </h2>
 
-          <div class="food-grid">
-            <div class="food-item">
-              <h3 class="food-name">
+          <div className="food-grid">
+            <div className="food-item">
+              <h3 className="food-name">
                 {" "}
                 <span className="icon">
                   <img src={br_sm} alt="" />
@@ -89,12 +89,12 @@ const LandingPage = () => {
               </h3>
               <img src={Breakfast} alt="Food 1"></img>
 
-              <p class="food-rating">
+              <p className="food-rating">
                 <img src={rating} alt="" />
               </p>
             </div>
-            <div class="food-item">
-              <h3 class="food-name">
+            <div className="food-item">
+              <h3 className="food-name">
                 {" "}
                 <span className="icon">
                   <img src={gory_sm} alt="" />
@@ -103,12 +103,12 @@ const LandingPage = () => {
               </h3>
               <img src={Gory} alt="Food 2"></img>
 
-              <p class="food-rating">
+              <p className="food-rating">
                 <img src={rating2} alt="" />
               </p>
             </div>
-            <div class="food-item">
-              <h3 class="food-name">
+            <div className="food-item">
+              <h3 className="food-name">
                 {" "}
                 <span className="icon">
                   <img src={pl_sm} alt="" />
@@ -117,7 +117,7 @@ const LandingPage = () => {
               </h3>
               <img src={Platter} alt="Food 3"></img>
 
-              <p class="food-rating">
+              <p className="food-rating">
                 <img src={rating3} alt="" />
               </p>
             </div>
@@ -128,15 +128,15 @@ const LandingPage = () => {
             Why <span className="highlight"> Choose</span> Us ?
           </h2>
 
-          <div class="grid-container">
-            <div class="grid-box">
+          <div className="grid-container">
+            <div className="grid-box">
               <img src={bike} alt="" />
               <h2>Fast Delivery </h2>
               <p>
                 Enjoy fast and reliable <br /> delivery to every <br /> location{" "}
               </p>
             </div>
-            <div class="grid-box">
+            <div className="grid-box">
               <img src={clock} alt="" />
               <h2>
                 24/7 Delivery <br />
@@ -147,7 +147,7 @@ const LandingPage = () => {
                 you covered!
               </p>
             </div>
-            <div class="grid-box">
+            <div className="grid-box">
               <img src={cutlery} alt="" />
               <h2>Quality Food</h2>{" "}
               <p>

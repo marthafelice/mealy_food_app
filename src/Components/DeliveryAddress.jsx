@@ -27,6 +27,7 @@ const DeliveryAddress = () => {
             type="text"
             className="delivery-address_search-input"
             placeholder="Search street, city, district....."
+            autoComplete="current-password"
           />
 
           <div className="current-location">
