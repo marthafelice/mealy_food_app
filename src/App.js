@@ -8,7 +8,7 @@ import Homepage from "./components/Homepage";
 
 import "./styles/activation.css";
 import { Route, Routes } from "react-router";
-// import DeliveryOrder from "./components/DeliveryOrder";
+import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
 import PickUpOrder from "./components/PickUpOrder";
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
         path: "home",
         element: <Homepage />,
         children: [
-          // { path: "deliveryOrder", element: <DeliveryOrder /> },
+          { path: "deliveryOrder", element: <DeliveryOrder /> },
           { path: "bulkOrder", element: <BulkOrder /> },
           { path: "pickupOrder", element: <PickUpOrder /> },
         ],
