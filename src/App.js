@@ -39,22 +39,6 @@ const router = createBrowserRouter([
 ]);
 function App() {
   return <RouterProvider router={router} />;
-  // return (
-  //   <div className="app">
-  //     {/* <NewPassword /> */}
-  //     {/* <SignUp/> */}
-  //     {/* <Homepage /> */}
-  //     {/* <ForgotPassword/> */}
-  //     {/* <DeliveryAddress /> */}
-  //     {/* <Activation /> */}
-  //     {/* <p>{value}</p>
-  //     <button onClick={incrementValue}>increment</button> */}
-  //     {/* <DeliveryAddress /> */}
-  //     {/* <Login/> */}
-  //     {/* ROUTES */}
-  //
-  //   </div>
-  // );
 }
 
 export default App;
