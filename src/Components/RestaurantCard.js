@@ -1,12 +1,11 @@
 import React from "react";
 import "../styles/restaurantCard.css";
-import Monogram from "../images/monogram.svg";
 import { BsThreeDotsVertical } from "react-icons/bs";
-import BreakFastHub from "../images/breakfasthub.svg";
 import Star from "../images/star.svg";
-function RestaurantCard({ name, rating, price }) {
+import { Link } from "react-router-dom";
+function RestaurantCard({ name, rating, price, Monogram, Food }) {
   return (
-    <div className="restaurant-card">
+    <Link to="/menu" className="restaurant-card">
       <div className=" restaurant-card_top-section">
         <div className="restaurant-name-container">
           <img src={Monogram} alt="a small restaurant" />
@@ -15,7 +14,7 @@ function RestaurantCard({ name, rating, price }) {
         <BsThreeDotsVertical />
       </div>
       <img
-        src={BreakFastHub}
+        src={Food}
         className="restaurant-img"
         alt="restaurant meal"
       />
@@ -26,7 +25,7 @@ function RestaurantCard({ name, rating, price }) {
         </div>
         <p className="price">Delivery: ${price}</p>
       </div>
-    </div>
+    </Link>
   );
 }
 
