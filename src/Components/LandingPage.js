@@ -17,7 +17,7 @@ import RestaurantCard from "./RestaurantCard";
 const LandingPage = () => {
   return (
     <section className="landing-page">
-      <nav className="landing-page-nav ">
+      <nav className="landing-page-nav" id="land-nav">
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
         <div className="landing-nav-links">
