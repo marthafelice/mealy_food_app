@@ -5,7 +5,7 @@ import Homepage from "./components/Homepage";
 // import ForgotPassword from "./components/ForgotPassword";
 // import Activation from "./components/Activation";
 // import DeliveryAddress from "./components/DeliveryAddress";
-import RestuarantMenu from './components/RestuarantMenu/RestuarantMenu'
+import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 
 import "./styles/activation.css";
 import { Route, Routes } from "react-router";
@@ -35,9 +35,9 @@ const router = createBrowserRouter([
           { path: "pickupOrder", element: <PickUpOrder /> },
         ],
       },
+      { path: "menu", element: <RestuarantMenu /> },
     ],
   },
-  { path: "menu", element: <RestuarantMenu /> },
 ]);
 function App() {
   return <RouterProvider router={router} />;
