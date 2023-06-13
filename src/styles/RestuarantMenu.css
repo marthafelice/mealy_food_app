@@ -7,11 +7,12 @@ h1 {
   position: relative;
   display: flex;
   justify-content: space-between;
-  /* z-index: -1; */
+  flex-wrap: wrap;
 }
 .breadCrumb img {
   max-width: 100%;
   height: auto;
+  margin-top: calc(85px);
 }
 .menu-title {
   padding: 2rem;
@@ -81,18 +82,17 @@ h1 {
   margin-left: 2rem;
 }
 .menu-highlight {
-  width: 60%;
+  width: 100%;
+  order: 2;
 }
 .cart-wrapper {
   background-color: white;
   box-shadow: -1px 5px 10px 8px rgba(0, 0, 0, 0.04);
-  margin-top: 2.5rem;
-  position: absolute;
-  right: 0;
+  margin: 2.5rem;
   padding: 2rem;
   border-radius: 1rem;
-  width: 37rem;
   text-align: center;
+  width: 100%;
 }
 .cart-wrapper h1 {
   font-size: 2rem;
@@ -162,4 +162,22 @@ h1 {
 }
 button {
   cursor: pointer;
+}
+@media (min-width: 640px) {
+  .cart-wrapper {
+    order: 1;
+  }
+}
+@media (min-width: 768px) {
+  .menu-highlight {
+    width: 60%;
+  }
+  .cart-wrapper {
+    position: absolute;
+    right: 0;
+    width: 38%;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+  }
 }

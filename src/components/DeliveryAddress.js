@@ -1,18 +1,33 @@
 import React from "react";
 import map from "../images/Map.jpg";
-import "../styles/deliveryAddress.css";
+import "../styles/DeliveryAddress.css";
 import RoundLocation from "../images/locationround.svg";
+import ReactModal from "react-modal";
+import { useDispatch, useSelector } from "react-redux";
+import { closedAuthModal } from "../redux/slices/authSlice";
+
 const DeliveryAddress = () => {
+  const { displayDeliveryMap } = useSelector((state) => state.auth);
+  const dispatch=useDispatch();
+  function closeMapModal(){
+    dispatch(closedAuthModal('map'))
+  }
   return (
-    <div className="delivery-address auth-width ">
+    <ReactModal
+      isOpen={displayDeliveryMap}
+      overlayClassName="overlay"
+      className="delivery-address auth-width"
+      onRequestClose={closeMapModal}
+    >
       <div className="address-section">
         <h2>Add a delivery address</h2>
 
         <div className="input-container">
           <input
             type="text"
-            class="delivery-address_search-input"
+            className="delivery-address_search-input"
             placeholder="Search street, city, district....."
+            autoComplete="current-password"
           />
 
           <div className="current-location">
@@ -24,10 +39,9 @@ const DeliveryAddress = () => {
       </div>
 
       <div className="map-section">
-        <img src={map} className="" alt="map" />
+        <img src={map}  alt="map" />
       </div>
-    </div>
+    </ReactModal>
   );
 };
-
 export default DeliveryAddress;

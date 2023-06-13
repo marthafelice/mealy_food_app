@@ -4,23 +4,31 @@ import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import Filter from "../images/filterIcon.svg";
 import Profile from "../images/profile.svg";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
+import { toggledSignUp } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
+import { NavLink } from "react-router-dom";
 
 function HomepageNav() {
-  const authUser = false;
+  const {authUser}=useSelector((state)=>state.auth)
   let dispatch = useDispatch();
   function toggle() {
     dispatch(toggleProfile());
   }
+  function toggleSignup() {
+    dispatch(toggledSignUp());
+    console.log("signup-triggered");
+  }
   return (
     <nav className="homepage-nav">
-      <img
-        src={LogoDark}
-        alt="mealy dark logo"
-        className="logo-dark nav-logo"
-      />
+      <NavLink to="/">
+        <img
+          src={LogoDark}
+          alt="mealy dark logo"
+          className="logo-dark nav-logo"
+        />
+      </NavLink>
 
       <div className="address-input">
         <div className="address-container">
@@ -38,7 +46,7 @@ function HomepageNav() {
             className="nav-section_arrow-icon"
           />
         </div>
-        <input className="homepage-nav_search" placeholder="search"></input>
+        <input className="homepage-nav_search" placeholder="search"  autoComplete="current-password"></input>
       </div>
       <div className="cart-profile ">
         {authUser ? (
@@ -48,6 +56,7 @@ function HomepageNav() {
               alt="cart icon"
               className="nav-section_filter-icon"
             />
+
             <img
               src={Profile}
               alt="profile icon"
@@ -60,6 +69,7 @@ function HomepageNav() {
             src={unAuthProfileIcon}
             alt="unathourized user profile icon"
             className="unAuthprofile-icon"
+            onClick={toggleSignup}
           />
         )}
       </div>

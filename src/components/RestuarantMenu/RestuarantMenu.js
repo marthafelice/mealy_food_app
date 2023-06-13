@@ -6,16 +6,16 @@ import Star from "../../images/star.png";
 import Search from "../../images/search.png";
 import Menus from "./Menu";
 import Cart from "./Cart";
-import { useDispatch } from 'react-redux';
-import { addToCart} from '../../redux/slices/cartSlice';
+import { useDispatch } from "react-redux";
+import { addToCart } from "../../redux/slices/cartSlice";
+import Footer from "../Footer";
 
 const RestuarantMenu = () => {
-  
   return (
     <>
       <HomepageNav />
       <div className='breadCrumb '>
-        <img src={Pancake} alt='pancake image' />
+        <img src={Pancake} alt='pancake' />
       </div>
       <div className='page-container'>
         <div className='menu-highlight'>
@@ -38,8 +38,9 @@ const RestuarantMenu = () => {
             <Tab />
           </div>
         </div>
-      <Cart/>
-    </div>
+        <Cart />
+      </div>
+      <Footer />
     </>
   );
 };
@@ -53,16 +54,15 @@ const Tab = () => {
     activeTab === 0
       ? Menus
       : Menus.filter((menu) => menu.category === categories[activeTab]);
-      const dispatch = useDispatch();
-    
-      const handleAddToCart = (menuItem) => {
-        dispatch(addToCart(menuItem));
-      };
-    
-      
+  const dispatch = useDispatch();
+
+  const handleAddToCart = (menuItem) => {
+    dispatch(addToCart(menuItem));
+  };
+
   return (
     <div>
-      <div className="category">
+      <div className='category'>
         {categories.map((category, index) => (
           <div
             key={index}
@@ -79,8 +79,13 @@ const Tab = () => {
             <div>
               <h2>{menu.type}</h2>
               <p>{menu.description}</p>
-              <p className="price">$ {menu.price}</p>
-              <button onClick={() => handleAddToCart(menu)} className="add-to-cart-btn">Add to Cart</button>
+              <p className='price'>$ {menu.price}</p>
+              <button
+                onClick={() => handleAddToCart(menu)}
+                className='add-to-cart-btn'
+              >
+                Add to Cart
+              </button>
             </div>
             <img src={menu.img} alt='' />
           </div>

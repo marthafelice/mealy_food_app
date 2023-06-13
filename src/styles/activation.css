@@ -1,11 +1,8 @@
 .activation-container {
-  
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 10px;
-
+  font-size: 2rem;
   background-color: white;
 }
 
@@ -14,22 +11,23 @@
   height: auto;
 }
 
-
-
 .activation-email-notify {
-  font-size: 1.5rem;
+  font-size: 1.7rem;
   text-align: center;
+  margin-top: 1rem;
+  line-height: 1.5;
 }
 
 .activation-code-box-container {
   display: flex;
   justify-content: space-between;
-  width: 100%;
+  width: 70%;
   gap: 1rem;
+  margin: 3rem 0;
 }
 
 .code-box {
-  padding: 3em 5.5em;
+  padding: .5em 1.5em;
   background-color: #e0e0e0;
 }
 
@@ -44,20 +42,17 @@ span {
   font-size: 1.25rem;
 }
 
-.verify-proceed-button {
-  width: 31.25rem;
-  height: 2.5rem;
-  background-color: #6750a4;
-  color: white;
-  padding: 10px 0;
-  text-transform: uppercase;
-  border: none;
-  font-weight: bold;
-  cursor: pointer;
-  font-size: 1.25rem;
-}
+
 @media (max-width: 425px) {
   .activation-img {
     width: 90%;
+  }
+  .activation-code-box-container{
+    width: 100%;
+  }
+}
+@media(max-width:320px){
+  .verify-proceed-btn{
+    font-size: 1.5rem;
   }
 }

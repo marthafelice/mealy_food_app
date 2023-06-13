@@ -2,9 +2,9 @@ import React from "react";
 import "../styles/buttons.css";
 // import { getByText } from "@testing-library/rea
 
-function ButtonLarge({ text,classname }) {
+function ButtonLarge({ text,classname,onclick }) {
   return (
-    <button type="submit" className={`button-large ${classname}`}>
+    <button type="submit" onClick={onclick} className={`button-large ${classname}`}>
       {text}
     </button>
   );
