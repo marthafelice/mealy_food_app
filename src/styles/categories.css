@@ -19,6 +19,7 @@
 .category-meal_name {
   font-size: 3rem;
   font-weight: 500;
+  text-align: center;
 }
 /* ....................................ORDER CATEGORY....................... */
 .categories-section_order {
