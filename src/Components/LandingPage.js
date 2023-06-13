@@ -4,16 +4,8 @@ import cart from "../images/bluecart.svg";
 import "../styles/LandingPage.css";
 import Elipse from "../images/Group 203Elipse.png";
 import AboutFood from "../images/aboutfood.svg";
-import Breakfast from "../images/BreakfastHub.jpg";
-import Gory from "../images/Gory Cafe.jpg";
-import Platter from "../images/Platters.png";
-import br_sm from "../images/br-small.jpg";
-import gory_sm from "../images/gory-small.png";
-import pl_sm from "../images/platter-small.png";
-import star from "../images/star.jpg";
-import rating from "../images/rating.jpg";
-import rating2 from "../images/rating2.png";
-import rating3 from "../images/rating3.jpg";
+import Restuarant5 from "../images/rest5.png";
+import Monogram1 from "../images/monogram1.png";
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
@@ -80,9 +72,24 @@ const LandingPage = () => {
         </h2>
 
         <div className="popular-section_food">
-          <RestaurantCard name="Breakfast hub" />
-          <RestaurantCard name="Gory's Cafe" />
-          <RestaurantCard name="Platters Couch" />
+          <RestaurantCard
+            name="Breakfast Hub"
+            rating="4.6"
+            Monogram={Monogram1}
+            Food={Restuarant5}
+          />{" "}
+          <RestaurantCard
+            name="Gory's Cafe"
+            rating="4.6"
+            Monogram={Monogram1}
+            Food={Restuarant5}
+          />{" "}
+          <RestaurantCard
+            name="Breakfast Hub"
+            rating="4.6"
+            Monogram={Monogram1}
+            Food={Restuarant5}
+          />
         </div>
       </div>
 
