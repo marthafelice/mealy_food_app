@@ -7,7 +7,7 @@ import ReactModal from "react-modal";
 
 const CartModal = () => {
   const [count, setCount] = useState(0);
-  const [displayCart, setDisplayCart] = useState(true);
+  const [displayCart, setDisplayCart] = useState(false);
   //pls set the open and close functionality from the slices
   function closeCartModal() {
     setDisplayCart(false);
@@ -30,8 +30,8 @@ const CartModal = () => {
         <div className="cart-modal-content">
           <h3>Full Breakfast</h3>
           <p className="food-description">
-            120g of Yam, potatoes, and plantain, served  with sauteed
-            vegetables, egg sauce & sausage.
+            120g of Yam, potatoes, and plantain, served with sauteed vegetables,
+            egg sauce & sausage.
           </p>
           <p className="price">$ 3,000</p>
           <div className="order-quantity-add-to-cart-container">

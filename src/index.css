@@ -97,6 +97,7 @@ h3 {
 }
 a {
   text-decoration: none;
+  color: black;
 }
 .forgot-password {
   color: #6750a4;
