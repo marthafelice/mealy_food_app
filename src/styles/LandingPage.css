@@ -1,6 +1,9 @@
 .landing-page {
   font-size: 3rem;
   line-height: 1.4;
+  height: 100vh;
+  overflow-y: auto;
+  
 }
 .landing-page-nav {
   display: flex;
@@ -12,6 +15,7 @@
   position: fixed;
   top: 0;
   width: 100%;
+  background-color: white;
 }
 .landing-page-nav_logo {
   width: 9rem;
@@ -47,6 +51,7 @@
   margin-top: 15rem;
   align-items: center;
   column-gap: 5rem;
+  
 }
 .hero-text-container {
   flex: 1;
@@ -161,6 +166,11 @@
     font-size: 4rem;
   }
 }
+@media (max-width: 650px) {
+  .landing-page-nav {
+    font-size: 2rem;
+  }
+}
 @media (max-width: 425px) {
   .landing-page {
     font-size: 2rem;
@@ -175,10 +185,15 @@
     margin-bottom: 4rem;
   }
   .choose-section-content div {
-    padding: 3rem 2rem ;
+    padding: 3rem 2rem;
     font-size: 2rem;
   }
-  .landing-page-nav_logo{
+  .landing-page-nav_logo {
     width: 5rem;
+  }
+}
+@media (max-width: 320px) {
+  .landing-page-nav {
+    font-size: 1.3rem;
   }
 }

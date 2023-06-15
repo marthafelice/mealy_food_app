@@ -1,5 +1,5 @@
-import React from "react";
-import mealy from "../images/MEALY.jpg";
+import React, { useEffect } from "react";
+import mealy from "../images/logodark.svg";
 import cart from "../images/bluecart.svg";
 import "../styles/LandingPage.css";
 import Elipse from "../images/Group 203Elipse.png";
@@ -13,10 +13,11 @@ import HomepageNav from "./HomepageNav";
 import Footer from "./Footer";
 import { NavLink } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
+import { useState } from "react";
 
 const LandingPage = () => {
   return (
-    <section className="landing-page">
+    <section className="landing-page" onScroll={handleScroll}>
       <nav className="landing-page-nav" id="land-nav">
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
