@@ -1,5 +1,4 @@
-import "./App.css";
-// import NewPassword from "./components/NewPassword";
+// // import NewPassword from "./components/NewPassword";
 import Homepage from "./components/Homepage";
 // import SignUp from "./components/SignUp";
 // import ForgotPassword from "./components/ForgotPassword";
@@ -7,8 +6,8 @@ import Homepage from "./components/Homepage";
 // import DeliveryAddress from "./components/DeliveryAddress";
 import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 
-import "./styles/activation.css";
-import { Route, Routes } from "react-router";
+import Cart from "./components/Cart";
+// import { Route, Routes } from "react-router";
 import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
