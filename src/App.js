@@ -1,11 +1,11 @@
-import "./App.css";
-import Activation from "./components/Activation";
-import "./styles/activation.css";
+// import Activation from "./components/Activation";
+import Cart from "./components/Cart";
 
 function App() {
   return (
     <div className="App">
-      <Activation />
+      {/* <Activation /> */}
+      <Cart />
     </div>
   );
 }
