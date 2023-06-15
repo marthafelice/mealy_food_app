@@ -17,7 +17,7 @@ import { useState } from "react";
 
 const LandingPage = () => {
   return (
-    <section className="landing-page" onScroll={handleScroll}>
+    <section className="landing-page">
       <nav className="landing-page-nav" id="land-nav">
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 

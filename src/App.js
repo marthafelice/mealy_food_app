@@ -6,7 +6,7 @@ import Homepage from "./components/Homepage";
 // import DeliveryAddress from "./components/DeliveryAddress";
 import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 
-import Cart from "./components/Cart";
+import Cart from "./components/CartModal";
 // import { Route, Routes } from "react-router";
 import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
@@ -17,6 +17,7 @@ import LandingPage from "./components/LandingPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./utilities/Layout";
+import CartModal from "./components/CartModal";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -39,7 +40,11 @@ const router = createBrowserRouter([
   },
 ]);
 function App() {
-  return <RouterProvider router={router} />;
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;
