@@ -3,6 +3,11 @@
 
   box-shadow: 0 0 2px 0rem black;
   border-radius: 10px;
+  transition: all ease .3s;
+}
+.restaurant-card:hover{
+  
+  box-shadow: 0 0 10px 0 #6650a4bb;
 }
 .restaurant-name-container {
   display: flex;
