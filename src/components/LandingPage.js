@@ -28,17 +28,29 @@ import NewPassword from "./NewPassword";
 import "../styles/activation.css"
 
 const LandingPage = () => {
-  const [active,setActive]=useState(false)
+  const [activeLink, setActiveLink] = useState('');
+ 
   const dispatch=useDispatch()
-
-  const currentHash = window.location.hash;
-  console.log(currentHash)
-
-  
   function displaySignup(){
    dispatch(toggled('signup'))
-   console.log('ooa')
+
   }
+ 
+  useEffect(() => {
+   
+      const handleHashChange = () => {
+      const hash = window.location.hash;
+      setActiveLink(hash);
+    };
+
+    handleHashChange(); // Set initial active link on component mount
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
 
   return (
     <section className="landing-page">
@@ -48,18 +60,23 @@ const LandingPage = () => {
       <DeliveryAddress />
       <ForgotPassword />
       <NewPassword />
-      <nav className="landing-page-nav" id="land-nav">
+      <nav className="landing-page-nav" >
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
         <div className="landing-nav-links">
-         <a href="z">Home</a>
-         <a >About Us</a>
-         <a >
-        Contact Us</a> 
+        <a href="" className={activeLink === '' ? 'active' : ''}>
+        Home
+      </a>
+      <a href="#about" className={activeLink === '#about' ? 'active' : ''}>
+        About Us
+      </a>
+      <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}>
+        Contact Us
+      </a>
       <img src={cart} className="cart" alt="Cart" />
         </div>
       </nav>
-      <section className="hero-section landing-page-padding" id="/">
+      <section className="hero-section landing-page-padding" >
         <div className="hero-text-container">
           <h1 className="hero-heading">
             Delightful Eats Delivered with
@@ -82,7 +99,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <div className="about-section landing-page-padding">
+      <div className="about-section landing-page-padding" id="about">
         <div className="about-img-container">
           <img src={AboutFood} alt="" className="about-food-img" />
         </div>

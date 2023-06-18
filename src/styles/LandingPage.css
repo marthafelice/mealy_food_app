@@ -5,6 +5,7 @@
   overflow-y: auto;
   z-index: 2;
   position: relative;
+  scroll-behavior: smooth;
   
 }
 .landing-page-nav {
@@ -29,6 +30,10 @@
 .landing-page .landing-nav-links {
   display: flex;
   align-items: center;
+}
+nav a.active{
+  font-weight: bold;
+  
 }
 .landing-nav-links img {
   height: 5rem;
