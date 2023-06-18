@@ -9,15 +9,21 @@ const initialState = {
   displayDeliveryMap: false,
   displayForgotPwd: false,
   displayCreateNewPwd: false,
-  setAddress:false
+  setAddress:false,
+  toggleLoginTip:false
 };
 
 export const authSlice = createSlice({
   name: "authentication pages",
   initialState,
   reducers: {
-    toggledSignUp: (state) => {
+    toggled: (state,action) => {
+      if(action.payload==="signup"){
       state.displaySignUpModal = !state.displaySignUpModal;
+      }
+      if(action.payload==="loginTip"){
+        state.toggleLoginTip=!state.toggleLoginTip
+      }
     },
     authedHomepage: (state) => {
       state.authUser = true;
@@ -69,6 +75,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { toggledSignUp, displayedAuthModal,go, closedAuthModal ,authedHomepage} =
+export const { toggled, displayedAuthModal,go, closedAuthModal ,authedHomepage} =
   authSlice.actions;
 export default authSlice.reducer;

@@ -4,27 +4,27 @@ import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import Filter from "../images/filterIcon.svg";
 import Profile from "../images/profile.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleProfile } from "../redux/slices/profileSlice";
-import { go, toggledSignUp } from "../redux/slices/authSlice";
+import { useDispatch} from "react-redux";
+import { toggledProfile } from "../redux/slices/profileSlice";
+import { toggled } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+import LoginToolTip from "./LoginToolTip";
 
 function HomepageNav() {
-  const {authUser}=useSelector((state)=>state.auth)
+const authUser=false
   let dispatch = useDispatch();
-  const navigate=useNavigate()
-  function toggle() {
-    dispatch(toggleProfile());
+
+  
+  function toggleProfile() {
+    dispatch(toggledProfile());
+
   }
-  function toggleSignup() {
-    dispatch(toggledSignUp());
-    console.log("signup-triggered");
+ 
+  function toggleLoginTip(){
+    dispatch(toggled('loginTip'))
   }
-  function goLand(){
-    dispatch(go('goLand'))
-    navigate('/')
-  }
+
   return (
     <nav className="homepage-nav" id="home-nav">
       <NavLink to="/">
@@ -32,7 +32,7 @@ function HomepageNav() {
           src={LogoDark}
           alt="mealy dark logo"
           className="logo-dark nav-logo"
-        onClick={goLand}
+      
         />
       </NavLink>
 
@@ -67,7 +67,7 @@ function HomepageNav() {
               src={Profile}
               alt="profile icon"
               className="nav-section_profile-icon"
-              onClick={toggle}
+              onClick={toggleProfile}
             />
           </>
         ) : (
@@ -75,10 +75,11 @@ function HomepageNav() {
             src={unAuthProfileIcon}
             alt="unathourized user profile icon"
             className="unAuthprofile-icon"
-            onClick={toggleSignup}
+            onClick={toggleLoginTip}
           />
         )}
       </div>
+      <LoginToolTip/>
     </nav>
   );
 }

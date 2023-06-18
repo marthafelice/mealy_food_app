@@ -37,7 +37,8 @@
 .landing-nav-links * {
   margin-left: 1.5rem;
   color: #000000;
-  font-weight: 600;
+  font-weight: 400;
+  font-size: 2rem;
 }
 .links a {
   text-decoration: none;
@@ -46,6 +47,9 @@
 .links a:hover {
   text-decoration: underline;
   color: #6750a4;
+}
+.active-land{
+  font-weight: bold;
 }
 
 .hero-section {

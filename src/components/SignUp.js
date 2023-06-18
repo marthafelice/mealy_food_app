@@ -12,7 +12,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   closedAuthModal,
   displayedAuthModal,
-  toggledSignUp,
+  toggled,
 } from "../redux/slices/authSlice";
 import ButtonLarge from "./Buttons";
 
@@ -25,14 +25,14 @@ function SignUp() {
   const onSubmit = (data) => console.log(data);
   const dispatch = useDispatch();
   function closeSignUp() {
-    dispatch(toggledSignUp());
+    dispatch(toggled('signup'));
   }
   function openActivationModal() {
     dispatch(displayedAuthModal("activation"));
-    dispatch(toggledSignUp());
+    dispatch(toggled('signup'));
   }
   function openLoginModal() {
-    dispatch(toggledSignUp());
+    dispatch(toggled('signup'));
     dispatch(displayedAuthModal("login"));
   }
 

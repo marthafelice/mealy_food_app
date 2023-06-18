@@ -15,7 +15,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggledSignUp } from "../redux/slices/authSlice";
+import { toggled } from "../redux/slices/authSlice";
 import { useLocation } from "react-router-dom";
 import SignUp from "./SignUp";
 import Activation from "./Activation";
@@ -23,14 +23,20 @@ import LoginForm from "./Login";
 import DeliveryAddress from "./DeliveryAddress";
 import ForgotPassword from "./ForgotPassword";
 import NewPassword from "./NewPassword";
+
+
 import "../styles/activation.css"
 
 const LandingPage = () => {
-
+  const [active,setActive]=useState(false)
   const dispatch=useDispatch()
 
+  const currentHash = window.location.hash;
+  console.log(currentHash)
+
+  
   function displaySignup(){
-   dispatch(toggledSignUp())
+   dispatch(toggled('signup'))
    console.log('ooa')
   }
 
@@ -46,13 +52,14 @@ const LandingPage = () => {
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
         <div className="landing-nav-links">
-          <NavLink to="home">Home</NavLink>
-          <a href="#">About Us </a>
-          <a href="#">Contact Us</a>
-          <img src={cart} className="cart" alt="Cart" />
+         <a href="z">Home</a>
+         <a >About Us</a>
+         <a >
+        Contact Us</a> 
+      <img src={cart} className="cart" alt="Cart" />
         </div>
       </nav>
-      <section className="hero-section landing-page-padding">
+      <section className="hero-section landing-page-padding" id="/">
         <div className="hero-text-container">
           <h1 className="hero-heading">
             Delightful Eats Delivered with

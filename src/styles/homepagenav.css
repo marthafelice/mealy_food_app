@@ -7,7 +7,7 @@
   width: 100%;
   height: auto;
   padding: 1em;
-  font-size: 2rem;
+  font-size: 1.3rem;
   background-color: white;
   z-index: 6;
 }
@@ -54,10 +54,32 @@
   width: 4rem;
   margin-left: 2rem;
 }
+.unAuthprofile-icon_2{
+
+  margin-left: 0;
+  width: 4rem;
+}
 .address {
   margin: 0 1rem;
 }
+.login-tip{
+  position: absolute;
+  background-color: white;
+  padding: 1em;
+  top: 10rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 20rem;
+  border-radius: 1rem;
+  border: 2px solid #6750A4;
 
+}
+.login-tip p{
+  font-weight: bold;
+font-size: 2rem;
+}
 @media (max-width: 992px) {
   .homepage-nav {
     align-items: flex-start;
@@ -87,5 +109,16 @@
   }
   .homepage-nav_search{
     background-position: 25%;
+  }
+  .login-tip{
+    width: 16rem;
+    top: 12rem;
+  }
+  .login-tip p{
+    font-size: 1.5rem;
+    
+  }
+  .login-tip img{
+    width: 3rem;
   }
 }

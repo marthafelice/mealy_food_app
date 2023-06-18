@@ -9,12 +9,13 @@ const initialState = {
   displayProfile: false,
   displayNameEdit: false,
   displayPasswordEdit: false,
+
 };
 export const profileSlice = createSlice({
   name: "profile",
   initialState,
   reducers: {
-    toggleProfile: (state) => {
+    toggledProfile: (state) => {
       state.displayProfile = !state.displayProfile;
     },
     displayedProfileEdit: (state, action) => {
@@ -35,7 +36,7 @@ export const profileSlice = createSlice({
 });
 //increment and decrement are your action creators
 
-export const { toggleProfile, displayedProfileEdit, closedProfileEdit } =
+export const { toggledProfile, displayedProfileEdit, closedProfileEdit } =
   profileSlice.actions;
 
 export default profileSlice.reducer;

@@ -12,7 +12,7 @@ import close from "../images/close.svg";
 import ButtonLarge from "./Buttons";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import { authedHomepage, closedAuthModal, displayedAuthModal, toggledSignUp } from "../redux/slices/authSlice";
+import { authedHomepage, closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
 const LoginForm = () => {
   const {
@@ -38,7 +38,7 @@ const LoginForm = () => {
   }
   function displaySignupModal(){
     dispatch(closedAuthModal(auth.login))
-    dispatch(toggledSignUp())
+    dispatch(toggled('signup'))
   }
   function displayForgotPwdModal(){
     dispatch(displayedAuthModal(auth.forgotPwd))
