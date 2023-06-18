@@ -9,6 +9,7 @@ const initialState = {
   displayDeliveryMap: false,
   displayForgotPwd: false,
   displayCreateNewPwd: false,
+  setAddress:false
 };
 
 export const authSlice = createSlice({
@@ -55,9 +56,19 @@ export const authSlice = createSlice({
         state.displayCreateNewPwd = false;
       }
     },
+    go:(state,action)=>{
+      if(action.payload==='goHome'){
+        state.setAddress=true
+      }
+      if(action.payload==='goLand'){
+        state.setAddress=false
+      }
+      
+      
+    },
   },
 });
 
-export const { toggledSignUp, displayedAuthModal, closedAuthModal ,authedHomepage} =
+export const { toggledSignUp, displayedAuthModal,go, closedAuthModal ,authedHomepage} =
   authSlice.actions;
 export default authSlice.reducer;

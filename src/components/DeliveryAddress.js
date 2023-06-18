@@ -1,17 +1,31 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import map from "../images/Map.jpg";
 import "../styles/deliveryAddress.css";
 import RoundLocation from "../images/locationround.svg";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import { closedAuthModal } from "../redux/slices/authSlice";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const DeliveryAddress = () => {
   const { displayDeliveryMap } = useSelector((state) => state.auth);
+  const [setAddress,setSetAddress]=useState(false)
   const dispatch=useDispatch();
+  const navigate=useNavigate()
+  const location=useLocation()
+
   function closeMapModal(){
     dispatch(closedAuthModal('map'))
+    setSetAddress(true)
+    console.log(setAddress)
+    console.log(location.pathname)
   }
+  useEffect(()=>{
+  
+    if(setAddress&&location.pathname==='/'){
+     navigate("/home/deliveryOrder")
+    }
+  },[setAddress])
   return (
     <ReactModal
       isOpen={displayDeliveryMap}
@@ -32,7 +46,7 @@ const DeliveryAddress = () => {
 
           <div className="current-location">
             <img src={RoundLocation} alt="a round location icon" />{" "}
-            <p> Use current location</p>
+            <p onClick={closeMapModal}> Use current location</p>
           </div>
         </div>
         <p className="set-location">Or set your location on the map</p>

@@ -3,6 +3,8 @@
   line-height: 1.4;
   height: 100vh;
   overflow-y: auto;
+  z-index: 2;
+  position: relative;
   
 }
 .landing-page-nav {

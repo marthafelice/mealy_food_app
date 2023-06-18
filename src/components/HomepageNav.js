@@ -6,19 +6,24 @@ import Filter from "../images/filterIcon.svg";
 import Profile from "../images/profile.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleProfile } from "../redux/slices/profileSlice";
-import { toggledSignUp } from "../redux/slices/authSlice";
+import { go, toggledSignUp } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 
 function HomepageNav() {
   const {authUser}=useSelector((state)=>state.auth)
   let dispatch = useDispatch();
+  const navigate=useNavigate()
   function toggle() {
     dispatch(toggleProfile());
   }
   function toggleSignup() {
     dispatch(toggledSignUp());
     console.log("signup-triggered");
+  }
+  function goLand(){
+    dispatch(go('goLand'))
+    navigate('/')
   }
   return (
     <nav className="homepage-nav" id="home-nav">
@@ -27,6 +32,7 @@ function HomepageNav() {
           src={LogoDark}
           alt="mealy dark logo"
           className="logo-dark nav-logo"
+        onClick={goLand}
         />
       </NavLink>
 

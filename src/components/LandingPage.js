@@ -11,13 +11,37 @@ import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
 import HomepageNav from "./HomepageNav";
 import Footer from "./Footer";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggledSignUp } from "../redux/slices/authSlice";
+import { useLocation } from "react-router-dom";
+import SignUp from "./SignUp";
+import Activation from "./Activation";
+import LoginForm from "./Login";
+import DeliveryAddress from "./DeliveryAddress";
+import ForgotPassword from "./ForgotPassword";
+import NewPassword from "./NewPassword";
+import "../styles/activation.css"
 
 const LandingPage = () => {
+
+  const dispatch=useDispatch()
+
+  function displaySignup(){
+   dispatch(toggledSignUp())
+   console.log('ooa')
+  }
+
   return (
     <section className="landing-page">
+      <SignUp />
+      <Activation />
+      <LoginForm />
+      <DeliveryAddress />
+      <ForgotPassword />
+      <NewPassword />
       <nav className="landing-page-nav" id="land-nav">
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
@@ -39,7 +63,7 @@ const LandingPage = () => {
             Enjoy a hassle free dining experience as we bring the best
             restaurants and dishes right to your doorstep.
           </p>
-          <button className="get-started-btn">Get Started</button>
+          <button className="get-started-btn" onClick={displaySignup}>Get Started</button>
         </div>
 
         <div className="hero-img-container">
