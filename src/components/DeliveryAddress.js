@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import map from "../images/Map.jpg";
-import "../styles/deliveryAddress.css";
+import "../styles/mapAddress.css"
 import RoundLocation from "../images/locationround.svg";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
