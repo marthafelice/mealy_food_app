@@ -10,7 +10,7 @@ import ReactModal from "react-modal";
 import close from "../images/close.svg";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  closedAuthModal,
+
   displayedAuthModal,
   toggled,
 } from "../redux/slices/authSlice";

@@ -1,7 +1,7 @@
 import React from "react";
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Link } from "react-router-dom";
+
 import cuate from "../images/cuate.svg";
 import mail from "../images/mail.svg";
 import password from "../images/password.svg";

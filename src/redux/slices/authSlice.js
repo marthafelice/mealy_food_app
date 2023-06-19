@@ -2,7 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import * as auth from "../constants/auth";
 
 const initialState = {
-  authUser: false,
+
   displaySignUpModal: false,
   displayActivationModal: false,
   displayLoginModal: false,

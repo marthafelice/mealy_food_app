@@ -29,7 +29,7 @@ const DeliveryAddress = () => {
  
     }
     
-  },[setAddress])
+  },[setAddress,navigate,location.pathname])
   return (
     <ReactModal
       isOpen={displayDeliveryMap}

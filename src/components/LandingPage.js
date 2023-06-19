@@ -9,14 +9,14 @@ import Monogram1 from "../images/monogram1.png";
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
-import HomepageNav from "./HomepageNav";
+
 import Footer from "./Footer";
-import { NavLink, useNavigate } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggled,authedHomepage } from "../redux/slices/authSlice";
-import { useLocation } from "react-router-dom";
+
 import SignUp from "./SignUp";
 import Activation from "./Activation";
 import LoginForm from "./Login";
@@ -67,7 +67,7 @@ const LandingPage = () => {
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
         <div className="landing-nav-links">
-        <a href="" className={activeLink === '' ? 'active' : ''}>
+        <a href="/" className={activeLink === '' ? 'active' : ''}>
         Home
       </a>
       <a href="#about" className={activeLink === '#about' ? 'active' : ''}>
