@@ -1,9 +1,18 @@
+.profile-section{
+  position: fixed;
+  z-index: 9;
+  top: 0;
+  right: 0;
+ 
+  width: 100%;
+  height: 100%;
+}
 .profile {
   height: 90vh;
   width: 100%;
   max-width: 40rem;
   background-color: white;
-  position: fixed;
+  position: absolute;
   overflow: scroll;
   display: block;
   top: 8.5rem;
@@ -14,6 +23,14 @@
   border-radius: 0 0 1rem 1rem;
   box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.437);
   z-index: 6;
+}
+
+.overlay_profile{
+top: 0;
+right: 0;
+width: 100%;
+height: 100%;
+background-color: rgba(17, 8, 8, 0.228);
 }
 .profile-content {
   padding: 0rem 3rem 3rem 3rem;

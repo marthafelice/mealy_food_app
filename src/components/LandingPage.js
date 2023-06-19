@@ -15,7 +15,7 @@ import { NavLink, useNavigate } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggled } from "../redux/slices/authSlice";
+import { toggled,authedHomepage } from "../redux/slices/authSlice";
 import { useLocation } from "react-router-dom";
 import SignUp from "./SignUp";
 import Activation from "./Activation";
@@ -34,6 +34,9 @@ const LandingPage = () => {
   function displaySignup(){
    dispatch(toggled('signup'))
 
+  }
+  function goUnAuthHomepage(){
+    dispatch(authedHomepage('unAuth'))
   }
  
   useEffect(() => {
@@ -73,7 +76,7 @@ const LandingPage = () => {
       <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}>
         Contact Us
       </a>
-      <img src={cart} className="cart" alt="Cart" />
+     <NavLink to="/home/deliveryOrder"><img src={cart} className="cart" alt="Cart" onClick={goUnAuthHomepage} /></NavLink> 
         </div>
       </nav>
       <section className="hero-section landing-page-padding" >

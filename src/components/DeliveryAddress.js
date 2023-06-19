@@ -4,7 +4,7 @@ import "../styles/deliveryAddress.css";
 import RoundLocation from "../images/locationround.svg";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import { closedAuthModal } from "../redux/slices/authSlice";
+import { authedHomepage, closedAuthModal, toggled } from "../redux/slices/authSlice";
 import { useLocation, useNavigate } from "react-router-dom";
 
 const DeliveryAddress = () => {
@@ -17,6 +17,8 @@ const DeliveryAddress = () => {
   function closeMapModal(){
     dispatch(closedAuthModal('map'))
     setSetAddress(true)
+    dispatch(authedHomepage('auth'))
+    dispatch(toggled('loginTip'))
     console.log(setAddress)
     console.log(location.pathname)
   }
@@ -24,7 +26,9 @@ const DeliveryAddress = () => {
   
     if(setAddress&&location.pathname==='/'){
      navigate("/home/deliveryOrder")
+ 
     }
+    
   },[setAddress])
   return (
     <ReactModal

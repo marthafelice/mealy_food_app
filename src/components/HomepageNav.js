@@ -3,21 +3,21 @@ import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import Filter from "../images/filterIcon.svg";
-import Profile from "../images/profile.svg";
-import { useDispatch} from "react-redux";
-import { toggledProfile } from "../redux/slices/profileSlice";
+import ProfileImg from "../images/profile.svg";
+import { useDispatch, useSelector} from "react-redux";
+import { Profile } from "../redux/slices/profileSlice";
 import { toggled } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
 import { NavLink } from "react-router-dom";
 import LoginToolTip from "./LoginToolTip";
 
 function HomepageNav() {
-const authUser=false
-  let dispatch = useDispatch();
 
+  let dispatch = useDispatch();
+const{authUser}=useSelector((state)=>state.auth)
   
-  function toggleProfile() {
-    dispatch(toggledProfile());
+  function displayProfile() {
+  dispatch(Profile('showProfile'));
 
   }
  
@@ -27,14 +27,14 @@ const authUser=false
 
   return (
     <nav className="homepage-nav" id="home-nav">
-      <NavLink to="/">
+
         <img
           src={LogoDark}
           alt="mealy dark logo"
           className="logo-dark nav-logo"
       
         />
-      </NavLink>
+  
 
       <div className="address-input">
         <div className="address-container">
@@ -64,10 +64,10 @@ const authUser=false
             />
 
             <img
-              src={Profile}
+              src={ProfileImg}
               alt="profile icon"
               className="nav-section_profile-icon"
-              onClick={toggleProfile}
+              onClick={displayProfile}
             />
           </>
         ) : (

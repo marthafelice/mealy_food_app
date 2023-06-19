@@ -1,6 +1,6 @@
 import "../styles/homepage.css";
 import "../styles/homepagenav.css";
-import Profile from "./Profile";
+import Profile from "./ProfileComp";
 import { useSelector } from "react-redux";
 
 import React from "react";
@@ -16,6 +16,8 @@ import DeliveryAddress from "./DeliveryAddress";
 import ForgotPassword from "./ForgotPassword";
 import NewPassword from "./NewPassword";
 import CartModal from "../components/CartModal"
+import Logout from "./Logout";
+import ProfileComp from "./ProfileComp";
 function Homepage() {
   const { displayProfile } = useSelector((state) => state.profile);
 
@@ -27,9 +29,11 @@ function Homepage() {
       <DeliveryAddress />
       <ForgotPassword />
       <NewPassword />
-      {displayProfile && <Profile />}
+      {displayProfile && <ProfileComp />}
       <EditNameEmailModal />
       <EditPasswordModal />
+      <Logout/>
+
       <CartModal />
       <Categories />
     </div>

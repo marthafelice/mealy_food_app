@@ -10,7 +10,8 @@ const initialState = {
   displayForgotPwd: false,
   displayCreateNewPwd: false,
   setAddress:false,
-  toggleLoginTip:false
+  toggleLoginTip:false,
+  authUser:false
 };
 
 export const authSlice = createSlice({
@@ -25,8 +26,14 @@ export const authSlice = createSlice({
         state.toggleLoginTip=!state.toggleLoginTip
       }
     },
-    authedHomepage: (state) => {
-      state.authUser = true;
+    authedHomepage: (state,action) => {
+      if(action.payload==='auth'){
+        state.authUser = true;
+      }
+      if(action.payload==='unAuth'){
+        state.authUser = false;
+      }
+   
     },
     displayedAuthModal: (state, action) => {
       if (action.payload === auth.activation) {
