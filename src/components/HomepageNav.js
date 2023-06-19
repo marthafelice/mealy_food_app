@@ -71,15 +71,18 @@ const{authUser}=useSelector((state)=>state.auth)
             />
           </>
         ) : (
+          <div className="unAuthIcon-container">
           <img
             src={unAuthProfileIcon}
             alt="unathourized user profile icon"
             className="unAuthprofile-icon"
             onClick={toggleLoginTip}
           />
+          <LoginToolTip/>
+          </div>
         )}
       </div>
-      <LoginToolTip/>
+    
     </nav>
   );
 }

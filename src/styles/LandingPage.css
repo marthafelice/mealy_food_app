@@ -203,8 +203,9 @@ nav a.active{
     width: 5rem;
   }
 }
-@media (max-width: 320px) {
-  .landing-page-nav {
-    font-size: 1.3rem;
+@media (max-width: 375px) {
+
+  .landing-nav-links * {
+     font-size: 1.3rem;
   }
 }
