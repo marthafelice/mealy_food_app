@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../../styles/RestuarantMenu.css";
-import HomepageNav from "../HomepageNav";
+
 import Pancake from "../../images/pancake.png";
 import Star from "../../images/star.png";
 import Search from "../../images/search.png";
@@ -8,12 +8,12 @@ import Menus from "./Menu";
 import Cart from "./Cart";
 import { useDispatch } from "react-redux";
 import { addToCart } from "../../redux/slices/cartSlice";
-import Footer from "../Footer";
+
 
 const RestuarantMenu = () => {
   return (
     <>
-      <HomepageNav />
+  
       <div className='breadCrumb '>
         <img src={Pancake} alt='pancake' />
       </div>
@@ -40,7 +40,7 @@ const RestuarantMenu = () => {
         </div>
         <Cart />
       </div>
-      <Footer />
+  
     </>
   );
 };

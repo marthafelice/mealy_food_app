@@ -7,8 +7,8 @@
 }
 
 .activation-img {
-  width: 50%;
-  height: auto;
+    width: 50%;
+    height: auto;
 }
 
 .activation-email-notify {
@@ -37,9 +37,9 @@
 }
 
 span {
-  color: #6750a4;
-  cursor: pointer;
-  font-size: 1.25rem;
+    color: #6750a4;
+    cursor: pointer;
+    font-size: 1.25rem;
 }
 
 

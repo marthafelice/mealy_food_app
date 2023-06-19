@@ -16,6 +16,10 @@ body {
   font-size: 62.5%;
   color: black;
 }
+
+.scrolled.landing-nav-links a{
+  color: white;
+}
 h2 {
   font-weight: 600;
   font-size: 3rem;
@@ -93,9 +97,10 @@ h3 {
 }
 a {
   text-decoration: none;
+  color: black;
 }
-.forgot-password{
-  color: #6750A4;
+.forgot-password {
+  color: #6750a4;
   align-self: flex-end;
   margin-top: 1rem;
 }

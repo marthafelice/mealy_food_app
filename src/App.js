@@ -1,12 +1,12 @@
-import "./App.css";
-// import NewPassword from "./components/NewPassword";
+// // import NewPassword from "./components/NewPassword";
 import Homepage from "./components/Homepage";
 // import SignUp from "./components/SignUp";
 // import ForgotPassword from "./components/ForgotPassword";
 // import Activation from "./components/Activation";
 // import DeliveryAddress from "./components/DeliveryAddress";
 
-import "./styles/activation.css";
+import Cart from "./components/CartModal";
+// import { Route, Routes } from "react-router";
 import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
@@ -17,6 +17,7 @@ import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./utilities/Layout";
+import CartModal from "./components/CartModal";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -32,31 +33,19 @@ const router = createBrowserRouter([
           { path: "deliveryOrder", element: <DeliveryOrder /> },
           { path: "bulkOrder", element: <BulkOrder /> },
           { path: "pickupOrder", element: <PickUpOrder /> },
-          
         ],
       },
+      { path: "menu", element: <RestuarantMenu /> },
     ],
   },
   { path: "menu", element: <RestuarantMenu /> },
 ]);
 function App() {
-  return <RouterProvider router={router} />;
-  // return (
-  //   <div className="app">
-  //     {/* <NewPassword /> */}
-  //     {/* <SignUp/> */}
-  //     {/* <Homepage /> */}
-  //     {/* <ForgotPassword/> */}
-  //     {/* <DeliveryAddress /> */}
-  //     {/* <Activation /> */}
-  //     {/* <p>{value}</p>
-  //     <button onClick={incrementValue}>increment</button> */}
-  //     {/* <DeliveryAddress /> */}
-  //     {/* <Login/> */}
-  //     {/* ROUTES */}
-  //
-  //   </div>
-  // );
+  return (
+    <div>
+      <RouterProvider router={router} />
+    </div>
+  );
 }
 
 export default App;

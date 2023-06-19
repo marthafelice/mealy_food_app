@@ -21,7 +21,7 @@ function HomepageNav() {
     console.log("signup-triggered");
   }
   return (
-    <nav className="homepage-nav">
+    <nav className="homepage-nav" id="home-nav">
       <NavLink to="/">
         <img
           src={LogoDark}

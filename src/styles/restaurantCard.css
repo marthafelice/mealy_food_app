@@ -6,6 +6,11 @@ a{
 
   box-shadow: 0 0 2px 0rem black;
   border-radius: 10px;
+  transition: all ease .3s;
+}
+.restaurant-card:hover{
+  
+  box-shadow: 0 0 10px 0 #6650a4bb;
 }
 .restaurant-name-container {
   display: flex;
@@ -21,11 +26,15 @@ a{
 }
 .restaurant-name {
   margin-left: 1rem;
+  font-weight: 600;
 }
 .restaurant-img {
   object-fit: cover;
   width: 100%;
-  height: auto;
+  height: 25rem;
+}
+.restaurant-logo {
+  border-radius: 50%;
 }
 .rating {
   display: flex;
@@ -33,4 +42,5 @@ a{
 }
 .star {
   margin-right: 0.4rem;
+  margin-top: -0.5rem;
 }

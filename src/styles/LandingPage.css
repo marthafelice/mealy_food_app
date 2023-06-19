@@ -1,24 +1,41 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
-
-html,
-body {
-  height: 100%;
+.landing-page {
+  font-size: 3rem;
+  line-height: 1.4;
+  height: 100vh;
+  overflow-y: auto;
+  
 }
-body {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-  font-family: 'Roboto', sans-serif;
-}
-
-.LandingPage {
-  background-color: white;
-}
-
-.header {
+.landing-page-nav {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
+  height: 9rem;
+
+  padding: 0 3rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: white;
+}
+.landing-page-nav_logo {
+  width: 9rem;
+  height: auto;
+}
+.landing-page-padding {
+  padding: 0 10rem;
+}
+.landing-page .landing-nav-links {
+  display: flex;
+  align-items: center;
+}
+.landing-nav-links img {
+  height: 5rem;
+  width: 5rem;
+}
+.landing-nav-links * {
+  margin-left: 1.5rem;
+  color: #000000;
+  font-weight: 600;
 }
 .links a {
   text-decoration: none;
@@ -29,176 +46,154 @@ body {
   color: #6750a4;
 }
 
-.links img {
-  width: 70px;
-  height: 70px;
-}
-.cart {
-  width: 70px;
-  height: 70px;
-}
-.Logo {
-  margin-right: 195px;
-  padding-top: 20px;
-}
-
-.links {
-  margin-left: 300px;
-  padding-left: 30px;
-  padding-bottom: 20px;
-}
-
-.links a {
-  color: #000000;
-  width: 65px;
-  height: 28px;
-
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 900;
-  font-size: 24px;
-  line-height: 28px;
-
-  color: #000000;
-
-  margin-right: 10px;
-}
-
-.hero {
+.hero-section {
   display: flex;
+  margin-top: 15rem;
   align-items: center;
+  column-gap: 5rem;
+  
+}
+.hero-text-container {
+  flex: 1;
 }
 
-.img1 {
-  width: 730px;
-  height: 590px;
-  margin-left: 80px;
+.hero-img-container {
+  flex: 1;
 }
-
-.hero-text {
-  margin-left: 20px;
-  margin-left: 90px;
+.hero-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
-.hero-text h2 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 57px;
+.hero-heading,
+.hero-heading span {
+  font-size: 5rem;
 }
-
-.hero-text p {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
+.hero-heading span {
+  margin-left: 1rem;
 }
-/* .hero-text img {
-  width: 730px;
-  height: 590px;
-  margin-left: -150px;
-} */
-
-.hero-text button {
-  background-color: #6750a4;
+.hero-text-container p {
+  width: 95%;
+}
+.get-started-btn {
+  margin-top: 2rem;
+  padding: 0.5em 2em;
+  border-radius: 1rem;
   color: white;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 5px;
-  cursor: pointer;
-  width: 200px;
+  font-size: 2.5rem;
 }
 
-.heading {
-  margin: 0;
-  padding: 3px;
-}
-
-.highlight {
-  color: #6750a4;
-}
-.About {
+/* .......................ABOUT SECTION ........... */
+.about-section {
   display: flex;
   align-items: center;
+  margin-top: 3rem;
+  column-gap: 5rem;
 }
-.About-text {
-  margin-left: 40px;
+.about-img-container {
+  flex: 1;
 }
-.About-text p {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
+.about-img-container img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
-
-.About-text h2 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 67px;
+.about-text-container {
+  flex: 1;
 }
-
-.About-text img {
-  width: 526px;
-  height: 454px;
+.about-heading {
+  margin-bottom: 2.5rem;
 }
-.food-grid {
+.about-heading,
+.about-heading span {
+  font-size: 4rem;
+}
+.popular-section {
+  margin: 6rem 0;
+  text-align: center;
+}
+.popular-section_food {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 10px;
-  /* width: 366.88px;
-  height: 258px; */
+  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  gap: 2rem;
+  font-size: 2rem;
 }
-
-.food-item {
-  text-align: center;
-  border: 1px solid #cac4d0;
-  border-radius: 12px;
+.popular-section-title,
+.popular-section-title span {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
 }
-
-.food-name {
-  margin: 10px 0;
-}
-
-.food-rating {
-  color: gray;
-}
-
-.popular h2 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 67px;
+.choose-section {
   text-align: center;
 }
-
-.grid-container {
+.choose-section-title,
+.choose-section-title span {
+  font-size: 4rem;
+  margin-bottom: 2.5rem;
+}
+.choose-section-content {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-collapse: collapse;
-  margin-left: 90px;
-  margin-right: 90px;
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 3rem;
 }
-
-.grid-box {
-  padding: 10px;
-  margin: 0;
-  border: 1px solid #6750a4;
+.choose-section-content div {
+  border: 1px solid black;
+  text-align: left;
+  padding: 3rem 2rem 3rem 5rem;
+  font-size: 2.5rem;
 }
-.grid h2 {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 700;
-  font-size: 37px;
-  text-align: center;
-  padding-right: 80px;
+.choose-section-content .choose-img {
+  width: 5rem;
+  height: 5rem;
 }
-.grid p {
-  font-family: 'Roboto';
-  font-style: normal;
-  font-weight: 400;
-  font-size: 30px;
-  line-height: 50px;
-  padding-left: 40px;
+@media (max-width: 992px) {
+  .landing-page-padding {
+    padding: 0 5rem;
+  }
+  .hero-section {
+    flex-direction: column;
+    row-gap: 3rem;
+  }
+  .about-section {
+    row-gap: 3rem;
+    flex-direction: column-reverse;
+  }
+  .hero-text-container p {
+    width: 100%;
+  }
+  .hero-heading,
+  .hero-heading span {
+    font-size: 4rem;
+  }
+}
+@media (max-width: 650px) {
+  .landing-page-nav {
+    font-size: 2rem;
+  }
+}
+@media (max-width: 425px) {
+  .landing-page {
+    font-size: 2rem;
+  }
+  .landing-page-nav {
+    font-size: 1.5rem;
+    align-items: center;
+  }
+  .hero-heading,
+  .hero-heading span {
+    font-size: 3.5rem;
+    margin-bottom: 4rem;
+  }
+  .choose-section-content div {
+    padding: 3rem 2rem;
+    font-size: 2rem;
+  }
+  .landing-page-nav_logo {
+    width: 5rem;
+  }
+}
+@media (max-width: 320px) {
+  .landing-page-nav {
+    font-size: 1.3rem;
+  }
 }
