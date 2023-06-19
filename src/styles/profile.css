@@ -22,7 +22,7 @@
   font-size: 2rem;
   border-radius: 0 0 1rem 1rem;
   box-shadow: -3px 3px 5px 0px rgba(0, 0, 0, 0.437);
-  z-index: 6;
+  z-index: 9;
 }
 
 .profile-content {

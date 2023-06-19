@@ -23,7 +23,7 @@ function Logout() {
     className='logout-section'>
 
    
-    <img src={logoutImg}/>
+    <img src={logoutImg} alt='logout logo'/>
     <p className='logout-confirm'>Oh No! You’re leaving.....<span>
 Are you sure?</span></p>
 <button className='logout-btn logout-btn_no' onClick={closeLogout}>Naah, Just Kidding</button>

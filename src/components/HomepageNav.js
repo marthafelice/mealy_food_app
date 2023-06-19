@@ -8,7 +8,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
 import { toggled } from "../redux/slices/authSlice";
 import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
-import { NavLink } from "react-router-dom";
+
 import LoginToolTip from "./LoginToolTip";
 
 function HomepageNav() {

@@ -4,13 +4,13 @@ import ReactDOM from "react-dom";
 import Card from "../images/card.svg";
 import Logout from "../images/logout.svg";
 import { AiOutlineRight } from "react-icons/ai";
-import {useDispatch, useSelector } from "react-redux";
+import {useDispatch } from "react-redux";
 import { displayedProfileEdit, Loggedout, Profile } from "../redux/slices/profileSlice";
 import * as profileConst from "../redux/constants/profile" 
 
 
 function ProfileComp() {
- const { displayProfile } = useSelector((state) => state.profile);
+//  const { displayProfile } = useSelector((state) => state.profile);
  const dispatch=useDispatch();
  function showNameEdit(){
   dispatch(displayedProfileEdit(profileConst.nameEdit))
@@ -31,7 +31,7 @@ function openLogout(){
   return ReactDOM.createPortal(
 
     <section className="profile-section" >
-      <div className="overlay_dark" onClick={closeProfile}></div>
+      <div className="overlay" onClick={closeProfile}></div>
       <div className="profile">
       <h2>Hello, Mariam!</h2>
       <hr className="d"></hr>
