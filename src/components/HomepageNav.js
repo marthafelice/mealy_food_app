@@ -3,7 +3,7 @@ import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import Filter from "../images/filterIcon.svg";
-import ProfileImg from "../images/profile.svg";
+import ProfileImg from "../images/authprofileIcon.svg";
 import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
 import { toggled } from "../redux/slices/authSlice";
