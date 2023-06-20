@@ -18,6 +18,7 @@ import NewPassword from "./NewPassword";
 import CartModal from "../components/CartModal"
 import Logout from "./Logout";
 import ProfileComp from "./ProfileComp";
+import YourOrders from "./YourOrders";
 function Homepage() {
   const { displayProfile } = useSelector((state) => state.profile);
 
@@ -33,7 +34,8 @@ function Homepage() {
       <EditNameEmailModal />
       <EditPasswordModal />
       <Logout/>
-
+{/* track order */}
+      <YourOrders/>
       <CartModal />
       <Categories />
     </div>

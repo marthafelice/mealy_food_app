@@ -16,6 +16,9 @@ body {
   font-size: 62.5%;
   color: black;
   scroll-behavior:smooth ;
+  position: relative;
+  max-width: 100%;
+  min-height: 100vh;
 }
 
 .scrolled.landing-nav-links a{

@@ -5,7 +5,7 @@ import Name from "../images/name.png";
 import Password from "../images/password.png";
 import Email from "../images/email.png";
 import "../styles/SignUp.css";
-
+import ButtonLarge from "./Buttons";
 import ReactModal from "react-modal";
 import close from "../images/close.svg";
 import { useDispatch, useSelector } from "react-redux";
@@ -14,7 +14,7 @@ import {
   displayedAuthModal,
   toggled,
 } from "../redux/slices/authSlice";
-import ButtonLarge from "./Buttons";
+
 
 function SignUp() {
   const {
