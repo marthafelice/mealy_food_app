@@ -19,8 +19,6 @@ import ProfileComp from "../components/ProfileComp";
 import { useSelector } from "react-redux";
 import YourOrders from "../components/YourOrders";
 import CartModal from "../components/CartModal";
-import Categories from "../components/Categories";
-// import YourOrders from "./YourOrders";
 
 function Layout() {
   const { displayProfile } = useSelector((state) => state.profile);
