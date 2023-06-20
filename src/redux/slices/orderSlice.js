@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     displayOrder:false
 }
-
 export const orderSlice=createSlice({
     name:"order",
     initialState,

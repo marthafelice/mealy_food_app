@@ -15,13 +15,30 @@ import Restuarant9 from "../images/rest9.png";
 import Restuarant10 from "../images/rest10.png";
 import BreakfastHub from "../images/breakfasthub.svg";
 import axios from "axios";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigation } from "react-router-dom";
+import { useEffect, useState } from "react";
 function DeliveryOrder() {
+//   const[loading,setLoad]=useState(false)
   const restaurant=useLoaderData()
+//   const dataState=useNavigation()
+//  useEffect(()=>{
+//   if (dataState.state==='loading'){
+//     console.log('i am loading')
+//     setLoad(true)
+//   }
+//   else{
+//     setLoad(false)
+//   }
+//  },[dataState.state])
+
   console.log(restaurant)
+
   return (
+
+    
     <div className="order-category_delivery order-category">
       <h3>African Restaurants</h3>
+     
       <div className="order-category_restaurant-cards">
         <RestaurantCard
           name="Breakfast Hub"
@@ -101,6 +118,7 @@ function DeliveryOrder() {
           Food={Restuarant10}
         />
       </div>
+
     </div>
   );
 }

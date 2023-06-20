@@ -28,6 +28,7 @@ const{authUser}=useSelector((state)=>state.auth)
   function openOrder(){
     dispatch(Order('openOrder'))
 }
+
   return (
     <nav className="homepage-nav" id="home-nav">
 

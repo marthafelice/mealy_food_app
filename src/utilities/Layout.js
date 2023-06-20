@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import HomepageNav from "../components/HomepageNav";
-import { Outlet } from "react-router-dom";
+import { Outlet, useNavigation } from "react-router-dom";
 import Footer from "../components/Footer";
 import "../styles/layout.css"
 import EditNameEmailModal from "../components/EditNameEmail";
@@ -22,8 +22,10 @@ import CartModal from "../components/CartModal";
 
 function Layout() {
   const { displayProfile } = useSelector((state) => state.profile);
+
   return (
     <div className="app-layout">
+
       {/* PORTAL AND MODALS */}
       <SignUp />
       <Activation />
