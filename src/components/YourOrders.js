@@ -2,7 +2,7 @@ import React from 'react'
 import ReactModal from 'react-modal'
 import { useDispatch, useSelector } from 'react-redux'
 import { Order } from '../redux/slices/orderSlice'
-import "../styles/orders.css"
+import "../styles/yourOrders.css"
 
 function YourOrders() {
     const {displayOrder}=useSelector((state)=>state.order)
@@ -11,7 +11,7 @@ function YourOrders() {
         dispatch(Order('closeOrder'))
     }
   return (
-    <ReactModal isOpen={displayOrder} overlayClassName="overlay" onRequestClose={closeOrder} className={order-container}>
+    <ReactModal isOpen={displayOrder} overlayClassName="overlay" onRequestClose={closeOrder} className='order-container'>
     <div>YourOrders</div>
     </ReactModal>
 
