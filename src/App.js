@@ -10,6 +10,7 @@ import PickUpOrder from "./components/PickUpOrder";
 // import Login from "./components/Login"
 import LandingPage from "./components/LandingPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import {loader as DeliveryRestaurantLoader} from "./components/DeliveryOrder"
 
 import Layout from "./utilities/Layout";
 
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         path: "home",
         element: <Homepage />,
         children: [
-          { path: "deliveryOrder", element: <DeliveryOrder /> },
+          { path: "deliveryOrder", element: <DeliveryOrder />,loader:DeliveryRestaurantLoader },
           { path: "bulkOrder", element: <BulkOrder /> },
           { path: "pickupOrder", element: <PickUpOrder /> },
         ],

@@ -14,7 +14,11 @@ import Restuarant8 from "../images/rest8.png";
 import Restuarant9 from "../images/rest9.png";
 import Restuarant10 from "../images/rest10.png";
 import BreakfastHub from "../images/breakfasthub.svg";
+import axios from "axios";
+import { useLoaderData } from "react-router-dom";
 function DeliveryOrder() {
+  const restaurant=useLoaderData()
+  console.log(restaurant)
   return (
     <div className="order-category_delivery order-category">
       <h3>African Restaurants</h3>
@@ -100,5 +104,21 @@ function DeliveryOrder() {
     </div>
   );
 }
-
+export async function loader(){
+  try{
+    const response= await  axios.get("https://mealyapp-bdev.onrender.com/api/v1/restaurant/all-restaurants")
+    
+    // const response= await  axios.get(" https://mealyapp-bdev.onrender.com/api/v1/restaurant/keyword/?restaurants=African Pot")
+    
+    // const response=await axios.get("https://mealyapp-bdev.onrender.com/api/v1/restaurant/create")
+    const data=response
+    return data
+  
+  }
+  catch(err){
+    console.log(err)
+    return null
+  }
+ 
+}
 export default DeliveryOrder;
