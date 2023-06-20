@@ -15,8 +15,8 @@ import Restuarant9 from "../images/rest9.png";
 import Restuarant10 from "../images/rest10.png";
 import BreakfastHub from "../images/breakfasthub.svg";
 import axios from "axios";
-import { useLoaderData, useNavigation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useLoaderData } from "react-router-dom";
+// import { useEffect, useState } from "react";
 function DeliveryOrder() {
 //   const[loading,setLoad]=useState(false)
   const restaurant=useLoaderData()

@@ -1,6 +1,6 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import HomepageNav from "../components/HomepageNav";
-import { Outlet, useNavigation } from "react-router-dom";
+import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer";
 import "../styles/layout.css"
 import EditNameEmailModal from "../components/EditNameEmail";
