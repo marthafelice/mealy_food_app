@@ -11,14 +11,19 @@ import PickUpOrder from "./components/PickUpOrder";
 import LandingPage from "./components/LandingPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {loader as DeliveryRestaurantLoader} from "./components/DeliveryOrder"
+import {loader as PickUpOrderLoader} from "./components/PickUpOrder"
+
+
 
 import Layout from "./utilities/Layout";
+import Checkout from "./components/Checkout";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <LandingPage />,
   },
+  {path:"checkout",element:<Checkout/>},
   {
     element: <Layout />,
     children: [
@@ -27,13 +32,14 @@ const router = createBrowserRouter([
         element: <Homepage />,
         children: [
           { path: "deliveryOrder", element: <DeliveryOrder />,loader:DeliveryRestaurantLoader },
-          { path: "bulkOrder", element: <BulkOrder /> },
-          { path: "pickupOrder", element: <PickUpOrder /> },
+          { path: "bulkOrder", element: <BulkOrder />},
+          { path: "pickupOrder", element: <PickUpOrder />, loader:PickUpOrderLoader },
         ],
       },
       { path: "menu", element: <RestuarantMenu /> },
     ],
   },
+  {path:"menu/checkout",element:<Checkout/>}
 ]);
 function App() {
   return (

@@ -7,10 +7,15 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../../redux/slices/cartSlice";
+import { NavLink } from "react-router-dom";
 
 const Cart = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart);
+  const {cartItems} = useSelector((state) => state.cart);
+  const ok=[]
+
+  console.log(cartItems)
+  console.log(cartItems.length)
   const handleRemoveFromCart = (itemId) => {
     dispatch(removeFromCart(itemId));
   };
@@ -25,6 +30,8 @@ const Cart = () => {
   return (
       <div className='cart-wrapper'>
         <h1>Your Cart</h1>
+
+
         {cartItems.length === 0 ? (
           <p>Nothing added yet</p>
         ) : (
@@ -32,6 +39,7 @@ const Cart = () => {
             {cartItems.map((cartItem) => (
             
                 <div className='cart-row' key={cartItem.id}>
+            
                   <img src={cartItem.img} alt='cartimage' />
                   <div className='cart-desc'>
                     <h5>{cartItem.type}</h5>
@@ -55,7 +63,7 @@ const Cart = () => {
                   </button>
                 </div>
             ))}
-            <button>Checkout</button>
+            <NavLink to="checkout"><button>Checkout</button></NavLink>
           </div>
         )}
       </div>

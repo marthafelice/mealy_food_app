@@ -2,6 +2,7 @@ import React from "react";
 import "../styles/restaurantCard.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Star from "../images/star.svg";
+
 import { Link } from "react-router-dom";
 function RestaurantCard({ name, rating, price, Monogram, Food }) {
   return (
