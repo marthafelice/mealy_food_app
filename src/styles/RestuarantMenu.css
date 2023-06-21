@@ -14,6 +14,9 @@ h1 {
   height: auto;
   margin-top: calc(85px);
 }
+.menu-card{
+  cursor: pointer;
+}
 .menu-title {
   padding: 2rem;
 }
