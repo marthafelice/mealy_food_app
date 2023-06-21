@@ -18,14 +18,18 @@
   color: #6750A4;
   
 }
+.align{
+  display: flex;
+  align-items: center;
+}
 .signup-input-container {
   position: relative;
  
 }
 .signup-input-container img {
   position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
+  /* top: 50%;
+  transform: translateY(-50%); */
   left: 1.5rem;
 }
 .signup-input {

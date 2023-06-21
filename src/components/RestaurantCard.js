@@ -3,7 +3,7 @@ import "../styles/restaurantCard.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 import Star from "../images/star.svg";
 import { Link } from "react-router-dom";
-function RestaurantCard({ name, rating, price, Monogram, Food }) {
+function RestaurantCard({ name, rating, price, Monogram, Food, tab }) {
   return (
     <Link to='/menu' className='restaurant-card'>
       <div className=' restaurant-card_top-section'>

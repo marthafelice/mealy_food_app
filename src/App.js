@@ -39,6 +39,7 @@ const router = createBrowserRouter([
     ],
   },
   { path: "menu", element: <RestuarantMenu /> },
+  { path: "live", element: <CartModal /> },
 ]);
 function App() {
   return (

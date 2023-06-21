@@ -7,12 +7,20 @@ import Search from "../../images/search.png";
 import Menus from "./Menu";
 import Cart from "./Cart";
 import { useDispatch } from "react-redux";
-import { addToCart } from "../../redux/slices/cartSlice";
+// import { addToCart } from "../../redux/slices/cartSlice";
+import LiveChat from "../LiveChat";
+import CartModal from "../CartModal";
 
 
-const RestuarantMenu = () => {
+const RestuarantMenu = () => { 
+
+  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
+
+  const toggleCartModal = () => {
+    setIsCartModalOpen(!isCartModalOpen);
+  };
   return (
-    <>
+    <div className="menu-card" onClick={toggleCartModal}>
   
       <div className='breadCrumb '>
         <img src={Pancake} alt='pancake' />
@@ -40,8 +48,9 @@ const RestuarantMenu = () => {
         </div>
         <Cart />
       </div>
-  
-    </>
+      <LiveChat/>
+      {isCartModalOpen && <CartModal isCartModalOpen={isCartModalOpen} />}
+    </div>
   );
 };
 const Tab = () => {
@@ -49,18 +58,28 @@ const Tab = () => {
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
-  const categories = ["All", ...new Set(Menus.map((menu) => menu.category))]; // Get unique categories
+  const categories = ["All", ...new Set(Menus.map((menu) => menu.category))]; 
   const filteredMenus =
     activeTab === 0
       ? Menus
       : Menus.filter((menu) => menu.category === categories[activeTab]);
   const dispatch = useDispatch();
 
-  const handleAddToCart = (menuItem) => {
-    dispatch(addToCart(menuItem));
+  // const handleAddToCart = (menuItem) => {
+  //   dispatch(addToCart(menuItem));
+  // };
+
+  const [isCart, setIsCart] = useState(false);
+
+
+  const toggleCart = () => {
+    setIsCart(!isCart);
   };
 
+
+
   return (
+    <>
     <div>
       <div className='category'>
         {categories.map((category, index) => (
@@ -80,18 +99,15 @@ const Tab = () => {
               <h2>{menu.type}</h2>
               <p>{menu.description}</p>
               <p className='price'>$ {menu.price}</p>
-              <button
-                onClick={() => handleAddToCart(menu)}
-                className='add-to-cart-btn'
-              >
-                Add to Cart
-              </button>
+             
             </div>
             <img src={menu.img} alt='' />
           </div>
         ))}
       </div>
     </div>
+  
+    </>
   );
 };
 export default RestuarantMenu;
