@@ -39,7 +39,7 @@ const router = createBrowserRouter([
           { path: "pickupOrder", element: <PickUpOrder />, loader:PickUpOrderLoader },
         ],
       },
-      { path: "menu/:id", element: <RestuarantMenu /> },
+      { path: "menu/", element: <RestuarantMenu /> },
     ],
   },
   {path:"menu/checkout",element:<Checkout/>}

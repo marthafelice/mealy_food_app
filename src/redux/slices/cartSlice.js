@@ -1,6 +1,8 @@
 import { createSlice } from '@reduxjs/toolkit';
 const initialState={
   cartItems:[],
+  isCartModalOpen:false,
+  isChatModalOpen:false
 }
 const cartSlice = createSlice({
   name: 'cart',
@@ -40,9 +42,25 @@ const cartSlice = createSlice({
         }
       }
     },
+    displayedCartModal:(state,action)=>{
+      if(action.payload==="openCartModal"){
+        state.isCartModalOpen=true
+      }
+      if(action.payload==="closeCartModal"){
+        state.isCartModalOpen=false
+      }
+    }
   },
+  displayedChatModal:(state,action)=>{
+    if(action.payload==="openChatModal"){
+      state.isChatModalOpen=true
+    }
+    if(action.payload==="closeChatModal"){
+      state.isChatModalOpen=false
+    }
+  }
 });
 
-export const { addToCart, removeFromCart, incrementQuantity, decrementQuantity } = cartSlice.actions;
+export const { addToCart,displayedChatModal, removeFromCart,displayedCartModal, incrementQuantity, decrementQuantity } = cartSlice.actions;
 
 export default cartSlice.reducer;

@@ -72,6 +72,10 @@
   z-index: 999;
   padding: 0 !important;
 }
+.close-message{
+  z-index: 6;
+
+}
 .menu-card{
     position: relative;
 }
