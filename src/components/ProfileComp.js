@@ -31,7 +31,7 @@ function openLogout(){
   return ReactDOM.createPortal(
 
     <section className="profile-section" >
-      <div className="overlay" onClick={closeProfile}></div>
+      <div className="overlay_dark" onClick={closeProfile}></div>
       <div className="profile">
       <h2>Hello, Mariam!</h2>
       <hr className="d"></hr>

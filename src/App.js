@@ -1,7 +1,7 @@
 // // import NewPassword from "./components/NewPassword";
 import Homepage from "./components/Homepage";
 
-import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
+
 
 import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
@@ -9,6 +9,7 @@ import BulkOrder from "./components/BulkOrder";
 import PickUpOrder from "./components/PickUpOrder";
 // import Login from "./components/Login"
 import LandingPage from "./components/LandingPage";
+import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {loader as DeliveryRestaurantLoader} from "./components/DeliveryOrder"
 import {loader as PickUpOrderLoader} from "./components/PickUpOrder"

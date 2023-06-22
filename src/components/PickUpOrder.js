@@ -1,6 +1,6 @@
 import React from "react";
 import RestaurantCard from "./RestaurantCard";
-import Restuarant5 from "../images/rest5.png";
+import Monogram from "../images/monogram.svg";
 import Monogram1 from "../images/monogram1.png";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
@@ -8,7 +8,7 @@ import star from "../images/star.svg"
 function PickUpOrder() {
   const restaurants=useLoaderData()
   return (
-    <div className="order-category_pickup order-category">
+    <div className='order-category_pickup order-category'>
       <h3>African Restaurants</h3>
       <div className="order-category_restaurant-cards">
       {restaurants.map((restaurant)=>(

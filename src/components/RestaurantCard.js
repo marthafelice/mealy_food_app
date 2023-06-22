@@ -20,7 +20,7 @@ function RestaurantCard({ name, rating, price, Monogram, Food,StarImg }) {
         <img src={StarImg} alt="restaurant star rating" className="star" />
         <p>{rating} (Excellent)</p>
         </div>
-        <p className="delivery-price">Delivery: ${price}</p>
+        <p className="delivery-price"> {price}</p>
       </div>
     </Link>
   );

@@ -1,7 +1,7 @@
 import React from "react";
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
-
+import eye from "../images/eye.svg"
 import cuate from "../images/cuate.svg";
 import mail from "../images/mail.svg";
 import password from "../images/password.svg";
@@ -60,7 +60,7 @@ const LoginForm = () => {
       <img src={cuate} alt="mealy" className="cuate-img" />
       <form onSubmit={handleSubmit(onSubmit)} className="login-form">
         <div className="login-input-container">
-          <img src={mail} alt="mail" />
+          <img src={mail} alt="mail" className="mail" />
           <input
             type="text"
             placeholder="Email"
@@ -72,7 +72,8 @@ const LoginForm = () => {
         </div>
 
         <div className="login-input-container">
-          <img src={password} alt="password" />
+          <img src={password} alt="password" className="passwordKey"/>
+          <img src={eye} alt='eye' className="eye"/>
           <input
             type="password"
             placeholder="Password"
@@ -81,7 +82,7 @@ const LoginForm = () => {
           {errors.password && (
             <span className="error-message">Password is required</span>
           )}
-          {/* <img src={eye} alt='eye'/> */}
+          
         </div>
 
         <p className="forgot-password" onClick={displayForgotPwdModal}>

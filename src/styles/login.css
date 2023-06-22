@@ -26,6 +26,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  
+ 
+}
+.eye{
+  right: 2%;
+}
+.passwordKey,.mail{
   left: 2%;
 }
 .login-forgot-password {
