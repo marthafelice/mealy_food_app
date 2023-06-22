@@ -11,7 +11,7 @@ function Checkout() {
     <div className='checkout-container'>
 <nav className='checkout-nav'></nav>
 <div className='checkout-content'>
-<div className='back-container'><img src={back} className='back'/><p>Order Summary</p></div>
+<div className='back-container'><img src={back} className='back' alt='go back'/><p>Order Summary</p></div>
 <h3>BreakfastHub</h3>
 <div className='orders-details-container'>
 <div className='orders-details'>

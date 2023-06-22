@@ -6,7 +6,7 @@ import Star from "../../images/star.png";
 import Search from "../../images/search.png";
 import Menus from "./Menu";
 import Cart from "./Cart";
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 // import { addToCart } from "../../redux/slices/cartSlice";
 import LiveChat from "../LiveChat";
 import CartModal from "../CartModal";
@@ -28,10 +28,10 @@ const RestuarantMenu = () => {
             <p>Good food to start your day right</p>
             <div className='rating'>
               <span>
-                <img src={Star} alt='' />
-                <img src={Star} alt='' />
-                <img src={Star} alt='' />
-                <img src={Star} alt='' />
+                <img src={Star} alt='unknonw' />
+                <img src={Star} alt='unknown' />
+                <img src={Star} alt='unknown' />
+                <img src={Star} alt='unknown' />
               </span>
               <span className='rating-stats'>4.6 Excellent (70+)</span>
             </div>
@@ -69,12 +69,12 @@ const Tab = () => {
   //   dispatch(addToCart(menuItem));
   // };
 
-  const [isCart, setIsCart] = useState(false);
+  //const [isCart, setIsCart] = useState(false);
 
 
-  const toggleCart = () => {
-    setIsCart(!isCart);
-  };
+  // const toggleCart = () => {
+  //   setIsCart(!isCart);
+  // };
 
 
 

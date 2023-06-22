@@ -57,8 +57,8 @@ function SignUp() {
 
   const { displaySignUpModal } = useSelector((state) => state.auth);
 
-  const passwordRegex =
-    /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/;
+  // const passwordRegex =
+  //   /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&.])[A-Za-z\d@$!%*?&.]{8,}$/;
 
   return (
     <ReactModal
@@ -131,7 +131,7 @@ function SignUp() {
           />
         </div>
 
-        <ButtonLarge text='SIGNUP' type='submit' />
+        <ButtonLarge text='SIGNUP' type='submit' onclick={openActivationModal}/>
       </form>
     </ReactModal>
   );
