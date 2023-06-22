@@ -23,7 +23,7 @@ function NewPassword() {
   }
   return (
     <ReactModal
-      isOpen={displayCreateNewPwd}
+      isOpen={true}
       className="newpassword-container auth-padding auth-width"
       overlayClassName="overlay"
       onRequestClose={closeCreateNewPwd}

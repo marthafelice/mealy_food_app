@@ -21,6 +21,12 @@ import { toggled,authedHomepage } from "../redux/slices/authSlice";
 
 
 import "../styles/activation.css"
+import SignUp from "./SignUp";
+import Activation from "./Activation";
+import DeliveryAddress from "./DeliveryAddress";
+import ForgotPassword from "./ForgotPassword";
+import NewPassword from "./NewPassword";
+import Login from "./Login";
 
 const LandingPage = () => {
   const [activeLink, setActiveLink] = useState('');
@@ -28,6 +34,7 @@ const LandingPage = () => {
   const dispatch=useDispatch()
   function displaySignup(){
    dispatch(toggled('signup'))
+   console.log('signup clicked')
 
   }
   function goUnAuthHomepage(){
@@ -52,7 +59,12 @@ const LandingPage = () => {
 
   return (
     <section className="landing-page">
-   
+     <SignUp />
+      <Activation />
+      <Login />
+      <DeliveryAddress />
+      <ForgotPassword />
+      <NewPassword />
       <nav className="landing-page-nav" >
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 

@@ -124,6 +124,33 @@ a {
   height: 100%;
   background-color: rgba(17, 8, 8, 0.228);
   }
+  .auth-error{
+    color: red;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 1rem;
+    display: block;
+  }
+  .auth-error-display{
+    display: none;
+  }
+  .auth-input-container {
+    position: relative;
+   
+  }
+  .auth-input-container .icon-left{
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
+  .auth-input-container .icon-right{
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
 @media (max-width: 992px) {
   .homepage-padding {
     padding: 15rem 3rem 0rem 3rem;
