@@ -11,11 +11,10 @@ function BulkOrder() {
     <div className="order-category_pickup order-category">
       <h3>Featured Restaurants</h3>
       <div className="order-category_restaurant-cards">
-      <div className="order-category_restaurant-cards">
       {restaurants.map((restaurant)=>(
            <RestaurantCard key={restaurant._id} name={restaurant.name} price="400" Food={Restuarant5} Monogram={Monogram1} rating={4.6}/>
          ))}
-      </div>
+   
       <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
@@ -71,7 +70,7 @@ function BulkOrder() {
     Monogram={Monogram1}
     Food={Restuarant5}
   />
-           </div>
+  </div>
     </div>
   );
 }

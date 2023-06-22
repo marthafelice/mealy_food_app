@@ -37,7 +37,7 @@ function DeliveryOrder() {
 
     
     <div className="order-category_delivery order-category">
-      <h3>African Restaurants</h3>
+      <h3>All Restaurants</h3>
      
       <div className="order-category_restaurant-cards">
          {restaurants.map((restaurant)=>(
