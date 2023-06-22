@@ -6,6 +6,7 @@ import { displayedAuthModal, closedAuthModal } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import close from "../images/close.svg";
 import * as auth from "../redux/constants/auth";
+
 function Activation() {
   const dispatch = useDispatch();
 
@@ -36,20 +37,13 @@ function Activation() {
       <p className="activation-email-notify">
         An email was sent to *****@gmail.com with an active code
       </p>
-      <div className="activation-code-box-container">
-        <div className="code-box">
-          <p>*</p>
-        </div>
-        <div className="code-box">
-          <p>*</p>
-        </div>
-        <div className="code-box">
-          <p>*</p>
-        </div>
-        <div className="code-box">
-          <p>*</p>
-        </div>
-      </div>
+      <form className="activation-code-box-container">
+        <input className="code-box" type="password" placeholder="*"/>
+        <input className="code-box" type="password" placeholder="*"/>
+        <input className="code-box" type="password" placeholder="*"/>
+        <input className="code-box" type="password" placeholder="*"/>
+       
+      </form>
       <p className="receive-code">
         Did not receive code? <span>Resend Code</span>
       </p>

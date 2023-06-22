@@ -27,7 +27,7 @@ const LiveChat = () => {
 
   return (
     <div className='live-chat'>
-      {isOpen && <div className='overlay-a' onClick={toggleChat} />}
+      {isOpen && <div className='overlay-a'  />}
       {isOpen && (
         <div className='chat-window'>
           <div className='chat-header'>
@@ -55,7 +55,7 @@ const LiveChat = () => {
         </div>
       )}
       <button className='chat-toggle' onClick={toggleChat}>
-        {isOpen ? <img src={arrow} alt="close"/> : <img src={chat} alt="open"/>}
+        {isOpen ? <img src={arrow} alt="close" className="close-message"/> : <img src={chat} alt="open"/>}
       </button>
     </div>
   );

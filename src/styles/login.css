@@ -11,30 +11,21 @@
 
   /* width: 100%; */
 }
-.login-input-container input {
-  border-top: 0;
-  border-right: 0;
-  border-left: 0;
-  width: 100%;
-  padding-left: 4rem;
-  font-size: 1.5rem;
-  height: 4rem;
-  outline: none;
-}
 
-.login-input-container img {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  
+
+.login-input-container .login-input {
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid black;
+  width: 100%;
+  height: 4rem;
+  padding-left: 4rem;
+  outline: none;
  
 }
-.eye{
-  right: 2%;
-}
-.passwordKey,.mail{
-  left: 2%;
-}
+
+
 .login-forgot-password {
   align-self: flex-end;
   margin-top: 1rem;

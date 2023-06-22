@@ -2,14 +2,16 @@ import React from "react";
 import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
-import Filter from "../images/filterIcon.svg";
-import ProfileImg from "../images/authprofileIcon.svg";
+import order from "../images/filterIcon.svg";
+
 import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
 import { toggled } from "../redux/slices/authSlice";
-import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
+import ProfileImg from "../images/unAuthProfileIcon.svg";
+import AuthProfileImg from "../images/authprofileIcon.svg"
 
 import LoginToolTip from "./LoginToolTip";
+import { Order } from "../redux/slices/orderSlice";
 
 function HomepageNav() {
 
@@ -24,6 +26,9 @@ const{authUser}=useSelector((state)=>state.auth)
   function toggleLoginTip(){
     dispatch(toggled('loginTip'))
   }
+  function openOrder(){
+    dispatch(Order('openOrder'))
+}
 
   return (
     <nav className="homepage-nav" id="home-nav">
@@ -58,24 +63,25 @@ const{authUser}=useSelector((state)=>state.auth)
         {authUser ? (
           <>
             <img
-              src={Filter}
-              alt="cart icon"
+              src={order}
+              alt="order icon"
               className="nav-section_filter-icon"
+              onClick={openOrder}
             />
 
             <img
-              src={ProfileImg}
+              src={AuthProfileImg}
               alt="profile icon"
-              className="nav-section_profile-icon"
+              className="auth-profile-icon nav-section_profile-icon"
               onClick={displayProfile}
             />
           </>
         ) : (
           <div className="unAuthIcon-container">
           <img
-            src={unAuthProfileIcon}
+            src={ProfileImg}
             alt="unathourized user profile icon"
-            className="unAuthprofile-icon"
+            className="unauth-profile-icon nav-section_profile-icon"
             onClick={toggleLoginTip}
           />
           <LoginToolTip/>

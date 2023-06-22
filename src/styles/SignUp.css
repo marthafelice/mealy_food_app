@@ -6,32 +6,6 @@
   font-size: 2rem;
   border: none;
 }
-.close-signup-icon {
-  align-self: flex-end;
-}
-.signup-instruction{
-    margin-top: 1rem;
-    display: flex;
-}
-.signup-instruction p{
-  margin-left: .5rem;
-  color: #6750A4;
-  
-}
-.align{
-  display: flex;
-  align-items: center;
-}
-.signup-input-container {
-  position: relative;
- 
-}
-.signup-input-container img {
-  position: absolute;
-  /* top: 50%;
-  transform: translateY(-50%); */
-  left: 1.5rem;
-}
 .signup-input {
   border-top: none;
   border-left: none;
@@ -43,8 +17,28 @@
   outline: none;
  
 }
+.signup-form{
+  text-align: center;
+}
+
+.close-signup-icon {
+  align-self: flex-end;
+}
+.signup-instruction{
+    margin-top: 1rem;
+    display: flex;
+}
+.signup-instruction p{
+  margin-left: .5rem;
+  color: #6750A4; 
+}
+
+
 .biker-img{
     height: 20rem;
+}
+.error-message{
+  text-align: left;
 }
 
 @media(max-width:425px){

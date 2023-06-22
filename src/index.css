@@ -16,9 +16,20 @@ body {
   font-size: 62.5%;
   color: black;
   scroll-behavior:smooth ;
+  position: relative;
+  max-width: 100%;
+  min-height: 100vh;
 }
-
-.scrolled.landing-nav-links a {
+.load{
+  width: 100%;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  background-color: red;
+  font-size: 30rem;
+  z-index: 4444;
+}
+.scrolled.landing-nav-links a{
   color: white;
 }
 h2 {
@@ -112,6 +123,33 @@ a {
   width: 100%;
   height: 100%;
   background-color: rgba(17, 8, 8, 0.228);
+  }
+  .auth-error{
+    color: red;
+    text-align: center;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-top: 1rem;
+    display: block;
+  }
+  .auth-error-display{
+    display: none;
+  }
+  .auth-input-container {
+    position: relative;
+   
+  }
+  .auth-input-container .icon-left{
+    position: absolute;
+    left: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%); 
+  }
+  .auth-input-container .icon-right{
+    position: absolute;
+    right: 1.5rem;
+    top: 50%;
+    transform: translateY(-50%); 
   }
 @media (max-width: 992px) {
   .homepage-padding {

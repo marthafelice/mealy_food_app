@@ -2,8 +2,9 @@ import React from "react";
 import "../styles/restaurantCard.css";
 import { BsThreeDotsVertical } from "react-icons/bs";
 
+
 import { Link } from "react-router-dom";
-function RestaurantCard({ name, rating, price, Monogram, Food,star }) {
+function RestaurantCard({ name, rating, price, Monogram, Food,StarImg }) {
   return (
     <Link to="/menu" className="restaurant-card">
       <div className=" restaurant-card_top-section">
@@ -16,7 +17,7 @@ function RestaurantCard({ name, rating, price, Monogram, Food,star }) {
       <img src={Food} className="restaurant-img" alt="restaurant meal" />
       <div className="restaurant-card_bottom-section">
         <div className="rating">
-          {star}
+        <img src={StarImg} alt="restaurant star rating" className="star" />
         <p>{rating} (Excellent)</p>
         </div>
         <p className="delivery-price"> {price}</p>

@@ -10,17 +10,13 @@ import { useDispatch } from "react-redux";
 // import { addToCart } from "../../redux/slices/cartSlice";
 import LiveChat from "../LiveChat";
 import CartModal from "../CartModal";
+import { displayedChatModal } from "../../redux/slices/cartSlice";
 
 
 const RestuarantMenu = () => { 
-
-  const [isCartModalOpen, setIsCartModalOpen] = useState(false);
-
-  const toggleCartModal = () => {
-    setIsCartModalOpen(!isCartModalOpen);
-  };
+   
   return (
-    <div className="menu-card" onClick={toggleCartModal}>
+    <div className="menu-card">
   
       <div className='breadCrumb '>
         <img src={Pancake} alt='pancake' />
@@ -32,10 +28,10 @@ const RestuarantMenu = () => {
             <p>Good food to start your day right</p>
             <div className='rating'>
               <span>
-                <img src={Star} alt='' />
-                <img src={Star} alt='' />
-                <img src={Star} alt='' />
-                <img src={Star} alt='' />
+                <img src={Star} alt='unknonw' />
+                <img src={Star} alt='unknown' />
+                <img src={Star} alt='unknown' />
+                <img src={Star} alt='unknown' />
               </span>
               <span className='rating-stats'>4.6 Excellent (70+)</span>
             </div>
@@ -49,11 +45,15 @@ const RestuarantMenu = () => {
         <Cart />
       </div>
       <LiveChat/>
-      {isCartModalOpen && <CartModal isCartModalOpen={isCartModalOpen} />}
+      <CartModal  />
     </div>
   );
 };
 const Tab = () => {
+  const dispatch=useDispatch();
+  function openCartModal  ()  {
+      dispatch (displayedChatModal("openChatModal"))
+    };
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (index) => {
     setActiveTab(index);
@@ -63,18 +63,18 @@ const Tab = () => {
     activeTab === 0
       ? Menus
       : Menus.filter((menu) => menu.category === categories[activeTab]);
-  const dispatch = useDispatch();
+
 
   // const handleAddToCart = (menuItem) => {
   //   dispatch(addToCart(menuItem));
   // };
 
-  const [isCart, setIsCart] = useState(false);
+  //const [isCart, setIsCart] = useState(false);
 
 
-  const toggleCart = () => {
-    setIsCart(!isCart);
-  };
+  // const toggleCart = () => {
+  //   setIsCart(!isCart);
+  // };
 
 
 
@@ -94,7 +94,7 @@ const Tab = () => {
       </div>
       <div>
         {filteredMenus.map((menu, index) => (
-          <div className='menu-box' key={index}>
+          <div className='menu-box' key={index} onClick={openCartModal}>
             <div>
               <h2>{menu.type}</h2>
               <p>{menu.description}</p>

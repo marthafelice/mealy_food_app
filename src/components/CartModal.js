@@ -4,15 +4,17 @@ import CartPageImage from "../images/cart-page-image.png";
 import CloseWindowIcon from "../images/close-window.svg";
 import { useState } from "react";
 import ReactModal from "react-modal";
+import { useDispatch, useSelector } from "react-redux";
+import { displayedCartModal } from "../redux/slices/cartSlice";
 
-const CartModal = ({ isCartModalOpen }) => {
+const CartModal = () => {
   const [count, setCount] = useState(0);
-  const [displayCart, setDisplayCart] = useState(false);
-  // function openCartModal() {
-  //   setDisplayCart(true);
-  // }
+  const {isCartModalOpen}=useSelector((state)=>state.cart);
+  const dispatch=useDispatch();
+
+ 
   function closeCartModal() {
-    setDisplayCart(false);
+  dispatch(displayedCartModal('closeCartModal'))
   }
   return (
     <>
@@ -27,7 +29,7 @@ const CartModal = ({ isCartModalOpen }) => {
             src={CloseWindowIcon}
             alt='close-window-icon'
             className='close-icon_cart'
-            // onClick={closeCartModal}
+            onClick={closeCartModal}
           />
           <img src={CartPageImage} alt='breakfast' className='cart-modal-img' />
           <div className='cart-modal-content'>

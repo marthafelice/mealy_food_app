@@ -18,18 +18,28 @@
   line-height: 1.5;
 }
 
-.activation-code-box-container {
-  display: flex;
-  justify-content: space-between;
+form.activation-code-box-container {
   width: 70%;
-  gap: 1rem;
-  margin: 3rem 0;
+ 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 2rem;
 }
+ input.code-box {
 
-.code-box {
-  padding: .5em 1.5em;
   background-color: #e0e0e0;
+  width: 6rem;
+  height: 5rem;
+  border-color:transparent ;
+  
+
 }
+input.code-box::placeholder{
+  font-weight: bolder;
+  font-size: 2rem;
+  color: black;
+} 
 
 .receive-code {
   font-weight: bold;

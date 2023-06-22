@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 // import { useState } from "react";
 import { useForm } from "react-hook-form";
 import eye from "../images/eye.svg"
@@ -14,16 +14,32 @@ import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import { authedHomepage, closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
+import axios from "axios"
 const LoginForm = () => {
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm();
-
-  const onSubmit = (data) => {
-    console.log(data); // You can perform your login logic here
+  const [loginError,setLoginError]=useState("");
+  const [exist,setExist]=useState("");
+  const onLoginSubmit = async (data) => {
+    console.log(data); 
+    try{
+      const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/login",data)
+      console.log(response)
+    }
+    catch(err){
+      console.error(err.response.data)
+      setLoginError(err.response.data.message)
+    }
   };
+  useEffect(()=>{
+    if(loginError){
+      setExist(loginError)
+    }
+  }
+,[loginError])
   const dispatch = useDispatch();
   const { displayLoginModal } = useSelector((state) => state.auth);
   function closeLogin() {
@@ -58,38 +74,40 @@ const LoginForm = () => {
         Don't have an account? <p onClick={displaySignupModal}>Sign up</p>
       </div>
       <img src={cuate} alt="mealy" className="cuate-img" />
-      <form onSubmit={handleSubmit(onSubmit)} className="login-form">
-        <div className="login-input-container">
-          <img src={mail} alt="mail" className="mail" />
+      <form onSubmit={handleSubmit(onLoginSubmit)} className="login-form">
+        <div className="login-input-container auth-input-container">
+          <img src={mail} alt="mail" className="mail icon-left" />
           <input
             type="text"
             placeholder="Email"
             {...register("email", { required: true })}
+            className="login-input"
           />
-          {errors.email && (
+        </div>
+        {errors.email && (
             <span className="error-message">Email is required</span>
           )}
-        </div>
 
-        <div className="login-input-container">
-          <img src={password} alt="password" className="passwordKey"/>
-          <img src={eye} alt='eye' className="eye"/>
+        <div className="login-input-container  auth-input-container ">
+          <img src={password} alt="password" className="icon-left"/>
+          <img src={eye} alt='eye' className="icon-right"/>
           <input
             type="password"
             placeholder="Password"
             {...register("password", { required: true })}
-          />
-          {errors.password && (
+            className="login-input"
+          />    
+        </div>
+        {errors.password && (
             <span className="error-message">Password is required</span>
           )}
-          
-        </div>
 
         <p className="forgot-password" onClick={displayForgotPwdModal}>
           
           Forgot password?
         </p>
-        <ButtonLarge text="LOGIN" onclick={displayMap} classname="login-btn" />
+        <p className={exist?"auth-error":"auth-error-display"}>{exist}</p>
+        <ButtonLarge text="LOGIN" type='submit' classname="login-btn"/>
       </form>
 
       <button className="google-btn">
