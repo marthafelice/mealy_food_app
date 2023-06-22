@@ -9,6 +9,7 @@ import ButtonLarge from "./Buttons";
 import ReactModal from "react-modal";
 import close from "../images/close.svg";
 import { useDispatch, useSelector } from "react-redux";
+import axios from "axios";
 import {
 
   displayedAuthModal,

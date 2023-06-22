@@ -8,6 +8,7 @@ import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
 import { toggled } from "../redux/slices/authSlice";
 import ProfileImg from "../images/unAuthProfileIcon.svg";
+import AuthProfileImg from "../images/authprofileIcon.svg"
 
 import LoginToolTip from "./LoginToolTip";
 import { Order } from "../redux/slices/orderSlice";
@@ -69,9 +70,9 @@ const{authUser}=useSelector((state)=>state.auth)
             />
 
             <img
-              src={ProfileImg}
+              src={AuthProfileImg}
               alt="profile icon"
-              className="nav-section_profile-icon"
+              className="auth-profile-icon nav-section_profile-icon"
               onClick={displayProfile}
             />
           </>
@@ -80,7 +81,7 @@ const{authUser}=useSelector((state)=>state.auth)
           <img
             src={ProfileImg}
             alt="unathourized user profile icon"
-            className="nav-section_profile-iconn"
+            className="unauth-profile-icon nav-section_profile-icon"
             onClick={toggleLoginTip}
           />
           <LoginToolTip/>

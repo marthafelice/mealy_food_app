@@ -4,6 +4,7 @@ import Monogram from "../images/monogram.svg";
 import Monogram1 from "../images/monogram1.png";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
+import Restuarant5 from "../images/rest4.png"
 import star from "../images/star.svg"
 function PickUpOrder() {
   const restaurants=useLoaderData()

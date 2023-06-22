@@ -17,13 +17,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggled,authedHomepage } from "../redux/slices/authSlice";
 
-import SignUp from "./SignUp";
-import Activation from "./Activation";
-import LoginForm from "./Login";
-import DeliveryAddress from "./DeliveryAddress";
-import ForgotPassword from "./ForgotPassword";
-import NewPassword from "./NewPassword";
-import star from "../images/star.svg"
+
 
 
 import "../styles/activation.css"
