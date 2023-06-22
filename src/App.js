@@ -1,7 +1,7 @@
 // // import NewPassword from "./components/NewPassword";
 import Homepage from "./components/Homepage";
 
-import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
+
 
 import DeliveryOrder from "./components/DeliveryOrder";
 import BulkOrder from "./components/BulkOrder";
@@ -9,9 +9,11 @@ import BulkOrder from "./components/BulkOrder";
 import PickUpOrder from "./components/PickUpOrder";
 // import Login from "./components/Login"
 import LandingPage from "./components/LandingPage";
+import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 import Layout from "./utilities/Layout";
+import CartModal from "./components/CartModal";
 
 const router = createBrowserRouter([
   {
@@ -33,6 +35,8 @@ const router = createBrowserRouter([
       { path: "menu", element: <RestuarantMenu /> },
     ],
   },
+  { path: "menu", element: <RestuarantMenu /> },
+  { path: "live", element: <CartModal /> },
 ]);
 function App() {
   return (

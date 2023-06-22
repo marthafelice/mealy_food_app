@@ -8,7 +8,7 @@ const Menu =[{
     id:"1",
     type: "full breakfast",
     description: "Yam, potatoes and plantain, served with sauteed vegetables..",
-    category: "specials",
+    category: "Specials",
     price: "3,000",
     img: Food1
 },
@@ -16,7 +16,7 @@ const Menu =[{
     id:"2",
     type: "full breakfast",
     description: "Bread, potatoes and plantain, served with sauteed vegetables..",
-    category: "specials",
+    category: "Specials",
     price: "4,000",
     img: Food2
 },
@@ -24,7 +24,7 @@ const Menu =[{
     id:"3",
     type: "french toast",
     description: "Toast, egg, avocado and mayo served with sauteed vegetables..",
-    category: "specials",
+    category: "Specials",
     price: "8,000",
     img:Food3
 },
@@ -32,7 +32,7 @@ const Menu =[{
     id:"4",
     type: "loafers",
     description: "Croissants and a cup of coffee served with sauteed vegetables..",
-    category: "quick",
+    category: "Quick",
     price: "2,000",
     img:Food4
 },
@@ -40,7 +40,7 @@ const Menu =[{
     id:"5",
     type: "full pancake",
     description: "Pancakes with jam and toppings served with sauteed vegetables..",
-    category: "quick",
+    category: "Quick",
     price: "7,000",
     img: Food5
 },
