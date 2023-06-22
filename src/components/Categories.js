@@ -12,11 +12,11 @@ function Categories() {
     <section className="categories-section homepage-padding">
       <h3>All Categories</h3>
       <div className="categories-section_meal">
-        <MealCategory categoryName="Chinese" ChineseCategory={Chinese} />
-        <MealCategory categoryName="African" ChineseCategory={African} />
-        <MealCategory categoryName="Breakfast" ChineseCategory={Breakfast} />
-        <MealCategory categoryName="Lunch" ChineseCategory={Lunch} />
-        <MealCategory categoryName="Combo meals" ChineseCategory={ComboMeals} />
+        <MealCategory categoryName="Chinese" img={Chinese} />
+        <MealCategory categoryName="African" img={African} />
+        <MealCategory categoryName="Breakfast" img={Breakfast} />
+        <MealCategory categoryName="Lunch" img={Lunch} />
+        <MealCategory categoryName="Combo meals" img={ComboMeals} />
       </div>
       <OrderCategory />
     </section>
