@@ -9,7 +9,7 @@ import Monogram1 from "../images/monogram1.png";
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
-
+import star from "../images/star.svg"
 import Footer from "./Footer";
 import { NavLink } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
@@ -17,12 +17,6 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggled,authedHomepage } from "../redux/slices/authSlice";
 
-import SignUp from "./SignUp";
-import Activation from "./Activation";
-import LoginForm from "./Login";
-import DeliveryAddress from "./DeliveryAddress";
-import ForgotPassword from "./ForgotPassword";
-import NewPassword from "./NewPassword";
 
 
 import "../styles/activation.css"
@@ -57,12 +51,7 @@ const LandingPage = () => {
 
   return (
     <section className="landing-page">
-      <SignUp />
-      <Activation />
-      <LoginForm />
-      <DeliveryAddress />
-      <ForgotPassword />
-      <NewPassword />
+   
       <nav className="landing-page-nav" >
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
@@ -79,7 +68,7 @@ const LandingPage = () => {
      <NavLink to="/home/deliveryOrder"><img src={cart} className="cart" alt="Cart" onClick={goUnAuthHomepage} /></NavLink> 
         </div>
       </nav>
-      <section className="hero-section landing-page-padding" >
+      <section className="hero-section " >
         <div className="hero-text-container">
           <h1 className="hero-heading">
             Delightful Eats Delivered with
@@ -129,21 +118,24 @@ const LandingPage = () => {
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            star={<img src={star} alt="restaurant rating"/>}
           />{" "}
           <RestaurantCard
             name="Gory's Cafe"
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            star={<img src={star} alt="restaurant rating"/>}
           />{" "}
           <RestaurantCard
             name="Breakfast Hub"
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            star={<img src={star} alt="restaurant rating"/>}
           />
         </div>
-      </div>
+      </div>lo
 
       <div className="choose-section">
         <h2 className="choose-section-title">

@@ -14,6 +14,7 @@ import Restuarant8 from "../images/rest8.png";
 import Restuarant9 from "../images/rest9.png";
 import Restuarant10 from "../images/rest10.png";
 import BreakfastHub from "../images/breakfasthub.svg";
+import star from "../images/star.svg"
 function DeliveryOrder() {
   return (
     <div className="order-category_delivery order-category">
@@ -22,77 +23,78 @@ function DeliveryOrder() {
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price={400}
+          price="delivery:$400"
           Monogram={Monogram}
           Food={BreakfastHub}
+          star={<img src={star} alt="restaurant rating"/>}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+          price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant1}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+            price="delivery:$400"
           Monogram={Monogram2}
           Food={Restuarant2}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+            price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant3}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+          price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant4}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+            price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant5}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+            price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant6}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+          price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant7}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+          price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant8}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+             price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant9}
         />
         <RestaurantCard
           name="Breakfast Hub"
           rating="4.6"
-          price="400"
+             price="delivery:$400"
           Monogram={Monogram1}
           Food={Restuarant10}
         />

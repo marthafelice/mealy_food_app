@@ -95,6 +95,7 @@ function SignUp() {
             })}
             placeholder="Password"
             className="signup-input"
+            type="password"
           />
         </div>
 
