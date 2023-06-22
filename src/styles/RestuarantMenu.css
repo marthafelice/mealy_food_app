@@ -99,7 +99,15 @@ h1 {
   padding: 2rem;
   border-radius: 1rem;
   text-align: center;
-  width: 100%;
+ width: 100%;
+  transition: position ease .4s;
+}
+.scrolled-cart.cart-wrapper{
+top: 6rem;
+right: 8rem;
+position: fixed;
+width: 32%;
+
 }
 .cart-wrapper h1 {
   font-size: 2rem;

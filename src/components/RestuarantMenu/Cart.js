@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import add from "../../images/add.png";
 import minus from "../../images/minus.png";
@@ -7,16 +7,14 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../../redux/slices/cartSlice";
-import { NavLink, useParams } from "react-router-dom";
+import { NavLink, } from "react-router-dom";
 
 const Cart = () => {
-  const {id}=useParams()
+  // const {id}=useParams()
+  const [isScrolled, setIsScrolled] = useState(false);
   const dispatch = useDispatch();
   const {cartItems} = useSelector((state) => state.cart);
-  const ok=[]
 
-  console.log(cartItems)
-  console.log(cartItems.length)
   const handleRemoveFromCart = (itemId) => {
     dispatch(removeFromCart(itemId));
   };
@@ -28,8 +26,25 @@ const Cart = () => {
   const handleDecrementQuantity = (itemId) => {
     dispatch(decrementQuantity(itemId));
   };
+ 
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const scrollHeight = window.scrollY;
+      const desiredHeight =450 /* specify the desired height where the position should change */;
+
+      setIsScrolled(scrollHeight > desiredHeight);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    // Cleanup the event listener on component unmount
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
   return (
-      <div className='cart-wrapper'>
+      <div className={`cart-wrapper ${isScrolled ? 'scrolled-cart' : ''}`}>
         <h1>Your Cart</h1>
 
 

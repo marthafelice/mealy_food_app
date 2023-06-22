@@ -29,7 +29,7 @@ const CartModal = () => {
             src={CloseWindowIcon}
             alt='close-window-icon'
             className='close-icon_cart'
-            // onClick={closeCartModal}
+            onClick={closeCartModal}
           />
           <img src={CartPageImage} alt='breakfast' className='cart-modal-img' />
           <div className='cart-modal-content'>
