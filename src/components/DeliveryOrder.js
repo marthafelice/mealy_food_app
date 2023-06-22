@@ -6,26 +6,13 @@ import Restuarant1 from "../images/rest1.png";
 import star from "../images/star.svg"
 import axios from "axios";
 import { useLoaderData } from "react-router-dom";
-// import { useEffect, useState } from "react";
-function DeliveryOrder() {
-//   const[loading,setLoad]=useState(false)
-  const restaurants=useLoaderData()
-//   const dataState=useNavigation()
-//  useEffect(()=>{
-//   if (dataState.state==='loading'){
-//     console.log('i am loading')
-//     setLoad(true)
-//   }
-//   else{
-//     setLoad(false)
-//   }
-//  },[dataState.state])
 
+function DeliveryOrder() {
+
+  const restaurants=useLoaderData()
   console.log(restaurants.length)
 
   return (
-
-    
     <div className="order-category_delivery order-category">
       <h3>All Restaurants</h3>
      
