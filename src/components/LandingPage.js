@@ -23,6 +23,7 @@ import LoginForm from "./Login";
 import DeliveryAddress from "./DeliveryAddress";
 import ForgotPassword from "./ForgotPassword";
 import NewPassword from "./NewPassword";
+import star from "../images/star.svg"
 
 
 import "../styles/activation.css"
@@ -129,18 +130,21 @@ const LandingPage = () => {
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            StarImg={star}
           />{" "}
           <RestaurantCard
             name="Gory's Cafe"
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            StarImg={star}
           />{" "}
           <RestaurantCard
             name="Breakfast Hub"
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            StarImg={star}
           />
         </div>
       </div>

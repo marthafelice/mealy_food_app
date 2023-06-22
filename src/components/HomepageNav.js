@@ -3,11 +3,11 @@ import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
 import order from "../images/filterIcon.svg";
-import ProfileImg from "../images/profile.svg";
+
 import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
 import { toggled } from "../redux/slices/authSlice";
-import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
+import ProfileImg from "../images/unAuthProfileIcon.svg";
 
 import LoginToolTip from "./LoginToolTip";
 import { Order } from "../redux/slices/orderSlice";
@@ -78,9 +78,9 @@ const{authUser}=useSelector((state)=>state.auth)
         ) : (
           <div className="unAuthIcon-container">
           <img
-            src={unAuthProfileIcon}
+            src={ProfileImg}
             alt="unathourized user profile icon"
-            className="unAuthprofile-icon"
+            className="nav-section_profile-iconn"
             onClick={toggleLoginTip}
           />
           <LoginToolTip/>
