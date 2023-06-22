@@ -7,9 +7,10 @@ import {
   incrementQuantity,
   decrementQuantity,
 } from "../../redux/slices/cartSlice";
-import { NavLink } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 
 const Cart = () => {
+  const {id}=useParams()
   const dispatch = useDispatch();
   const {cartItems} = useSelector((state) => state.cart);
   const ok=[]

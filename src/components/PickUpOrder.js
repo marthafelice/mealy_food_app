@@ -20,8 +20,8 @@ function PickUpOrder() {
 }
 export async function loader(){
   try{
-    const response= await  axios.get("https://mealyapp-bdev.onrender.com/api/v1/restaurant/all-restaurants")
-    const  data=response.data.data.restaurant
+    const response= await  axios.get("https://mealyapp-bdev.onrender.com/api/v1/restaurant/keyword/?restaurants=Pickup")
+    const  data=response.data.data.restaurants
     return data
   
   }
@@ -31,4 +31,5 @@ export async function loader(){
   }
  
 }
+
 export default PickUpOrder;

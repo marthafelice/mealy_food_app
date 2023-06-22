@@ -12,6 +12,8 @@ import LandingPage from "./components/LandingPage";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import {loader as DeliveryRestaurantLoader} from "./components/DeliveryOrder"
 import {loader as PickUpOrderLoader} from "./components/PickUpOrder"
+import {loader as BulkOrderLoader} from "./components/BulkOrder"
+
 
 
 
@@ -32,11 +34,11 @@ const router = createBrowserRouter([
         element: <Homepage />,
         children: [
           { path: "deliveryOrder", element: <DeliveryOrder />,loader:DeliveryRestaurantLoader },
-          { path: "bulkOrder", element: <BulkOrder />},
+          { path: "bulkOrder", element: <BulkOrder />,loader:BulkOrderLoader},
           { path: "pickupOrder", element: <PickUpOrder />, loader:PickUpOrderLoader },
         ],
       },
-      { path: "menu", element: <RestuarantMenu /> },
+      { path: "menu/:id", element: <RestuarantMenu /> },
     ],
   },
   {path:"menu/checkout",element:<Checkout/>}
