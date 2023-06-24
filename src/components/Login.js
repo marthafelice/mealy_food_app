@@ -46,12 +46,12 @@ const LoginForm = () => {
     dispatch(closedAuthModal(auth.login));
 
   }
-  function displayMap(){
-    dispatch(closedAuthModal(auth.login))
-    dispatch(displayedAuthModal(auth.map))
-    dispatch(authedHomepage())
+  // function displayMap(){
+  //   dispatch(closedAuthModal(auth.login))
+  //   dispatch(displayedAuthModal(auth.map))
+  //   dispatch(authedHomepage())
     
-  }
+  // }
   function displaySignupModal(){
     dispatch(closedAuthModal(auth.login))
     dispatch(toggled('signup'))
