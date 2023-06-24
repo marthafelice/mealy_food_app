@@ -12,7 +12,7 @@ import close from "../images/close.svg";
 import ButtonLarge from "./Buttons";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import { authedHomepage, closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
+import {  closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
 import axios from "axios"
 const LoginForm = () => {
