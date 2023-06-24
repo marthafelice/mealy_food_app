@@ -11,19 +11,24 @@ import close from "../images/close.svg";
 import { useDispatch, useSelector } from "react-redux";
 import axios from "axios";
 
+
 import {
 
   displayedAuthModal,
   toggled,
 } from "../redux/slices/authSlice";
+import { tokenGenerated } from "../redux/slices/userData";
 
 
 function SignUp() {
   const [userExist,setUserExist]=useState('')
+  const dispatch = useDispatch();
+  // const {userAccessToken}=useSelector((state)=>state.userData)
+ 
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors,isSubmitting },
   } = useForm();
 
 const onSignupSubmit = async (data) => {
@@ -38,6 +43,7 @@ const onSignupSubmit = async (data) => {
   console.log(response)
   dispatch(displayedAuthModal("activation"));
   dispatch(toggled('signup'))
+  dispatch(tokenGenerated(response.data.data.access_token))
   setUserExist('')
  }
   catch(err){
@@ -47,13 +53,13 @@ const onSignupSubmit = async (data) => {
 
   }
   };
-  const dispatch = useDispatch();
+ 
   function closeSignUp() {
     dispatch(toggled('signup'));
   }
-  function openActivationModal() {
-    ;
-  }
+  // function openActivationModal() {
+  //   ;
+  // }
   function openLoginModal() {
     dispatch(toggled('signup'));
     dispatch(displayedAuthModal("login"));
@@ -138,7 +144,7 @@ const onSignupSubmit = async (data) => {
                 message: "password should be at least 8 characters long",
              },
              pattern:{
-               value: "^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$",
+               value:/^(?=.*[a-z])(?=.*[A-Z])(?=.*[\W_]).*$/,
                message: 'Password must contain at least one alphanumeric character, one capital letter, and one number',
     
              }
@@ -153,8 +159,8 @@ const onSignupSubmit = async (data) => {
         {errors.password && (
             <p className='error-message'>{errors.password.message}</p>
           )}
-<p className={userExist?"auth-error":"auth-error-display"}>{userExist}</p>
-        <ButtonLarge text='SIGNUP' type='submit' />
+       <p className={userExist?"auth-error":"auth-error-display"}>{userExist}</p>
+        <ButtonLarge text='SIGNUP' type='submit' isSubmit={isSubmitting} loading={<div className="loader"></div>}/>
       </form>
     </ReactModal>
   );

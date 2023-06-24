@@ -52,6 +52,7 @@ function Activation() {
         text="VERIFY AND PROCEED"
         onclick={openLoginModal}
         classname="verify-proceed-btn"
+        loading={'Verifying ....'}
       />
     </ReactModal>
   );

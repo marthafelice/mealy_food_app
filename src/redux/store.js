@@ -4,6 +4,7 @@ import profileReducer from "./slices/profileSlice";
 import cartReducer from './slices/cartSlice';
 import authReducer from "./slices/authSlice";
 import orderReducer from "./slices/orderSlice";
+import userDataReducer from "./slices/userData"
 
 
 
@@ -12,7 +13,8 @@ const store = configureStore({
   profile:profileReducer,
   cart: cartReducer,
   auth:authReducer,
-  order:orderReducer
+  order:orderReducer,
+  userData:userDataReducer,
   },
 });
 
