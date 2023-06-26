@@ -10,42 +10,43 @@ import { useForm } from "react-hook-form";
 
 
 function Activation() {
+  
+  const { displayActivationModal } = useSelector((state) => state.auth);
+  const dispatch = useDispatch();
+  const InputRefs=useRef([]);
+  dispatch(displayedAuthModal(auth.login));
+  dispatch(closedAuthModal(auth.activation));
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: {isSubmitting },
   } = useForm();
-  const dispatch = useDispatch();
-  const InputRefs=useRef([]);
- 
 
 
 
-  const { displayActivationModal } = useSelector((state) => state.auth);
+
   function closeActivationModal() {
     dispatch(closedAuthModal(auth.activation));
   }
   function handleInputChange(e,i){
- 
    const {value}=e.target
    if (value.length===1 && i<InputRefs.current.length-1){
 
       InputRefs.current[i+1].focus()
    }
-
-  console.log(InputRefs.current.length)
   }
   function verifyCode(data){
+    console.log("activation clciked")
     console.log(data)
-    console.log(data.box1 + data.box2 + data.box3 + data.box4)
-    dispatch(displayedAuthModal(auth.login));
-    dispatch(closedAuthModal(auth.activation));
   }
+   
+  
 
 
   return (
     <ReactModal
       isOpen={displayActivationModal}
+      
       contentLabel="activationpmodal"
       overlayClassName="overlay"
       className="activation-container auth-padding auth-width"
@@ -77,9 +78,11 @@ function Activation() {
       <ButtonLarge
         text="VERIFY AND PROCEED"
         classname="verify-proceed-btn"
-        loading={'Verifying ....'}
-        type="submit"
+        isSubmit={isSubmitting}
+        loading={<div className="loader"></div>}
+      
       />
+        
       </form>
     </ReactModal>
   );

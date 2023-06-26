@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { useForm } from "react-hook-form";
+import {useForm}  from "react-hook-form";
+
 import Biker from "../images/bike.png";
 import Name from "../images/name.png";
 import Password from "../images/password.png";
@@ -163,7 +164,7 @@ const onSignupSubmit = async (data) => {
             <p className='error-message'>{errors.password.message}</p>
           )}
        <p className={userExist?"auth-error":"auth-error-display"}>{userExist}</p>
-        <ButtonLarge text='SIGNUP' type='submit' isSubmit={isSubmitting} loading={<div className="loader"></div>}/>
+        <ButtonLarge text='SIGNUP' isSubmit={isSubmitting} loading={<div className="loader"></div>}/>
       </form>
     </ReactModal>
   );
