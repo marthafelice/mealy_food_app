@@ -1,5 +1,5 @@
 import React from "react";
-import ForgotPasswordForm from "./ForgotPasswordForm";
+import ForgotPasswordForm from "../components/ForgotPasswordForm";
 import logo from "../images/forgot-password-img.png";
 import ReactModal from "react-modal";
 import "../styles/forgotpassword.css";

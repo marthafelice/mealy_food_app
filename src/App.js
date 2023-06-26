@@ -1,25 +1,23 @@
 // // import NewPassword from "./components/NewPassword";
-import Homepage from "./components/Homepage";
+import Homepage from "./pages/Homepage";
 
 
 
-import DeliveryOrder from "./components/DeliveryOrder";
-import BulkOrder from "./components/BulkOrder";
+import DeliveryOrder from "./pages/DeliveryOrder";
+import BulkOrder from "./pages/BulkOrder";
 // import OrderCategory from "./components/OrderCategory";
-import PickUpOrder from "./components/PickUpOrder";
+import PickUpOrder from "./pages/PickUpOrder";
 // import Login from "./components/Login"
-import LandingPage from "./components/LandingPage";
-import RestuarantMenu from "./components/RestuarantMenu/RestuarantMenu";
+import LandingPage from "./pages/LandingPage";
+import RestuarantMenu from "./pages/RestuarantMenu";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import {loader as DeliveryRestaurantLoader} from "./components/DeliveryOrder"
-import {loader as PickUpOrderLoader} from "./components/PickUpOrder"
-import {loader as BulkOrderLoader} from "./components/BulkOrder"
-
-
-
-
+import {loader as DeliveryRestaurantLoader} from "./pages/DeliveryOrder"
+import {loader as PickUpOrderLoader} from "./pages/PickUpOrder"
+import {loader as BulkOrderLoader} from "./pages/BulkOrder"
 import Layout from "./utilities/Layout";
-import Checkout from "./components/Checkout";
+import Checkout from "./pages/Checkout"
+
+
 
 const router = createBrowserRouter([
   {
@@ -37,6 +35,7 @@ const router = createBrowserRouter([
           { path: "deliveryOrder", element: <DeliveryOrder />,loader:DeliveryRestaurantLoader },
           { path: "bulkOrder", element: <BulkOrder />,loader:BulkOrderLoader},
           { path: "pickupOrder", element: <PickUpOrder />, loader:PickUpOrderLoader },
+
         ],
       },
       { path: "menu/", element: <RestuarantMenu /> },

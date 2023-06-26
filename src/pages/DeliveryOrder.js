@@ -1,4 +1,4 @@
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "../components/RestaurantCard";
 import "../styles/categories.css";
 import Monogram from "../images/monogram.svg";
 

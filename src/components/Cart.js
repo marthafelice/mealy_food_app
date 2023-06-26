@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import add from "../../images/add.png";
-import minus from "../../images/minus.png";
+import add from "../images/add.png";
+import minus from "../images/minus.png";
 import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
-} from "../../redux/slices/cartSlice";
+} from "../redux/slices/cartSlice";
 import { NavLink, } from "react-router-dom";
 
 const Cart = () => {

@@ -9,7 +9,7 @@ import password from "../images/password.svg";
 import google_logo from "../images/logos_google-icon.svg";
 import "../styles/login.css";
 import close from "../images/close.svg";
-import ButtonLarge from "./Buttons";
+import ButtonLarge from "../components/Buttons";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import {  closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";

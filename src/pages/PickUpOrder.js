@@ -1,5 +1,5 @@
 import React from "react";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "../components/RestaurantCard";
 
 import Monogram1 from "../images/monogram1.png";
 import { useLoaderData } from "react-router-dom";

@@ -4,7 +4,7 @@ import "../styles/editProfile.css";
 import { useSelector, useDispatch } from "react-redux";
 import { closedProfileEdit } from "../redux/slices/profileSlice";
 
-import { ButtonPill } from "./Buttons";
+import { ButtonPill } from "../components/Buttons";
 import { useForm } from "react-hook-form";
 import close from "../images/close.svg";
 import padlockIcon from "../images/padlock.svg";

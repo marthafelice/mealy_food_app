@@ -1,6 +1,6 @@
 import React from 'react'
 import "../styles/checkout.css"
-import Footer from "./Footer"
+import Footer from "../components/Footer"
 import back from "../images/back.svg"
 import { useSelector } from 'react-redux'
 

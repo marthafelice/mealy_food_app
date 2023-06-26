@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import "../../styles/RestuarantMenu.css";
+import "../styles/RestuarantMenu.css";
 
-import Pancake from "../../images/pancake.png";
-import Star from "../../images/star.png";
-import Search from "../../images/search.png";
-import Menus from "./Menu";
-import Cart from "./Cart";
+import Pancake from "../images/pancake.png";
+import Star from "../images/star.png";
+import Search from "../images/search.png";
+import Menus from "../utilities/Menu";
+import Cart from "../components/Cart";
 import { useDispatch } from "react-redux";
 // import { addToCart } from "../../redux/slices/cartSlice";
-import LiveChat from "../LiveChat";
-import CartModal from "../CartModal";
-import { displayedChatModal } from "../../redux/slices/cartSlice";
+import LiveChat from "../components/LiveChat";
+import CartModal from "../modals/CartModal";
+import { displayedChatModal } from "../redux/slices/cartSlice";
 
 
 const RestuarantMenu = () => { 

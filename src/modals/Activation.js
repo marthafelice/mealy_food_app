@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "../images/activation.svg";
-import ButtonLarge from "./Buttons";
+import ButtonLarge from "../components/Buttons";
 import ReactModal from "react-modal";
 import {  closedAuthModal } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";

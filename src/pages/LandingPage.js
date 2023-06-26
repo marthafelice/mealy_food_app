@@ -10,9 +10,9 @@ import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
 import star from "../images/star.svg"
-import Footer from "./Footer";
+import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
-import RestaurantCard from "./RestaurantCard";
+import RestaurantCard from "../components/RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggled,authedHomepage } from "../redux/slices/authSlice";
@@ -21,12 +21,12 @@ import { toggled,authedHomepage } from "../redux/slices/authSlice";
 
 
 import "../styles/activation.css"
-import SignUp from "./SignUp";
-import Activation from "./Activation";
-import DeliveryAddress from "./DeliveryAddress";
-import ForgotPassword from "./ForgotPassword";
-import NewPassword from "./NewPassword";
-import Login from "./Login";
+import SignUp from "../modals/SignUp";
+import Activation from "../modals/Activation";
+import DeliveryAddress from "../components/DeliveryAddress";
+import ForgotPassword from "../modals/ForgotPassword";
+import NewPassword from "../modals/NewPassword";
+import Login from "../modals/Login";
 
 const LandingPage = () => {
   const [activeLink, setActiveLink] = useState('');

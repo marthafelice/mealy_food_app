@@ -1,9 +1,9 @@
-import Food1 from "../../images/food1.png"
-import Food2 from "../../images/food2.png"
-import Food3 from "../../images/food3.png"
-import Food4 from "../../images/food4.png"
-import Food5 from "../../images/food5.png"
-import Food6 from "../../images/food6.png"
+import Food1 from "../images/food1.png"
+import Food2 from "../images/food2.png"
+import Food3 from "../images/food3.png"
+import Food4 from "../images/food4.png"
+import Food5 from "../images/food5.png"
+import Food6 from "../images/food6.png"
 const Menu =[{
     id:"1",
     type: "full breakfast",

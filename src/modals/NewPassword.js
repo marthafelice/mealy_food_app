@@ -3,7 +3,7 @@ import "../styles/newpassword.css";
 
 import Privacy from "../images/privacy.svg";
 import { useForm } from "react-hook-form";
-import ButtonLarge from "./Buttons";
+import ButtonLarge from "../components/Buttons";
 import { useDispatch, useSelector } from "react-redux";
 import ReactModal from "react-modal";
 import { closedAuthModal } from "../redux/slices/authSlice";
