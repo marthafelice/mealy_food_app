@@ -3,16 +3,16 @@ import React, {useState } from "react";
 import { useForm } from "react-hook-form";
 import padlock from "../images/padlock.svg"
 import ButtonLarge from "./Buttons";
-import * as auth from "../redux/constants/auth";
+// import * as auth from "../redux/constants/auth";
 
-import { closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
+// import { closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
 import axios from "axios"
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 export default function ForgotPasswordForm() {
   const [existError,setExistError]=useState(false)
   const [forgotError,setForgotError]=useState("")
   const [resetText,setResetText]=useState("");
-  const dispatch = useDispatch();
+  // const dispatch = useDispatch();
 
 
   const { register, handleSubmit,formState:{errors,isSubmitting} } = useForm();
@@ -22,12 +22,12 @@ export default function ForgotPasswordForm() {
   const onSubmit = async (data) =>{
     console.log(data)
     try{
-      // const response=await axios.post(`https://mealyapp-bdev.onrender.com/api/v1/user/${userId}`,data)
-      
+      const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/forgotPassword",data)
+      console.log(response)
       setExistError(false)
-      // setResetText(response.data)
-      dispatch(closedAuthModal(auth.forgotPwd));
-      dispatch(displayedAuthModal(auth.CreateNewPwd));
+      setResetText(response.data)
+      // dispatch(closedAuthModal(auth.forgotPwd));
+      // dispatch(displayedAuthModal(auth.CreateNewPwd));
       
     }
     catch(err){
