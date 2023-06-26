@@ -27,7 +27,7 @@ dispatch(closedAuthModal(auth.forgotPwd))
       <img src={logo} alt="forgot-email" className="privacy-img" />
 
       <p className="forgot-password_instruction">
-        Please Enter Your Email Address To Receive A Verification Code
+        Please Enter Your Email Address To Receive A Password Reset Link
       </p>
 
       <ForgotPasswordForm />
