@@ -15,12 +15,12 @@ function NewPassword() {
     formState: { errors ,isSubmitting},
   } = useForm();
 
-  console.log(errors);
+  // console.log(errors);
   const { displayCreateNewPwd } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   function closeCreateNewPwd() {
     dispatch(closedAuthModal(auth.CreateNewPwd));
-    console.log('nnew')
+    // console.log('nnew')
   }
   return (
     <ReactModal

@@ -12,6 +12,7 @@ import AuthProfileImg from "../images/authprofileIcon.svg"
 
 import LoginToolTip from "./LoginToolTip";
 import { Order } from "../redux/slices/orderSlice";
+import { NavLink } from "react-router-dom";
 
 function HomepageNav() {
 
@@ -32,14 +33,14 @@ const{authUser}=useSelector((state)=>state.auth)
 
   return (
     <nav className="homepage-nav" id="home-nav">
-
+       <NavLink>
         <img
           src={LogoDark}
           alt="mealy dark logo"
           className="logo-dark nav-logo"
       
         />
-  
+        </NavLink>
 
       <div className="address-input">
         <div className="address-container">

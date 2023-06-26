@@ -2,7 +2,8 @@ import { createSlice } from "@reduxjs/toolkit";
 ;
 
 const initialState={
-    userAccessToken:null
+    userAccessToken:null,
+    userId:null,
 }
 
 
@@ -13,9 +14,12 @@ export const  userDataSlice=createSlice({
         tokenGenerated:(state,action)=>{ 
             state.userAccessToken=action.payload
     
+        },
+        idGenerated:(state,action)=>{
+            state.userId=action.payload
         }
     }
 })
 
 export default userDataSlice.reducer
-export const {tokenGenerated} =userDataSlice.actions
+export const {tokenGenerated,idGenerated} =userDataSlice.actions

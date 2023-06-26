@@ -17,13 +17,14 @@ import {
   displayedAuthModal,
   toggled,
 } from "../redux/slices/authSlice";
-import { tokenGenerated } from "../redux/slices/userData";
+import { idGenerated, tokenGenerated } from "../redux/slices/userData";
 
 
 function SignUp() {
   const [userExist,setUserExist]=useState('')
   const dispatch = useDispatch();
   // const {userAccessToken}=useSelector((state)=>state.userData)
+
  
   const {
     register,
@@ -37,10 +38,12 @@ const onSignupSubmit = async (data) => {
     userAddress: '123 Street, City, Country'
   }
   console.log(formData)
+ 
  try{
 
   const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/Signup",formData)
-  console.log(response)
+  console.log(response.data.data.user._id)
+  dispatch(idGenerated(response.data.data.user._id))
   dispatch(displayedAuthModal("activation"));
   dispatch(toggled('signup'))
   dispatch(tokenGenerated(response.data.data.access_token))

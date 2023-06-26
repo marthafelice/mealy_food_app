@@ -131,7 +131,7 @@ const LandingPage = () => {
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
-            StarImg={star}
+            StarImg={<div>{star}{star}{star}{star}</div>} 
           />{" "}
           <RestaurantCard
             name="Gory's Cafe"

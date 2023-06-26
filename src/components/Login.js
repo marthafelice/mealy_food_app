@@ -19,7 +19,7 @@ const LoginForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors,isSubmitting },
   } = useForm();
   const [loginError,setLoginError]=useState("");
   const [exist,setExist]=useState("");
@@ -27,6 +27,8 @@ const LoginForm = () => {
     console.log(data); 
     try{
       const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/login",data)
+      dispatch(displayedAuthModal(auth.map))
+      dispatch(closedAuthModal(auth.login))
       console.log(response)
     }
     catch(err){
@@ -107,7 +109,7 @@ const LoginForm = () => {
           Forgot password?
         </p>
         <p className={exist?"auth-error":"auth-error-display"}>{exist}</p>
-        <ButtonLarge text="LOGIN" type='submit' classname="login-btn"/>
+        <ButtonLarge text="LOGIN" type='submit' classname="login-btn" isSubmit={isSubmitting} loading={<div className="loader"></div>}/>
       </form>
 
       <button className="google-btn">
