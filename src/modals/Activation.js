@@ -2,7 +2,7 @@ import React from "react";
 import Image from "../images/activation.svg";
 import ButtonLarge from "../components/Buttons";
 import ReactModal from "react-modal";
-import {  closedAuthModal } from "../redux/slices/authSlice";
+import {  closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import close from "../images/close.svg";
 import * as auth from "../redux/constants/auth";
@@ -23,11 +23,10 @@ function Activation() {
   function verifyCode(data){
     console.log(data)
     console.log(data.box1 + data.box2 + data.box3 + data.box4)
+    dispatch(displayedAuthModal(auth.login));
+    dispatch(closedAuthModal(auth.activation));
   }
-  // function openLoginModal() {
-  //   dispatch(displayedAuthModal(auth.login));
-  //   dispatch(closedAuthModal(auth.activation));
-  // }
+  
   console.log(errors)
   return (
     <ReactModal
