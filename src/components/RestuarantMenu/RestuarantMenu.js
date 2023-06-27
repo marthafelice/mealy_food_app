@@ -17,7 +17,7 @@ const RestuarantMenu = () => {
   const [isCartModalOpen, setIsCartModalOpen] = useState(false);
 
   const toggleCartModal = () => {
-    setIsCartModalOpen(!isCartModalOpen);
+    setIsCartModalOpen(true);
   };
   return (
     <div className="menu-card" onClick={toggleCartModal}>
