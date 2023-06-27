@@ -4,19 +4,17 @@ import CartPageImage from "../images/cart-page-image.png";
 import CloseWindowIcon from "../images/close-window.svg";
 import { useSelector, useDispatch } from "react-redux";
 import ReactModal from "react-modal";
-import { incrementQuantity, decrementQuantity } from "../redux/slices/cartSlice";
+import { useDispatch, useSelector } from "react-redux";
+import { displayedCartModal } from "../redux/slices/cartSlice";
 
-const CartModal = ({ isCartModalOpen }) => {
-  const count = useSelector((state) => {
-    // Access the quantity value from the Redux store based on your data structure
-    // Return the quantity for the specific item you want to display
-    return state.cart.quantity;
-  });
+const CartModal = () => {
+  const [count, setCount] = useState(0);
+  const {isCartModalOpen}=useSelector((state)=>state.cart);
+  const dispatch=useDispatch();
 
-  const dispatch = useDispatch();
-
+ 
   function closeCartModal() {
-    // Dispatch an action to close the cart modal
+  dispatch(displayedCartModal('closeCartModal'))
   }
 
   const handleDecrease = () => {
@@ -40,8 +38,13 @@ const CartModal = ({ isCartModalOpen }) => {
         <div className="cart-window cart-modal-content-container">
           <img
             src={CloseWindowIcon}
+<<<<<<< HEAD
             alt="close-window-icon"
             className="close-icon_cart"
+=======
+            alt='close-window-icon'
+            className='close-icon_cart'
+>>>>>>> 3572a39658e759cc2fedd8bcde36ceed8a1170fd
             onClick={closeCartModal}
           />
           <img src={CartPageImage} alt="breakfast" className="cart-modal-img" />

@@ -2,33 +2,45 @@ import React from "react";
 import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
-import Filter from "../images/filterIcon.svg";
-import Profile from "../images/profile.svg";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleProfile } from "../redux/slices/profileSlice";
-import { toggledSignUp } from "../redux/slices/authSlice";
-import unAuthProfileIcon from "../images/unAuthProfileIcon.svg";
+import order from "../images/filterIcon.svg";
+
+import { useDispatch, useSelector} from "react-redux";
+import { Profile } from "../redux/slices/profileSlice";
+import { toggled } from "../redux/slices/authSlice";
+import ProfileImg from "../images/unAuthProfileIcon.svg";
+import AuthProfileImg from "../images/authprofileIcon.svg"
+
+import LoginToolTip from "./LoginToolTip";
+import { Order } from "../redux/slices/orderSlice";
 import { NavLink } from "react-router-dom";
 
 function HomepageNav() {
-  const {authUser}=useSelector((state)=>state.auth)
+
   let dispatch = useDispatch();
-  function toggle() {
-    dispatch(toggleProfile());
+const{authUser}=useSelector((state)=>state.auth)
+  
+  function displayProfile() {
+  dispatch(Profile('showProfile'));
+
   }
-  function toggleSignup() {
-    dispatch(toggledSignUp());
-    console.log("signup-triggered");
+ 
+  function toggleLoginTip(){
+    dispatch(toggled('loginTip'))
   }
+  function openOrder(){
+    dispatch(Order('openOrder'))
+}
+
   return (
     <nav className="homepage-nav" id="home-nav">
-      <NavLink to="/">
+       <NavLink>
         <img
           src={LogoDark}
           alt="mealy dark logo"
           className="logo-dark nav-logo"
+      
         />
-      </NavLink>
+        </NavLink>
 
       <div className="address-input">
         <div className="address-container">
@@ -52,27 +64,32 @@ function HomepageNav() {
         {authUser ? (
           <>
             <img
-              src={Filter}
-              alt="cart icon"
+              src={order}
+              alt="order icon"
               className="nav-section_filter-icon"
+              onClick={openOrder}
             />
 
             <img
-              src={Profile}
+              src={AuthProfileImg}
               alt="profile icon"
-              className="nav-section_profile-icon"
-              onClick={toggle}
+              className="auth-profile-icon nav-section_profile-icon"
+              onClick={displayProfile}
             />
           </>
         ) : (
+          <div className="unAuthIcon-container">
           <img
-            src={unAuthProfileIcon}
+            src={ProfileImg}
             alt="unathourized user profile icon"
-            className="unAuthprofile-icon"
-            onClick={toggleSignup}
+            className="unauth-profile-icon nav-section_profile-icon"
+            onClick={toggleLoginTip}
           />
+          <LoginToolTip/>
+          </div>
         )}
       </div>
+    
     </nav>
   );
 }

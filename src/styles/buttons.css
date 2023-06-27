@@ -3,12 +3,16 @@ button {
   border-color: transparent;
   padding: 0.7rem 0;
   align-self: center;
+  text-align: center;
 }
 
 button.button-large {
   width: 60%;
   margin-top: 3rem ;
   color: white;
+  display: flex;
+  justify-content: center;
+  
 }
 button.button-pill {
   font-size: 2rem;
@@ -21,6 +25,28 @@ button.button-pill {
    margin-top: 4rem;
 }
 
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.loader {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  border: 3px solid white;
+  border-top: 3px solid #6750a4 ;
+  /* border-bottom: 5px solid blue; */
+  animation: spinner 0.5s linear infinite;
+  text-align: center;
+
+}
+.loading-text{
+  text-align: center;
+}
 @media(max-width:320px){
   button.button-large{
     width: 100%;

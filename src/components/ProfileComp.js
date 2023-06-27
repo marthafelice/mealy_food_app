@@ -5,12 +5,12 @@ import Card from "../images/card.svg";
 import Logout from "../images/logout.svg";
 import { AiOutlineRight } from "react-icons/ai";
 import {useDispatch } from "react-redux";
-import { displayedProfileEdit } from "../redux/slices/profileSlice";
+import { displayedProfileEdit, Loggedout, Profile } from "../redux/slices/profileSlice";
 import * as profileConst from "../redux/constants/profile" 
 
 
-function Profile() {
- 
+function ProfileComp() {
+//  const { displayProfile } = useSelector((state) => state.profile);
  const dispatch=useDispatch();
  function showNameEdit(){
   dispatch(displayedProfileEdit(profileConst.nameEdit))
@@ -18,8 +18,21 @@ function Profile() {
  function showPasswordEdit(){
   dispatch(displayedProfileEdit(profileConst.passwordEdit))
  }
+ function closeProfile() {
+  dispatch(Profile('closeProfile'));
+
+}
+
+
+function openLogout(){
+  dispatch(Loggedout('openLogout'))
+  console.log("openlg")
+}
   return ReactDOM.createPortal(
-    <section className="profile">
+
+    <section className="profile-section" >
+      <div className="overlay_dark" onClick={closeProfile}></div>
+      <div className="profile">
       <h2>Hello, Mariam!</h2>
       <hr className="d"></hr>
       <div className="profile-content">
@@ -67,18 +80,19 @@ function Profile() {
         </div>
         <hr></hr>
 
-        <div className="profile-title-container profile-title_text">
+        <div className="profile-title-container profile-title_text" onClick={openLogout}>
           <div className="profile-logout">
-            <img src={Logout} alt="logout icon" className="logout-icon" />{" "}
-            <p>Logout</p>
+            <img src={Logout} alt="logout icon" className="logout-icon" />
+            <p >Logout</p>
           </div>
 
           <AiOutlineRight />
         </div>
+      </div>
       </div>
     </section>,
     document.getElementById("portal")
   );
 }
 
-export default Profile;
+export default ProfileComp;

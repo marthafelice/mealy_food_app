@@ -2,24 +2,38 @@ import { createSlice } from "@reduxjs/toolkit";
 import * as auth from "../constants/auth";
 
 const initialState = {
-  authUser: false,
+
   displaySignUpModal: false,
   displayActivationModal: false,
   displayLoginModal: false,
   displayDeliveryMap: false,
   displayForgotPwd: false,
   displayCreateNewPwd: false,
+  setAddress:false,
+  toggleLoginTip:false,
+  authUser:false
 };
 
 export const authSlice = createSlice({
   name: "authentication pages",
   initialState,
   reducers: {
-    toggledSignUp: (state) => {
+    toggled: (state,action) => {
+      if(action.payload==="signup"){
       state.displaySignUpModal = !state.displaySignUpModal;
+      }
+      if(action.payload==="loginTip"){
+        state.toggleLoginTip=!state.toggleLoginTip
+      }
     },
-    authedHomepage: (state) => {
-      state.authUser = true;
+    authedHomepage: (state,action) => {
+      if(action.payload==='auth'){
+        state.authUser = true;
+      }
+      if(action.payload==='unAuth'){
+        state.authUser = false;
+      }
+   
     },
     displayedAuthModal: (state, action) => {
       if (action.payload === auth.activation) {
@@ -55,9 +69,19 @@ export const authSlice = createSlice({
         state.displayCreateNewPwd = false;
       }
     },
+    go:(state,action)=>{
+      if(action.payload==='goHome'){
+        state.setAddress=true
+      }
+      if(action.payload==='goLand'){
+        state.setAddress=false
+      }
+      
+      
+    },
   },
 });
 
-export const { toggledSignUp, displayedAuthModal, closedAuthModal ,authedHomepage} =
+export const { toggled, displayedAuthModal,go, closedAuthModal ,authedHomepage} =
   authSlice.actions;
 export default authSlice.reducer;

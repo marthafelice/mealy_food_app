@@ -9,25 +9,79 @@ import Monogram1 from "../images/monogram1.png";
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
+import star from "../images/star.svg"
 import Footer from "./Footer";
 import { NavLink } from "react-router-dom";
 import RestaurantCard from "./RestaurantCard";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { toggled,authedHomepage } from "../redux/slices/authSlice";
+
+
+
+
+import "../styles/activation.css"
+import SignUp from "./SignUp";
+import Activation from "./Activation";
+import DeliveryAddress from "./DeliveryAddress";
+import ForgotPassword from "./ForgotPassword";
+import NewPassword from "./NewPassword";
+import Login from "./Login";
 
 const LandingPage = () => {
+  const [activeLink, setActiveLink] = useState('');
+ 
+  const dispatch=useDispatch()
+  function displaySignup(){
+   dispatch(toggled('signup'))
+   console.log('signup clicked')
+
+  }
+  function goUnAuthHomepage(){
+    dispatch(authedHomepage('unAuth'))
+  }
+ 
+  useEffect(() => {
+   
+      const handleHashChange = () => {
+      const hash = window.location.hash;
+      setActiveLink(hash);
+    };
+
+    handleHashChange(); // Set initial active link on component mount
+
+    window.addEventListener('hashchange', handleHashChange);
+
+    return () => {
+      window.removeEventListener('hashchange', handleHashChange);
+    };
+  }, []);
+
   return (
     <section className="landing-page">
-      <nav className="landing-page-nav" id="land-nav">
+     <SignUp />
+      <Activation />
+      <Login />
+      <DeliveryAddress />
+      <ForgotPassword />
+      <NewPassword />
+      <nav className="landing-page-nav" >
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
         <div className="landing-nav-links">
-          <NavLink to="home">Home</NavLink>
-          <a href="#">About Us </a>
-          <a href="#">Contact Us</a>
-          <img src={cart} className="cart" alt="Cart" />
+        <a href="/" className={activeLink === '' ? 'active' : ''}>
+        Home
+      </a>
+      <a href="#about" className={activeLink === '#about' ? 'active' : ''}>
+        About Us
+      </a>
+      <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}>
+        Contact Us
+      </a>
+     <NavLink to="/home/deliveryOrder"><img src={cart} className="cart" alt="Cart" onClick={goUnAuthHomepage} /></NavLink> 
         </div>
       </nav>
-      <section className="hero-section landing-page-padding">
+      <section className="hero-section " >
         <div className="hero-text-container">
           <h1 className="hero-heading">
             Delightful Eats Delivered with
@@ -38,7 +92,7 @@ const LandingPage = () => {
             Enjoy a hassle free dining experience as we bring the best
             restaurants and dishes right to your doorstep.
           </p>
-          <button className="get-started-btn">Get Started</button>
+          <button className="get-started-btn" onClick={displaySignup}>Get Started</button>
         </div>
 
         <div className="hero-img-container">
@@ -50,7 +104,7 @@ const LandingPage = () => {
         </div>
       </section>
 
-      <div className="about-section landing-page-padding">
+      <div className="about-section landing-page-padding" id="about">
         <div className="about-img-container">
           <img src={AboutFood} alt="" className="about-food-img" />
         </div>
@@ -77,21 +131,24 @@ const LandingPage = () => {
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            StarImg={<div>{star}{star}{star}{star}</div>} 
           />{" "}
           <RestaurantCard
             name="Gory's Cafe"
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            StarImg={star}
           />{" "}
           <RestaurantCard
             name="Breakfast Hub"
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
+            StarImg={star}
           />
         </div>
-      </div>
+      </div>lo
 
       <div className="choose-section">
         <h2 className="choose-section-title">

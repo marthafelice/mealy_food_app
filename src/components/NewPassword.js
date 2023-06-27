@@ -12,14 +12,15 @@ function NewPassword() {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors ,isSubmitting},
   } = useForm();
 
-  console.log(errors);
+  // console.log(errors);
   const { displayCreateNewPwd } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   function closeCreateNewPwd() {
     dispatch(closedAuthModal(auth.CreateNewPwd));
+    // console.log('nnew')
   }
   return (
     <ReactModal
@@ -63,7 +64,7 @@ function NewPassword() {
           <p className="error-message">{errors.confirmPassword?.message}</p>
         </div>
 
-        <ButtonLarge text="SAVE" onclick={closeCreateNewPwd} />
+        <ButtonLarge text="SAVE" onclick={closeCreateNewPwd} isSubmit={isSubmitting} loading={<div className="loader"></div>} />
       </form>
     </ReactModal>
   );
