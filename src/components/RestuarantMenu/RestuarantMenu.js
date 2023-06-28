@@ -6,18 +6,22 @@ import Star from "../../images/star.png";
 import Search from "../../images/search.png";
 import Menus from "./Menu";
 import Cart from "./Cart";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 // import { addToCart } from "../../redux/slices/cartSlice";
 import LiveChat from "../LiveChat";
 import CartModal from "../CartModal";
-import { displayedChatModal } from "../../redux/slices/cartSlice";
+import {
+  displayedCartModal,
+  decrementQuantity,
+  incrementQuantity,
+  addToCart,
+  setSelectedMenuItem,
+} from "../../redux/slices/newCartSlice";
 
-
-const RestuarantMenu = () => { 
-   
+const RestuarantMenu = () => {
+  const { selectedMenuItem } = useSelector((state) => state.cart);
   return (
-    <div className="menu-card">
-  
+    <div className='menu-card'>
       <div className='breadCrumb '>
         <img src={Pancake} alt='pancake' />
       </div>
@@ -42,71 +46,90 @@ const RestuarantMenu = () => {
             <Tab />
           </div>
         </div>
-        <Cart />
+        <Cart selectedMenuItem={selectedMenuItem} />
       </div>
-      <LiveChat/>
-      <CartModal  />
+      <LiveChat />
+      {/* <CartModal /> */}
     </div>
   );
 };
 const Tab = () => {
-  const dispatch=useDispatch();
-  function openCartModal  ()  {
-      dispatch (displayedChatModal("openChatModal"))
-    };
+  const dispatch = useDispatch();
+  const cartItems = useSelector((state) => state.cart.items);
+  const { isCartModalOpen, quantity, selectedMenuItem } = useSelector(
+    (state) => state.cart
+  );
   const [activeTab, setActiveTab] = useState(0);
   const handleTabClick = (index) => {
     setActiveTab(index);
   };
-  const categories = ["All", ...new Set(Menus.map((menu) => menu.category))]; 
+  const categories = ["All", ...new Set(Menus.map((menu) => menu.category))];
   const filteredMenus =
     activeTab === 0
       ? Menus
       : Menus.filter((menu) => menu.category === categories[activeTab]);
 
+  const handleAddToCart = (menuItem) => {
+    dispatch(addToCart(menuItem));
+    dispatch(displayedCartModal("closeCartModal"));
+  };
+  const [selectedMenu, setSelectedMenu] = useState(null);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
-  // const handleAddToCart = (menuItem) => {
-  //   dispatch(addToCart(menuItem));
-  // };
+  const openCartModal = (menu) => {
+    dispatch(setSelectedMenuItem(menu));
+    dispatch(displayedCartModal("openCartModal"));
+    console.log("Clicked");
+    console.log(menu);
+    // dispatch(displayedChatModal("openChatModal"));
+  };
+  const handleDecrease = () => {
+    dispatch(decrementQuantity());
+  };
 
-  //const [isCart, setIsCart] = useState(false);
-
-
-  // const toggleCart = () => {
-  //   setIsCart(!isCart);
-  // };
-
-
-
+  const handleIncrease = () => {
+    dispatch(incrementQuantity());
+  };
   return (
     <>
-    <div>
-      <div className='category'>
-        {categories.map((category, index) => (
-          <div
-            key={index}
-            className={` ${index === activeTab ? "activeTab" : ""}`}
-            onClick={() => handleTabClick(index)}
-          >
-            {category}
-          </div>
-        ))}
-      </div>
       <div>
-        {filteredMenus.map((menu, index) => (
-          <div className='menu-box' key={index} onClick={openCartModal}>
-            <div>
-              <h2>{menu.type}</h2>
-              <p>{menu.description}</p>
-              <p className='price'>$ {menu.price}</p>
-             
+        <div className='category'>
+          {categories.map((category, index) => (
+            <div
+              key={index}
+              className={` ${index === activeTab ? "activeTab" : ""}`}
+              onClick={() => handleTabClick(index)}
+            >
+              {category}
             </div>
-            <img src={menu.img} alt='' />
-          </div>
-        ))}
+          ))}
+        </div>
+        <div>
+          {filteredMenus.map((menu, index) => (
+            <div
+              className='menu-box'
+              key={index}
+              onClick={() => openCartModal(menu)}
+            >
+              <div>
+                <h2>{menu.type}</h2>
+                <p>{menu.description}</p>
+                <p className='price'>$ {menu.price}</p>
+                {isModalOpen && selectedMenu && (
+                  <CartModal
+                    handleAddToCart={handleAddToCart}
+                    closeModal={() => setSelectedMenu(null)}
+                    handleDecrease={handleDecrease}
+                    handleIncrease={handleIncrease}
+                    quantity={quantity}
+                  />
+                )}
+              </div>
+              <img src={menu.img} alt='' />
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  
     </>
   );
 };

@@ -1,71 +1,75 @@
-import React from "react";
+import React, { useEffect} from "react";
 import "../styles/cartmodal.css";
 import CartPageImage from "../images/cart-page-image.png";
 import CloseWindowIcon from "../images/close-window.svg";
 import { useSelector, useDispatch } from "react-redux";
 import ReactModal from "react-modal";
-import { useDispatch, useSelector } from "react-redux";
-import { displayedCartModal } from "../redux/slices/cartSlice";
+import {
+  addToCart,
+  decrementQuantity,
+  displayedCartModal,
+  incrementQuantity,zeroQuantity
+} from "../redux/slices/newCartSlice";
 
 const CartModal = () => {
-  const [count, setCount] = useState(0);
-  const {isCartModalOpen}=useSelector((state)=>state.cart);
-  const dispatch=useDispatch();
+  const { isCartModalOpen, selectedMenuItem , quantity} = useSelector(
+    (state) => state.newCart
+  );
+  const dispatch = useDispatch();
 
- 
   function closeCartModal() {
-  dispatch(displayedCartModal('closeCartModal'))
+    dispatch(displayedCartModal("closeCartModal"));
+    dispatch(zeroQuantity()); 
   }
 
   const handleDecrease = () => {
-    // Dispatch an action to decrease the quantity
     dispatch(decrementQuantity());
   };
 
   const handleIncrease = () => {
-    // Dispatch an action to increase the quantity
     dispatch(incrementQuantity());
   };
+  const handleAddToCart = () => {
+    dispatch(addToCart());
+    dispatch(displayedCartModal('closeCartModal'));
+  };
+  useEffect(() => {
+    console.log(selectedMenuItem);
+  }, []);
 
   return (
     <>
       <ReactModal
         isOpen={isCartModalOpen}
         onRequestClose={closeCartModal}
-        overlayClassName="overlay-cart"
-        className="cart-modal"
+        overlayClassName='overlay-cart'
+        className='cart-modal'
       >
-        <div className="cart-window cart-modal-content-container">
+        <div className='cart-window cart-modal-content-container'>
           <img
             src={CloseWindowIcon}
-<<<<<<< HEAD
-            alt="close-window-icon"
-            className="close-icon_cart"
-=======
             alt='close-window-icon'
             className='close-icon_cart'
->>>>>>> 3572a39658e759cc2fedd8bcde36ceed8a1170fd
             onClick={closeCartModal}
           />
-          <img src={CartPageImage} alt="breakfast" className="cart-modal-img" />
-          <div className="cart-modal-content">
-            <h3>Full Breakfast</h3>
-            <p className="food-description">
-              120g of Yam, potatoes, and plantain, served with sauteed
-              vegetables, egg sauce & sausage.
+          <img src={CartPageImage} alt='breakfast' className='cart-modal-img' />
+          <div className='cart-modal-content'>
+            <h3> {selectedMenuItem?.type}</h3>
+            <p className='food-description'>
+              {selectedMenuItem?.description}
             </p>
-            <p className="price">$ 3,000</p>
-            <div className="order-quantity-add-to-cart-container">
-              <div className="order-quantity-container">
-                <button className="btn decrease-order" onClick={handleDecrease}>
+            <p className='price'>$  {selectedMenuItem?.price}</p>
+            <div className='order-quantity-add-to-cart-container'>
+              <div className='order-quantity-container'>
+                <button className='btn decrease-order' onClick={handleDecrease}>
                   -
                 </button>
-                <p className="quantity">{count}</p>
-                <button className="btn increase-order" onClick={handleIncrease}>
+                <p className='quantity'>{quantity}</p>
+                <button className='btn increase-order' onClick={handleIncrease}>
                   +
                 </button>
               </div>
-              <button className="add-to-cart">add to cart</button>
+              <button className='add-to-cart' onClick={handleAddToCart}>add to cart</button>
             </div>
           </div>
         </div>

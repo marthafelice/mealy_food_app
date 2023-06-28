@@ -11,6 +11,7 @@ function DeliveryOrder() {
 
   const restaurants=useLoaderData()
   console.log(restaurants.length)
+  console.log(restaurants)
 
   return (
     <div className="order-category_delivery order-category">
