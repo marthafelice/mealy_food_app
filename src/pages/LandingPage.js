@@ -26,13 +26,13 @@ import Activation from "../modals/Activation";
 import DeliveryAddress from "../components/DeliveryAddress";
 import ForgotPassword from "../modals/ForgotPassword";
 import NewPassword from "../modals/NewPassword";
-import Login from "../modals/Login";
+import LoginModal from "../modals/LoginModal";
 
 const LandingPage = () => {
   const [activeLink, setActiveLink] = useState('');
- 
+
   const dispatch=useDispatch()
-  function displaySignup(){
+function displaySignup(){
    dispatch(toggled('signup'))
    console.log('signup clicked')
 
@@ -59,9 +59,9 @@ const LandingPage = () => {
 
   return (
     <section className="landing-page">
-     <SignUp />
+      <SignUp />
       <Activation />
-      <Login />
+      <LoginModal />
       <DeliveryAddress />
       <ForgotPassword />
       <NewPassword />
@@ -131,7 +131,7 @@ const LandingPage = () => {
             rating="4.6"
             Monogram={Monogram1}
             Food={Restuarant5}
-            StarImg={<div>{star}{star}{star}{star}</div>} 
+            StarImg={star}
           />{" "}
           <RestaurantCard
             name="Gory's Cafe"
@@ -148,7 +148,7 @@ const LandingPage = () => {
             StarImg={star}
           />
         </div>
-      </div>lo
+      </div>
 
       <div className="choose-section">
         <h2 className="choose-section-title">

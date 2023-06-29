@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {  closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
 import axios from "axios"
-const LoginForm = () => {
+const LoginModal = () => {
   const {
     register,
     handleSubmit,
@@ -23,6 +23,9 @@ const LoginForm = () => {
   } = useForm();
   const [loginError,setLoginError]=useState("");
   const [exist,setExist]=useState("");
+  const dispatch = useDispatch();
+  const { showLoginModal } = useSelector((state) => state.auth);
+
   const onLoginSubmit = async (data) => {
     console.log(data); 
     try{
@@ -42,12 +45,7 @@ const LoginForm = () => {
     }
   }
 ,[loginError])
-  const dispatch = useDispatch();
-  const { displayLoginModal } = useSelector((state) => state.auth);
-  function closeLogin() {
-    dispatch(closedAuthModal(auth.login));
 
-  }
   // function displayMap(){
   //   dispatch(closedAuthModal(auth.login))
   //   dispatch(displayedAuthModal(auth.map))
@@ -62,9 +60,13 @@ const LoginForm = () => {
     dispatch(displayedAuthModal(auth.forgotPwd))
     dispatch(closedAuthModal(auth.login))
   }
+  function closeLogin() {
+    dispatch(closedAuthModal(auth.login));
+
+  }
   return (
     <ReactModal
-      isOpen={displayLoginModal}
+      isOpen={showLoginModal}
       contentLabel="loginmodal"
       overlayClassName="overlay"
       className="login-container auth-width auth-padding"
@@ -120,4 +122,4 @@ const LoginForm = () => {
   );
 };
 
-export default LoginForm;
+export default LoginModal;

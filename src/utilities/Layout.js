@@ -9,7 +9,6 @@ import EditPasswordModal from "../modals/EditPassword";
 
 import SignUp from "../modals/SignUp";
 import Activation from "../modals/Activation";
-import Login from "../modals/Login";
 import DeliveryAddress from "../components/DeliveryAddress";
 import ForgotPassword from "../modals/ForgotPassword";
 import NewPassword from "../modals/NewPassword";
@@ -19,9 +18,11 @@ import ProfileComp from "../modals/ProfileComp";
 import { useSelector } from "react-redux";
 import YourOrders from "../modals/YourOrders";
 import CartModal from "../modals/CartModal";
+import LoginModal from "../modals/LoginModal";
 
 function Layout() {
   const { displayProfile } = useSelector((state) => state.profile);
+ 
 
   return (
     <div className="app-layout">
@@ -29,7 +30,7 @@ function Layout() {
       {/* PORTAL AND MODALS */}
       <SignUp />
       <Activation />
-      <Login />
+       <LoginModal />
       <DeliveryAddress />
       <ForgotPassword />
       <NewPassword />

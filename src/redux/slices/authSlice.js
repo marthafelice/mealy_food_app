@@ -5,7 +5,7 @@ const initialState = {
 
   displaySignUpModal: false,
   displayActivationModal: false,
-  displayLoginModal: false,
+  showLoginModal: false,
   displayDeliveryMap: false,
   displayForgotPwd: false,
   displayCreateNewPwd: false,
@@ -40,7 +40,7 @@ export const authSlice = createSlice({
         state.displayActivationModal = true;
       }
       if (action.payload === auth.login) {
-        state.displayLoginModal = true;
+        state.showLoginModal = true;
       }
       if (action.payload === auth.map) {
         state.displayDeliveryMap = true;
@@ -57,7 +57,7 @@ export const authSlice = createSlice({
         state.displayActivationModal = false;
       }
       if (action.payload === auth.login) {
-        state.displayLoginModal = false;
+        state.showLoginModal = false;
       }
       if (action.payload === auth.map) {
         state.displayDeliveryMap = false;

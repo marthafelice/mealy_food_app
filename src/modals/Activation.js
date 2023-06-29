@@ -2,7 +2,7 @@ import React, { useRef } from "react";
 import Image from "../images/activation.svg";
 import ButtonLarge from "../components/Buttons";
 import ReactModal from "react-modal";
-import {  closedAuthModal, displayedAuthModal } from "../redux/slices/authSlice";
+import {  closedAuthModal } from "../redux/slices/authSlice";
 import { useDispatch, useSelector } from "react-redux";
 import close from "../images/close.svg";
 import * as auth from "../redux/constants/auth";
@@ -14,8 +14,8 @@ function Activation() {
   const { displayActivationModal } = useSelector((state) => state.auth);
   const dispatch = useDispatch();
   const InputRefs=useRef([]);
-  dispatch(displayedAuthModal(auth.login));
-  dispatch(closedAuthModal(auth.activation));
+  // dispatch(displayedAuthModal(auth.login));
+  // dispatch(closedAuthModal(auth.activation));
   const {
     register,
     handleSubmit,
