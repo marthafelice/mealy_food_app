@@ -1,4 +1,4 @@
-import React, { useEffect} from "react";
+import React, { useEffect } from "react";
 import "../styles/cartmodal.css";
 import CartPageImage from "../images/cart-page-image.png";
 import CloseWindowIcon from "../images/close-window.svg";
@@ -8,18 +8,19 @@ import {
   addToCart,
   decrementQuantity,
   displayedCartModal,
-  incrementQuantity,zeroQuantity
+  incrementQuantity,
+  zeroQuantity,
 } from "../redux/slices/newCartSlice";
 
 const CartModal = () => {
-  const { isCartModalOpen, selectedMenuItem , quantity} = useSelector(
+  const { isCartModalOpen, selectedMenuItem, quantity } = useSelector(
     (state) => state.newCart
   );
   const dispatch = useDispatch();
 
   function closeCartModal() {
     dispatch(displayedCartModal("closeCartModal"));
-    dispatch(zeroQuantity()); 
+    dispatch(zeroQuantity());
   }
 
   const handleDecrease = () => {
@@ -29,13 +30,16 @@ const CartModal = () => {
   const handleIncrease = () => {
     dispatch(incrementQuantity());
   };
-  const handleAddToCart = () => {
-    dispatch(addToCart());
-    dispatch(displayedCartModal('closeCartModal'));
+
+  const handleAddToCart = (item) => {
+    dispatch(addToCart({item}));
+    dispatch(displayedCartModal("closeCartModal"));
+    dispatch(zeroQuantity());
   };
+
   useEffect(() => {
     console.log(selectedMenuItem);
-  }, []);
+  }, [selectedMenuItem]);
 
   return (
     <>
@@ -55,10 +59,8 @@ const CartModal = () => {
           <img src={CartPageImage} alt='breakfast' className='cart-modal-img' />
           <div className='cart-modal-content'>
             <h3> {selectedMenuItem?.type}</h3>
-            <p className='food-description'>
-              {selectedMenuItem?.description}
-            </p>
-            <p className='price'>$  {selectedMenuItem?.price}</p>
+            <p className='food-description'>{selectedMenuItem?.description}</p>
+            <p className='price'>$ {selectedMenuItem?.price}</p>
             <div className='order-quantity-add-to-cart-container'>
               <div className='order-quantity-container'>
                 <button className='btn decrease-order' onClick={handleDecrease}>
@@ -69,7 +71,12 @@ const CartModal = () => {
                   +
                 </button>
               </div>
-              <button className='add-to-cart' onClick={handleAddToCart}>add to cart</button>
+              <button
+                className='add-to-cart'
+                onClick={() => handleAddToCart(selectedMenuItem)}
+              >
+                add to cart
+              </button>
             </div>
           </div>
         </div>

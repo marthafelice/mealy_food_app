@@ -118,6 +118,10 @@ width: 32%;
 }
 .cart-desc {
   text-align: left;
+  text-transform: capitalize;
+}
+.cart-center{
+  width: 3rem;
 }
 .cart-row {
   display: flex;
