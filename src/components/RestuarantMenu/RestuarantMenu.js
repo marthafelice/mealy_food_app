@@ -55,8 +55,7 @@ const RestuarantMenu = () => {
 };
 const Tab = () => {
   const dispatch = useDispatch();
-  const cartItems = useSelector((state) => state.cart.items);
-  const { isCartModalOpen, quantity, selectedMenuItem } = useSelector(
+  const {quantity} = useSelector(
     (state) => state.cart
   );
   const [activeTab, setActiveTab] = useState(0);
@@ -74,7 +73,7 @@ const Tab = () => {
     dispatch(displayedCartModal("closeCartModal"));
   };
   const [selectedMenu, setSelectedMenu] = useState(null);
-  const [isModalOpen, setIsModalOpen] = useState(false);
+  const [isModalOpen] = useState(false);
 
   const openCartModal = (menu) => {
     dispatch(setSelectedMenuItem(menu));
