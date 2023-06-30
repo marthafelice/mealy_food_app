@@ -11,12 +11,14 @@ function DeliveryOrder() {
 
   const restaurants=useLoaderData()
   console.log(restaurants.length)
+  console.log(restaurants)
 
   return (
     <div className="order-category_delivery order-category">
       <h3>All Restaurants</h3>
      
       <div className="order-category_restaurant-cards">
+        
          {restaurants.map((restaurant)=>(
            <RestaurantCard key={restaurant._id} StarImg={star} name={restaurant.name} price="400" Food={Restuarant1} Monogram={Monogram} rating={4.6}/>
          ))}

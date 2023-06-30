@@ -2,29 +2,33 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import add from "../images/add.png";
 import minus from "../images/minus.png";
+import { NavLink, } from "react-router-dom";
 import {
   removeFromCart,
   incrementQuantity,
   decrementQuantity,
-} from "../redux/slices/cartSlice";
-import { NavLink, } from "react-router-dom";
+  updateCartItemQuantity,
+} from  "../redux/slices/newCartSlice";
+
 
 const Cart = () => {
   // const {id}=useParams()
   const [isScrolled, setIsScrolled] = useState(false);
   const dispatch = useDispatch();
-  const {cartItems} = useSelector((state) => state.cart);
+  const {items} = useSelector((state) => state.newCart);
 
   const handleRemoveFromCart = (itemId) => {
     dispatch(removeFromCart(itemId));
   };
 
-  const handleIncrementQuantity = (itemId) => {
-    dispatch(incrementQuantity(itemId));
+  const handleDecrease = (itemId, quantity) => {
+    dispatch(decrementQuantity());
+    dispatch(updateCartItemQuantity({ itemId, quantity: quantity - 1 }));
   };
 
-  const handleDecrementQuantity = (itemId) => {
-    dispatch(decrementQuantity(itemId));
+  const handleIncrease = (itemId, quantity) => {
+    dispatch(incrementQuantity());
+    dispatch(updateCartItemQuantity({ itemId, quantity: quantity + 1 }));
   };
  
 
@@ -38,7 +42,6 @@ const Cart = () => {
 
     window.addEventListener('scroll', handleScroll);
 
-    // Cleanup the event listener on component unmount
     return () => {
       window.removeEventListener('scroll', handleScroll);
     };
@@ -48,15 +51,16 @@ const Cart = () => {
         <h1>Your Cart</h1>
 
 
-        {cartItems.length === 0 ? (
+        {items.length === 0 ? (
           <p>Nothing added yet</p>
         ) : (
           <div>
-            {cartItems.map((cartItem) => (
+            {items.map((cartItem, index) => (
             
-                <div className='cart-row' key={cartItem.id}>
+                <div className='cart-row' key={index}>
             
                   <img src={cartItem.img} alt='cartimage' />
+                  <div className="cart-center">
                   <div className='cart-desc'>
                     <h5>{cartItem.type}</h5>
                     <p>${cartItem.price}</p>
@@ -65,15 +69,15 @@ const Cart = () => {
                     <img
                       src={minus}
                       alt=''
-                      onClick={() => handleDecrementQuantity(cartItem.id)}
+                      onClick={() => handleDecrease(cartItem.id, cartItem.quantity)}
                     />
                     <span> {cartItem.quantity} </span>
                     <img
                       src={add}
                       alt=''
-                      onClick={() => handleIncrementQuantity(cartItem.id)}
+                      onClick={() => handleIncrease(cartItem.id, cartItem.quantity)}
                     />
-                  </div>
+                  </div></div>
                   <button onClick={() => handleRemoveFromCart(cartItem.id)} className="remove">
                     Remove
                   </button>

@@ -23,8 +23,8 @@ export async function loader(){
   try{
     const response= await  axios.get("https://mealyapp-bdev.onrender.com/api/v1/restaurant/keyword/?restaurants=Pickup")
     const  data=response.data.data.restaurants
+    console.log(data)
     return data
-  
   }
   catch(err){
     console.log(err)
