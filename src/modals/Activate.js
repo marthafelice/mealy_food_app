@@ -35,8 +35,7 @@ function Activate() {
   }
 
   async function verifyCode(data){
-   const code = `${data.box1}${data.box2}${data.box3}${data.box4}`;
-  
+   const code = `${data.box1}${data.box2}${data.box3}${data.box4}`;  
     try {
       const response = await axios.post('https://mealyapp-bdev.onrender.com/api/v1/user/otpActivation', {
         otp: code
