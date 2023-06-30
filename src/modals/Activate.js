@@ -35,12 +35,12 @@ function Activate() {
   }
 
   async function verifyCode(data){
-    console.log("activation clciked")
- 
-  const code=Number(`${data.box1 + data.box2 + data.box3 +data.box4}`)
-  console.log(code)
-    try{
-      const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/otpActivation",7447)
+   const code = `${data.box1}${data.box2}${data.box3}${data.box4}`;
+  
+    try {
+      const response = await axios.post('https://mealyapp-bdev.onrender.com/api/v1/user/otpActivation', {
+        otp: code
+      })
       console.log(response)
       dispatch(closedAuthModal(auth.activation));
       dispatch(displayedAuthModal(auth.login));
@@ -62,7 +62,6 @@ function Activate() {
   return (
     <ReactModal
       isOpen={displayActivationModal}
-      // isOpen={true}
       contentLabel="activation modal"
       overlayClassName="overlay"
       className="activation-container auth-padding auth-width"
