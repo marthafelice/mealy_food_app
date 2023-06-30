@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {  closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
 import axios from "axios"
-const LoginModal = () => {
+const Login = () => {
   const {
     register,
     handleSubmit,
@@ -61,6 +61,7 @@ const LoginModal = () => {
     dispatch(closedAuthModal(auth.login))
   }
   function closeLogin() {
+  
     dispatch(closedAuthModal(auth.login));
 
   }
@@ -122,4 +123,4 @@ const LoginModal = () => {
   );
 };
 
-export default LoginModal;
+export default Login;

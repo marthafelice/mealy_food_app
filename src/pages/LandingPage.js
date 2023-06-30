@@ -22,11 +22,12 @@ import { toggled,authedHomepage } from "../redux/slices/authSlice";
 
 import "../styles/activation.css"
 import SignUp from "../modals/SignUp";
-import Activation from "../modals/Activation";
+
 import DeliveryAddress from "../components/DeliveryAddress";
 import ForgotPassword from "../modals/ForgotPassword";
 import NewPassword from "../modals/NewPassword";
-import LoginModal from "../modals/LoginModal";
+import Login from "../modals/Login";
+import Activate from "../modals/Activate";
 
 const LandingPage = () => {
   const [activeLink, setActiveLink] = useState('');
@@ -60,8 +61,8 @@ function displaySignup(){
   return (
     <section className="landing-page">
       <SignUp />
-      <Activation />
-      <LoginModal />
+      <Activate />
+      <Login />
       <DeliveryAddress />
       <ForgotPassword />
       <NewPassword />

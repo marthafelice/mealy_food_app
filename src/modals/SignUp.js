@@ -61,9 +61,7 @@ const onSignupSubmit = async (data) => {
   function closeSignUp() {
     dispatch(toggled('signup'));
   }
-  // function openActivationModal() {
-  //   ;
-  // }
+  
   function openLoginModal() {
     dispatch(toggled('signup'));
     dispatch(displayedAuthModal("login"));
