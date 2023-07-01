@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
@@ -6,7 +6,7 @@ import order from "../images/filterIcon.svg";
 
 import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
-import { Authenticated, toggled } from "../redux/slices/authSlice";
+import { toggled } from "../redux/slices/authSlice";
 import ProfileImg from "../images/unAuthProfileIcon.svg";
 import AuthProfileImg from "../images/authprofileIcon.svg"
 
