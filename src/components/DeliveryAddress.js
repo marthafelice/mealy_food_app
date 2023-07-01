@@ -1,34 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import map from "../images/Map.jpg";
 import "../styles/mapAddress.css"
 import RoundLocation from "../images/locationround.svg";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
 import { closedAuthModal, toggled } from "../redux/slices/authSlice";
-import { useLocation, useNavigate } from "react-router-dom";
+
 
 const DeliveryAddress = () => {
   const { displayDeliveryMap } = useSelector((state) => state.auth);
-  const [setAddress,setSetAddress]=useState(false)
+
   const dispatch=useDispatch();
-  const navigate=useNavigate()
-  const location=useLocation()
+
 
   function closeMapModal(){
     dispatch(closedAuthModal('map'))
-    setSetAddress(true)
     dispatch(toggled('loginTip'))
-    console.log(setAddress)
-    console.log(location.pathname)
+
   }
-  useEffect(()=>{
-  
-    if(setAddress&&location.pathname==='/'){
-     navigate("/home/deliveryOrder")
  
-    }
-    
-  },[setAddress,navigate,location.pathname])
   return (
     <ReactModal
       isOpen={displayDeliveryMap}

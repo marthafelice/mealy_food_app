@@ -16,8 +16,8 @@ function Logout() {
   function resetPage(){
     dispatch(Loggedout('closeLogout'))
     dispatch(Profile('closeProfile'))
-    localStorage.setItem('isAuth',String(false))
-    dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
+    dispatch(Authenticated(false))
+    localStorage.clear();
 
   }
 

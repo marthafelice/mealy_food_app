@@ -16,6 +16,7 @@ import {  Authenticated, closedAuthModal, displayedAuthModal, toggled} from "../
 import * as auth from "../redux/constants/auth"
 import axios from "axios"
 import { Email, Password,Name } from "../redux/slices/userData";
+import { useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
   const {
     register,
@@ -26,8 +27,10 @@ const Login = () => {
   const [exist,setExist]=useState("");
   const dispatch = useDispatch();
   const { showLoginModal } = useSelector((state) => state.auth);
-
+  const location= useLocation()
+  const navigate=useNavigate()
   const onLoginSubmit = async (data) => {
+    
     console.log(data); 
     try{
       const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/login",data)
@@ -38,6 +41,10 @@ const Login = () => {
       dispatch(Password(data.password)) 
       localStorage.setItem("isAuth", String(true));
       dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
+      if (location.pathname==="/"){
+        navigate("/home/deliveryOrder")
+ 
+      }
       
 
       console.log(response)
