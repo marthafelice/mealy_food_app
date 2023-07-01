@@ -21,7 +21,7 @@
   background-color: white;
 }
 .landing-page-nav_logo {
-  width: 9rem;
+  width: 8rem;
   height: auto;
 }
 .landing-page-padding {
@@ -37,7 +37,7 @@ nav a.active{
 }
 .landing-nav-links img {
   height: 5rem;
-  width: 5rem;
+  width: 4rem;
 }
 .landing-nav-links * {
   margin-left: 1.5rem;

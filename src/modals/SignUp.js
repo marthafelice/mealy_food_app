@@ -1,15 +1,16 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {useForm}  from "react-hook-form";
 
 import Biker from "../images/bike.png";
-import Name from "../images/name.png";
-import Password from "../images/password.png";
-import Email from "../images/email.png";
+import NameImg from "../images/name.png";
+import PasswordImg from "../images/password.png";
+import EmailImg from "../images/email.png";
 import "../styles/SignUp.css";
 import ButtonLarge from "../components/Buttons";
 import ReactModal from "react-modal";
 import close from "../images/close.svg";
 import { useDispatch, useSelector } from "react-redux";
+
 import axios from "axios";
 
 
@@ -18,15 +19,12 @@ import {
   displayedAuthModal,
   toggled,
 } from "../redux/slices/authSlice";
-import { idGenerated, tokenGenerated } from "../redux/slices/userData";
+import { idGenerated, tokenGenerated} from "../redux/slices/userData";
 
 
 function SignUp() {
   const [userExist,setUserExist]=useState('')
   const dispatch = useDispatch();
-  // const {userAccessToken}=useSelector((state)=>state.userData)
-
- 
   const {
     register,
     handleSubmit,
@@ -39,11 +37,11 @@ const onSignupSubmit = async (data) => {
     userAddress: '123 Street, City, Country'
   }
   console.log(formData)
- 
+
  try{
 
   const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/Signup",formData)
-  console.log(response.data.data.user._id)
+ 
   dispatch(idGenerated(response.data.data.user._id))
   dispatch(displayedAuthModal("activation"));
   dispatch(toggled('signup'))
@@ -53,9 +51,7 @@ const onSignupSubmit = async (data) => {
   catch(err){
     console.error(err.response.data.message)
     setUserExist(err.response.data.message)
-   
-
-  }
+   }
   };
  
   function closeSignUp() {
@@ -66,11 +62,12 @@ const onSignupSubmit = async (data) => {
     dispatch(toggled('signup'));
     dispatch(displayedAuthModal("login"));
   }
- 
+  const {user}=useSelector((state)=>state.userData)
+  useEffect(()=>{
+  console.log(user)
+    },[user])
 
-  const { displaySignUpModal } = useSelector((state) => state.auth);
-
-
+const { displaySignUpModal } = useSelector((state) => state.auth);
   return (
     <ReactModal
       isOpen={displaySignUpModal}
@@ -100,7 +97,7 @@ const onSignupSubmit = async (data) => {
       >
         <div className='signup-input-container auth-input-container'>
          
-            <img src={Name} alt='name icon' className="icon-left"/>
+            <img src={NameImg} alt='name icon' className="icon-left"/>
             <input
               id='userName'
               {...register("userName", {
@@ -122,7 +119,7 @@ const onSignupSubmit = async (data) => {
 
         <div className="signup-input-container auth-input-container">
         
-          <img src={Email} alt="email icon" className="icon-email icon-left" />
+          <img src={EmailImg} alt="email icon" className="icon-email icon-left" />
           <input
             {...register("email", { required: "Email Address is required",pattern:{
               value:/^[^\s@]+@[^\s@]+\.[^\s@]+$/,
@@ -137,7 +134,7 @@ const onSignupSubmit = async (data) => {
         {errors.email && <p className="error-message">{errors.email?.message}</p>}
         <div className="signup-input-container auth-input-container">
       
-          <img src={Password} alt="password icon" className=" icon-left" />
+          <img src={PasswordImg} alt="password icon" className=" icon-left" />
           <input
             {...register("password", {
               required: 'password is required',

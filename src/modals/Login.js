@@ -12,9 +12,10 @@ import close from "../images/close.svg";
 import ButtonLarge from "../components/Buttons";
 import ReactModal from "react-modal";
 import { useDispatch, useSelector } from "react-redux";
-import {  closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
+import {  Authenticated, closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
 import axios from "axios"
+import { Email, Password,Name } from "../redux/slices/userData";
 const Login = () => {
   const {
     register,
@@ -32,6 +33,13 @@ const Login = () => {
       const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/login",data)
       dispatch(displayedAuthModal(auth.map))
       dispatch(closedAuthModal(auth.login))
+      dispatch(Name(response.data.data.user.userName)) 
+      dispatch(Email(response.data.data.user.email)) 
+      dispatch(Password(data.password)) 
+      localStorage.setItem("isAuth", String(true));
+      dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
+      
+
       console.log(response)
     }
     catch(err){
@@ -45,6 +53,7 @@ const Login = () => {
     }
   }
 ,[loginError])
+
 
   // function displayMap(){
   //   dispatch(closedAuthModal(auth.login))
@@ -67,7 +76,9 @@ const Login = () => {
   }
   return (
     <ReactModal
-      isOpen={showLoginModal}
+     isOpen={showLoginModal}
+     //isOpen={true}
+      
       contentLabel="loginmodal"
       overlayClassName="overlay"
       className="login-container auth-width auth-padding"

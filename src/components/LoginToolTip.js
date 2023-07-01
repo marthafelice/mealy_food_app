@@ -17,7 +17,7 @@ function LoginToolTip() {
     
     <div className='login-tip' onClick={toggleSignup}>
 
-        <img src={unAuthProfile}  alt='unathurized profile icon'  className="unAuthprofile-icon_2 "/>
+        <img src={unAuthProfile}  alt='unathurized profile icon'  className="unauth-profile-icon_2 "/>
         <p>Log in</p>
         <img src={enter} className='enter' alt='enter icon'/>
     </div>

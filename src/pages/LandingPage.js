@@ -15,7 +15,7 @@ import { NavLink } from "react-router-dom";
 import RestaurantCard from "../components/RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { toggled,authedHomepage } from "../redux/slices/authSlice";
+import { toggled } from "../redux/slices/authSlice";
 
 
 
@@ -33,14 +33,12 @@ const LandingPage = () => {
   const [activeLink, setActiveLink] = useState('');
 
   const dispatch=useDispatch()
-function displaySignup(){
+    function displaySignup(){
    dispatch(toggled('signup'))
    console.log('signup clicked')
 
   }
-  function goUnAuthHomepage(){
-    dispatch(authedHomepage('unAuth'))
-  }
+ 
  
   useEffect(() => {
    
@@ -79,7 +77,7 @@ function displaySignup(){
       <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}>
         Contact Us
       </a>
-     <NavLink to="/home/deliveryOrder"><img src={cart} className="cart" alt="Cart" onClick={goUnAuthHomepage} /></NavLink> 
+     <NavLink to="/home/deliveryOrder"><img src={cart} className="cart" alt="Cart"/></NavLink> 
         </div>
       </nav>
       <section className="hero-section " >

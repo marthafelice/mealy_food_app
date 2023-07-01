@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import LogoDark from "../images/logo.svg";
 import Location from "../images/location.svg";
 import ArrowDown from "../images/arrowdown.svg";
@@ -6,7 +6,7 @@ import order from "../images/filterIcon.svg";
 
 import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
-import { toggled } from "../redux/slices/authSlice";
+import { Authenticated, toggled } from "../redux/slices/authSlice";
 import ProfileImg from "../images/unAuthProfileIcon.svg";
 import AuthProfileImg from "../images/authprofileIcon.svg"
 
@@ -17,8 +17,11 @@ import { NavLink } from "react-router-dom";
 function HomepageNav() {
 
   let dispatch = useDispatch();
-const{authUser}=useSelector((state)=>state.auth)
-  
+  const {authUser}=useSelector((state)=>state.auth)
+  console.log(authUser)
+ 
+ 
+
   function displayProfile() {
   dispatch(Profile('showProfile'));
 
@@ -30,6 +33,8 @@ const{authUser}=useSelector((state)=>state.auth)
   function openOrder(){
     dispatch(Order('openOrder'))
 }
+   
+
 
   return (
     <nav className="homepage-nav" id="home-nav">
@@ -61,12 +66,12 @@ const{authUser}=useSelector((state)=>state.auth)
         <input className="homepage-nav_search" placeholder="search"  autoComplete="current-password"></input>
       </div>
       <div className="cart-profile ">
-        {authUser ? (
+        {authUser? (
           <>
             <img
               src={order}
               alt="order icon"
-              className="nav-section_filter-icon"
+              className="nav-section_order-icon"
               onClick={openOrder}
             />
 

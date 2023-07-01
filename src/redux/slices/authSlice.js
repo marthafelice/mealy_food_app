@@ -26,15 +26,7 @@ export const authSlice = createSlice({
         state.toggleLoginTip=!state.toggleLoginTip
       }
     },
-    authedHomepage: (state,action) => {
-      if(action.payload==='auth'){
-        state.authUser = true;
-      }
-      if(action.payload==='unAuth'){
-        state.authUser = false;
-      }
-   
-    },
+  
     displayedAuthModal: (state, action) => {
       if (action.payload === auth.activation) {
         state.displayActivationModal = true;
@@ -69,6 +61,11 @@ export const authSlice = createSlice({
         state.displayCreateNewPwd = false;
       }
     },
+    Authenticated:(state,action)=>{
+  
+        state.authUser = action.payload;
+      
+        },
     go:(state,action)=>{
       if(action.payload==='goHome'){
         state.setAddress=true
@@ -82,6 +79,6 @@ export const authSlice = createSlice({
   },
 });
 
-export const { toggled, displayedAuthModal,go, closedAuthModal ,authedHomepage} =
+export const { toggled, displayedAuthModal,go, closedAuthModal ,Authenticated} =
   authSlice.actions;
 export default authSlice.reducer;

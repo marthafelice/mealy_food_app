@@ -47,14 +47,19 @@
   width: 1rem;
 }
 .nav-section_profile-icon,
-.nav-section_filter-icon {
-  width: 2.5rem;
-  margin-left: 2rem;
+.nav-section_order-icon {
+ margin-left: 2rem;
 }
-
+.nav-section_order-icon{
+  width: 3rem;
+}
 .auth-profile-icon {
 height: 3rem;
-} 
+}
+.unauth-profile-icon,.unauth-profile-icon_2{
+width: 4rem;
+height: 4rem;
+}
 
 .address {
   margin: 0 1rem;
@@ -92,11 +97,11 @@ font-size: 2rem;
     background-position: 35%;
   }
   .logo-dark,
-  .nav-section_filter-icon,
+  .nav-section_order-icon,
   .nav-section_profile-icon {
     margin-top: 1rem;
   }
-  .unAuthprofile-icon{
+  .unauth-profile-icon{
     margin-top: .5rem;
   }
 }

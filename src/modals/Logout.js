@@ -5,8 +5,10 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Loggedout, Profile} from '../redux/slices/profileSlice'
 import logoutImg from "../images/logoutImg.svg"
 import { NavLink } from 'react-router-dom'
+import { Authenticated } from '../redux/slices/authSlice'
 function Logout() {
   const {displayLogout}=useSelector((state)=>state.profile)
+  
   const dispatch=useDispatch()
   function closeLogout(){
     dispatch(Loggedout('closeLogout'))
@@ -14,8 +16,11 @@ function Logout() {
   function resetPage(){
     dispatch(Loggedout('closeLogout'))
     dispatch(Profile('closeProfile'))
+    localStorage.setItem('isAuth',String(false))
+    dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
 
   }
+
   return (
     <ReactModal 
     overlayClassName="overlay overlay_dark" 
@@ -29,8 +34,8 @@ Are you sure?</span></p>
 <button className='logout-btn logout-btn_no' onClick={closeLogout}>Naah, Just Kidding</button>
 
 <button className='logout-btn logout-btn_yes'onClick={resetPage}>
-<NavLink to="/" className='logout-link'>
-<p >Yes, Log Me Out</p>
+<NavLink to="/" className='logout-link' >
+<p>Yes, Log Me Out</p>
 </NavLink>
 </button>
     </ReactModal>

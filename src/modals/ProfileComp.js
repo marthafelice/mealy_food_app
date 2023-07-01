@@ -4,13 +4,13 @@ import ReactDOM from "react-dom";
 import Card from "../images/card.svg";
 import Logout from "../images/logout.svg";
 import { AiOutlineRight } from "react-icons/ai";
-import {useDispatch } from "react-redux";
+import {useDispatch, useSelector } from "react-redux";
 import { displayedProfileEdit, Loggedout, Profile } from "../redux/slices/profileSlice";
 import * as profileConst from "../redux/constants/profile" 
 
 
 function ProfileComp() {
-//  const { displayProfile } = useSelector((state) => state.profile);
+
  const dispatch=useDispatch();
  function showNameEdit(){
   dispatch(displayedProfileEdit(profileConst.nameEdit))
@@ -23,25 +23,25 @@ function ProfileComp() {
 
 }
 
-
 function openLogout(){
   dispatch(Loggedout('openLogout'))
   console.log("openlg")
 }
+const {user}=useSelector((state)=>state.userData)
   return ReactDOM.createPortal(
 
     <section className="profile-section" >
       <div className="overlay_dark" onClick={closeProfile}></div>
       <div className="profile">
-      <h2>Hello, Mariam!</h2>
+      <h2>Hello, {user.name}!</h2>
       <hr className="d"></hr>
       <div className="profile-content">
         <div className="profile-title-container">
           <div className="profile-title-container_section">
             <p className="profile-title">Name</p>
-            <p className="profile-title_text profile-title_name">Mariam</p>
+            <p className="profile-title_text profile-title_name">{user.name}</p>
             <p className="profile-title">Email</p>
-            <p className="profile-title_text">Marmtee@gmail.com</p>
+            <p className="profile-title_text">{user.email}</p>
           </div>
           <p className="edit-text" onClick={showNameEdit}>
             Edit
@@ -51,7 +51,7 @@ function openLogout(){
         <div className="profile-title-container">
           <div className="profile-title-container_section">
             <p className="profile-title">Password</p>
-            <p className="profile-title_password">........</p>
+            <input type="password" className="profile-title_password" value={user.password} readOnly/>
           </div>
           <p className="edit-text" onClick={showPasswordEdit}>
             Edit
