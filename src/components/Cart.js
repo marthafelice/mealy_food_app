@@ -60,7 +60,7 @@ const Cart = () => {
                 <div className='cart-row' key={index}>
             
                   <img src={cartItem.img} alt='cartimage' />
-                  <div className="cart-center">
+                 
                   <div className='cart-desc'>
                     <h5>{cartItem.type}</h5>
                     <p>${cartItem.price}</p>
@@ -77,7 +77,7 @@ const Cart = () => {
                       alt=''
                       onClick={() => handleIncrease(cartItem.id, cartItem.quantity)}
                     />
-                  </div></div>
+                  </div>
                   <button onClick={() => handleRemoveFromCart(cartItem.id)} className="remove">
                     Remove
                   </button>

@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {  Authenticated, closedAuthModal, displayedAuthModal, toggled} from "../redux/slices/authSlice";
 import * as auth from "../redux/constants/auth"
 import axios from "axios"
-import { Email, Password,Name } from "../redux/slices/userData";
+import { Email,Name } from "../redux/slices/userData";
 import { useLocation, useNavigate } from "react-router-dom";
 const Login = () => {
   const {
@@ -34,13 +34,17 @@ const Login = () => {
     console.log(data); 
     try{
       const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/login",data)
-      dispatch(displayedAuthModal(auth.map))
-      dispatch(closedAuthModal(auth.login))
-      dispatch(Name(response.data.data.user.userName)) 
-      dispatch(Email(response.data.data.user.email)) 
-      dispatch(Password(data.password)) 
+   
+      localStorage.setItem('userName',response.data.data.user.userName)
+      localStorage.setItem('email',response.data.data.user.email)
       localStorage.setItem("isAuth", String(true));
       dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
+      dispatch(Name(localStorage.getItem("userName"))) 
+      dispatch(Email(localStorage.getItem("email"))) 
+      dispatch(displayedAuthModal(auth.map))
+      dispatch(closedAuthModal(auth.login))
+    
+     
       if (location.pathname==="/"){
         navigate("/home/deliveryOrder")
  
