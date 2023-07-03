@@ -1,7 +1,7 @@
 .order-container{
     width: 90%;
     max-width: 35rem;
-    height: 60vh;
+    height: 70vh;
     background-color: white;
     position: absolute;
     right: 4rem;
@@ -31,4 +31,11 @@
 .completed{
     background-color: green;
    
+}
+@media(max-width:425px){
+    .order-container{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
 }

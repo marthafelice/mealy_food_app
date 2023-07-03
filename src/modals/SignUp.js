@@ -19,7 +19,7 @@ import {
   displayedAuthModal,
   toggled,
 } from "../redux/slices/authSlice";
-import { idGenerated, tokenGenerated} from "../redux/slices/userData";
+import {  tokenGenerated} from "../redux/slices/userData";
 
 
 function SignUp() {
@@ -42,7 +42,7 @@ const onSignupSubmit = async (data) => {
 
   const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/Signup",formData)
  
-  dispatch(idGenerated(response.data.data.user._id))
+  
   dispatch(displayedAuthModal("activation"));
   dispatch(toggled('signup'))
   dispatch(tokenGenerated(response.data.data.access_token))

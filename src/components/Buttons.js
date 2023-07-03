@@ -11,10 +11,10 @@ function ButtonLarge({ text,classname,onclick,isSubmit,loading }) {
   );
 }
 
-export function ButtonPill({ text, className }) {
+export function ButtonPill({ text, className ,onclick,isSubmit,loading,}) {
   return (
     <button type="submit" className={`${className}  button-pill`}>
-      {text}
+       {isSubmit?<div className="loading-text">{loading}</div>:text}
     </button>
   );
 }

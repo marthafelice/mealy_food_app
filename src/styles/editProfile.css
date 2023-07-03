@@ -57,4 +57,11 @@
 .closeEditProfile-icon {
   align-self: flex-end;
 }
+.edit-success{
+  color: green;
+  text-align: center;
+  font-size: 1.5rem;
+  margin-top: 1rem;
+  font-style: italic;
+}
 /* ........................EDIT PROFILE PASSWORD STYLES........................................ */

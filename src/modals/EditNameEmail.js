@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import ReactModal from "react-modal";
 import "../styles/editProfile.css";
 import { useSelector, useDispatch } from "react-redux";
@@ -11,12 +11,27 @@ import editMailIcon from "../images/email.svg";
 import clearEdit from "../images/clearEdit.svg";
 import close from "../images/close.svg";
 import * as profileConst from "../redux/constants/profile";
+import axios from "axios";
 
 function EditNameEmailModal() {
-  const { register, handleSubmit } = useForm();
+  const [success,setSuccess]=useState("");
+  const { register, handleSubmit ,formState:{isSubmitting,isSubmitSuccessful}} = useForm();
   const { displayNameEdit } = useSelector((state) => state.profile);
-  function editSubmit(data) {
-    console.log(data);
+  const {userId}=useSelector((state)=>state.userData)
+  console.log(userId)
+  async function editSubmit(userData) {
+    console.log(userData);
+    try{
+        const response=await axios.patch(`https://mealyapp-bdev.onrender.com/api/v1/user/${userId}`,userData)
+        console.log(response.data.message)
+        setSuccess(response.data.message)
+        localStorage.setItem('userName',userData.userName)
+        localStorage.setItem('email',userData.email)
+      
+      }
+    catch(err){
+    console.warn(err.response.data)
+    }
   }
   const dispatch = useDispatch();
   function closeProfileEdit() {
@@ -48,7 +63,7 @@ function EditNameEmailModal() {
             className="editProfile_input"
             placeholder="mariam"
             id="edit-name"
-            {...register("edit-name", { required: "this is required" })}
+            {...register("userName", { required: "this is required" })}
           />
           <img src={editNameIcon} alt="edit name icon" className="icon-start" />
           <img src={clearEdit} alt="clear edit icon" className="icon-end" />
@@ -62,19 +77,19 @@ function EditNameEmailModal() {
             className="editProfile_input"
             id="edit-email"
             placeholder="marmtee@gmail.com"
-            {...register("edit-email", {
+            {...register("email", {
               required: "this is required",
               pattern: {
-                value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                message: "invalid Email Address",
+                value:/^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+                message:'Enter email in the correct format'
               },
             })}
           />
           <img src={editMailIcon} alt="edit name icon" className="icon-start" />
           <img src={clearEdit} alt="clear edit icon" className="icon-end" />
         </div>
-
-        <ButtonPill text="Submit" className="button-pill_editProfileName" />
+              <p className="edit-success">{isSubmitSuccessful?success:""}</p>
+        <ButtonPill text="Submit" className="button-pill_editProfileName" isSubmit={isSubmitting} loading={<div className="loader"></div>}/>
       </form>
     </ReactModal>
   );

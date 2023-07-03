@@ -21,12 +21,15 @@ import CartModal from "../modals/CartModal";
 import Login from "../modals/Login";
 import Activate from "../modals/Activate";
 import { Authenticated } from "../redux/slices/authSlice";
+import { useEffect } from "react";
 
 function Layout() {
   const { displayProfile } = useSelector((state) => state.profile);
   const dispatch=useDispatch()
-  dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
 
+  useEffect(() => {
+    dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))));
+  }, [dispatch]);
   return (
     <div className="app-layout">
 
