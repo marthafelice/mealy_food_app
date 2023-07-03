@@ -9,12 +9,24 @@ import { useForm } from "react-hook-form";
 import close from "../images/close.svg";
 import padlockIcon from "../images/padlock.svg";
 import * as profileConst from "../redux/constants/profile.js";
+import axios from "axios";
 
 function EditPasswordModal() {
   const { register, handleSubmit } = useForm();
   const { displayPasswordEdit } = useSelector((state) => state.profile);
-  function editSubmit(data) {
+  const {userId}=useSelector((state)=>state.userData)
+ 
+  async function editSubmit(data) {
     console.log(data);
+    try{
+      const response=await axios.patch(`https://mealyapp-bdev.onrender.com/api/v1/user/${userId}`,data)
+      console.log(response)
+    }
+    catch(err){
+      console.warn(err.response.data)
+    }
+    
+  
   }
   const dispatch = useDispatch();
   function closeProfileEdit() {
@@ -43,7 +55,7 @@ function EditPasswordModal() {
             className="editProfile_input"
             placeholder="Old password"
             id="old-password"
-            {...register("old-pwd", { required: "this is required" })}
+            {...register("old-password", { required: "this is required" })}
           />
           <img src={padlockIcon} alt="padlock  icon" className="icon-start" />
         </div>

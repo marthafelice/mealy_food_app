@@ -19,7 +19,8 @@ button.button-pill {
   border-radius: 2rem;
   width: 50%;
   font-weight: bold;
-  text-align: center;
+  display: flex;
+  justify-content: center;
 }
 .button-pill_editProfileName{
    color: white;

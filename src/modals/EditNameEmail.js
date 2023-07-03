@@ -17,7 +17,7 @@ function EditNameEmailModal() {
   const [success,setSuccess]=useState("");
   const { register, handleSubmit ,formState:{isSubmitting,isSubmitSuccessful}} = useForm();
   const { displayNameEdit } = useSelector((state) => state.profile);
-  const {userId}=useSelector((state)=>state.userData)
+  const userId=localStorage.getItem('userId')
   console.log(userId)
   async function editSubmit(userData) {
     console.log(userData);

@@ -36,13 +36,16 @@ const Login = () => {
       const response=await axios.post("https://mealyapp-bdev.onrender.com/api/v1/user/login",data)
       console.log(response.data.data.user._id)
       console.log(response)
-      dispatch(idGenerated(response.data.data.user._id))
+      
       localStorage.setItem('userName',response.data.data.user.userName)
       localStorage.setItem('email',response.data.data.user.email)
+      localStorage.setItem('userId',response.data.data.user._id)
       localStorage.setItem("isAuth", String(true));
       dispatch(Authenticated(JSON.parse(localStorage.getItem("isAuth"))))
       dispatch(Name(localStorage.getItem("userName"))) 
       dispatch(Email(localStorage.getItem("email"))) 
+      dispatch(idGenerated(localStorage.getItem('userId')))
+
       
       dispatch(closedAuthModal(auth.login))
     
