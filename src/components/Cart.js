@@ -59,7 +59,7 @@ const Cart = () => {
             
                 <div className='cart-row' key={index}>
             
-                  <img src={cartItem.img} alt='cartimage' />
+                  <img src={cartItem.img} alt='cartimage' className="cart-img"/>
                  
                   <div className='cart-desc'>
                     <h5>{cartItem.type}</h5>

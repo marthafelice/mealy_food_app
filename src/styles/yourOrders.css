@@ -16,22 +16,63 @@
     background-color: #EBEBEB;
     margin: 3rem 0 2rem 0;
     display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
 .your-orders_type{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex: 1;
+   flex: 1;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5rem;
+   font-weight: bold;
+    
 }
-.ongoing{
-    background-color: red;
 
-   
+
+.active-order{
+    background-color: black;
+    color: white;
 }
-.completed{
-    background-color: green;
-   
+/* ..................styles for ongoing and complete order */
+.orders-container{
+    margin-top: 1.5rem;
+    
 }
+.ongoing-order-container,.completed-order-container{
+width: 100%;
+font-size: 1.5rem;
+
+}
+.ongoing-orders{
+position: relative;
+}
+.ongoing-orders .track-order{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: #6750A4;
+    font-weight:bold;
+    }
+.ongoing-order{
+    line-height: 2;
+}
+.ongoing-order  .order-name{
+    font-weight: bold;
+    font-size: 2rem;
+}
+/* completed order styles */
+.completed-order{
+    display:flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+.completed-order  .order-name{
+    font-weight: bold;
+    font-size: 2rem;
+}
+
 @media(max-width:425px){
     .order-container{
         top: 50%;

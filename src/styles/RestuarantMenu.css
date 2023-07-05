@@ -94,7 +94,7 @@ h1 {
 }
 .cart-wrapper {
   background-color: white;
-  box-shadow: -1px 5px 10px 8px rgba(0, 0, 0, 0.04);
+  box-shadow: -1px 5px 10px 2px rgba(0, 0, 0, 0.247);
   margin: 2.5rem;
   padding: 2rem;
   border-radius: 1rem;
@@ -119,6 +119,7 @@ width: 32%;
 .cart-desc {
   text-align: left;
   text-transform: capitalize;
+  margin: 0 3%;
 }
 .cart-center{
   width: 3rem;
@@ -150,6 +151,7 @@ width: 32%;
 .cart-row img {
   width: 6rem;
 }
+
 .counter img {
   width: 17px;
   margin-left: 4px;
@@ -162,6 +164,7 @@ width: 32%;
   display: flex;
   align-items: center;
   justify-content: space-between;
+
 }
 .category {
   display: flex;
@@ -182,6 +185,7 @@ width: 32%;
 button {
   cursor: pointer;
 }
+
 @media (min-width: 640px) {
   .cart-wrapper {
     order: 1;
@@ -199,4 +203,12 @@ button {
     margin-left: 0;
     margin-right: 0;
   }
+}
+@media(max-width:725px){
+  .scrolled-cart.cart-wrapper{
+  
+    width: auto;
+    right: 0;
+    
+    }
 }
