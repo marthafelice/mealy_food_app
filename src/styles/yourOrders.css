@@ -55,14 +55,14 @@ position: relative;
     color: #6750A4;
     font-weight:bold;
     }
-.ongoing-order{
+.ongoing-order,.completed-order{
     line-height: 2;
 }
 .ongoing-order  .order-name{
     font-weight: bold;
     font-size: 2rem;
 }
-/* completed order styles */
+/* ....................................completed order styles.............................................. */
 .completed-order{
     display:flex ;
     justify-content: space-between;
@@ -71,6 +71,11 @@ position: relative;
 .completed-order  .order-name{
     font-weight: bold;
     font-size: 2rem;
+}
+.completed-order .re-order{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6750A4;
 }
 
 @media(max-width:425px){

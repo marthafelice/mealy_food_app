@@ -8,7 +8,7 @@ import OngoingOrder from './OngoingOrder'
 import CompletedOrder from './CompletedOrder'
 
 function YourOrders() {
-    const [active,setActive]=useState("")
+    const [active,setActive]=useState("ongoing")
     const {displayOrder}=useSelector((state)=>state.order)
     const dispatch=useDispatch()
     function closeOrder(){
