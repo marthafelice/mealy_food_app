@@ -1,6 +1,13 @@
 import React from 'react'
 import "../styles/yourOrders.css"
+import { useDispatch } from 'react-redux'
+import { Order } from '../redux/slices/orderSlice'
 function OngoingOrder() {
+  const dispatch=useDispatch()
+  function openOrderTrack(){
+    dispatch(Order("openTrackOrder"))
+    console.log('order')
+  }
   return (
     <div className='ongoing-order-container'>
       <div className='ongoing-orders'>
@@ -17,7 +24,7 @@ function OngoingOrder() {
           </p>
         </div>
        
-        <p className='track-order'>Track Order</p>
+        <p className='track-order'onClick={openOrderTrack}>Track Order</p>
 
       </div>
 
@@ -30,7 +37,7 @@ function OngoingOrder() {
         </div>
        
        
-        <p className='track-order'>Track Order</p>
+        <p className='track-order' onClick={openOrderTrack}>Track Order</p>
 
       </div>
     </div>

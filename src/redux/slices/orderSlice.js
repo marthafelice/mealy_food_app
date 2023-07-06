@@ -1,7 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState={
-    displayOrder:false
+    displayOrder:false,
+    displayTrackOrder:false
 }
 export const orderSlice=createSlice({
     name:"order",
@@ -13,6 +14,12 @@ export const orderSlice=createSlice({
         }
         if(action.payload==='closeOrder'){
             state.displayOrder=false
+        }
+        if(action.payload==='openTrackOrder'){
+            state.displayTrackOrder=true
+        }
+        if(action.payload==='closeTrackOrder'){
+            state.displayTrackOrder=false
         }
      }
     }
