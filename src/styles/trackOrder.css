@@ -1,3 +1,5 @@
+
+
 .track-order-heading{
     display:flex;
     justify-content: space-between;
@@ -28,6 +30,7 @@
     background-color: white;
     width: 50rem;
     max-width: 90%;
+    height: 75vh;
   }
 
 .your-rider-container,.your-rider-right-side,.rider-rating,.your-rider-left-side{

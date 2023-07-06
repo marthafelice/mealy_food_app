@@ -1,15 +1,29 @@
+
+.chat-with-rider-main-container {
+
+  padding: 20px;
+  height: auto;
+  width: 50rem;
+  max-width: 90%;
+  background-color: white;
+  height: 75vh;
+
+}
 .chat-with-rider-header-container {
   display: flex;
-  flex-direction: right;
-  justify-content: space-around;
-  gap: 50px;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.arrow-driver-container{
+  display: flex;
   align-items: center;
 }
-
 .rider-header-image-and-name {
   display: flex;
   flex-direction: right;
   align-items: center;
+  margin-left: 4rem;
 }
 
 .chat-with-rider-image img {
@@ -33,12 +47,13 @@
   margin-top: 5px;
   padding-left: 10px;
 }
-
-.chat-with-rider-main-container {
-  border: 1px solid black;
-  padding: 20px;
-  height: auto;
+.your-rider-name{
+  font-weight: bold;
+  margin-left: 1rem;
+  font-size: 1.5rem;
 }
+
+
 
 /* .chat-with-rider-call-div{
 

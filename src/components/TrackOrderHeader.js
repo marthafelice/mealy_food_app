@@ -3,11 +3,17 @@ import back from '../images/back-arrow.png'
 import chat from '../images/chat-icon.svg'
 import '../styles/trackOrder.css'
 import { Order } from '../redux/slices/orderSlice'
-import { useDispatch } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 export default function TrackOrderHeader() {
   const dispatch=useDispatch()
+  const{displayRiderChat}=useSelector((state)=>state.order)
+
     function closeTrackOrder(){
         dispatch(Order("closeTrackOrder"))
+    }
+    function openRiderChat(){
+      dispatch(Order('displayRiderChat'))
+      console.log(displayRiderChat)
     }
   return (
     <div>
@@ -17,7 +23,7 @@ export default function TrackOrderHeader() {
             
             <div><h2 className="forgot-password_title auth-title">Track your Order</h2></div>  
             
-            <img className='track-order-chat' src={chat} alt="chat icon" />
+            <img className='track-order-chat' src={chat} alt="chat icon" onClick={openRiderChat}/>
             
        </div>
 

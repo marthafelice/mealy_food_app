@@ -23,6 +23,7 @@ import Activate from "../modals/Activate";
 import { Authenticated } from "../redux/slices/authSlice";
 import { useEffect } from "react";
 import TrackOrder from "../modals/TrackOrder";
+import ChatWithRider from "../modals/ChatWithRider";
 
 function Layout() {
   const { displayProfile } = useSelector((state) => state.profile);
@@ -49,6 +50,7 @@ function Layout() {
      {/* track order */}
       <YourOrders/>
       <TrackOrder/>
+      <ChatWithRider/>
       <CartModal />
      
 
