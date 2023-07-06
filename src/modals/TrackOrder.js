@@ -1,25 +1,29 @@
 import React from 'react'
 import ReactModal from 'react-modal'
 import { useDispatch, useSelector } from 'react-redux'
-import "../styles/yourOrders.css"
-import { Order } from '../redux/slices/orderSlice'
 
+import { Order } from '../redux/slices/orderSlice'
+import React from 'react'
+import TrackOrderHeader from "./TrackOrderHeader";
+import YourRider from "./YourRider";
+import OrderProgress from '../components/OrderProgress.js';
+import '../styles/trackOrder.css'
 function TrackOrder() {
     const {displayTrackOrder}=useSelector((state)=>state.order)
-    const dispatch=useDispatch()
-    function closeTrackOrder(){
-        dispatch(Order('closeTrackOrder'))
-    }
+    
   return (
     <ReactModal isOpen={displayTrackOrder} 
     overlayClassName='overlay_dark'
     className='trackOrder'
     
     >
-        <div className='track-order-container'>
+    
+    <div  className='track-order-main-container'>
+      <TrackOrderHeader/>
+      <YourRider/>
+      <OrderProgress/>
+    </div>
 
-        TrackOrder
-        </div>
  
 
         

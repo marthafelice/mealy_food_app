@@ -77,16 +77,6 @@ position: relative;
     font-weight: bold;
     color: #6750A4;
 }
-/* ................track order styles....... */
-.track-order-container{
-    font-size: 3rem;
-}
-.trackOrder,.message-rider{
-    width: 90%;
-    max-width: 50rem;
-    height: 85vh;
-    background-color: white;
-}
 
 @media(max-width:425px){
     .order-container{
