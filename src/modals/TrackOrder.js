@@ -1,11 +1,9 @@
 import React from 'react'
 import ReactModal from 'react-modal'
-import { useDispatch, useSelector } from 'react-redux'
+import { useSelector } from 'react-redux'
 
-import { Order } from '../redux/slices/orderSlice'
-import React from 'react'
-import TrackOrderHeader from "./TrackOrderHeader";
-import YourRider from "./YourRider";
+import TrackOrderHeader from "../components/TrackOrderHeader";
+import YourRider from "../components/YourRider";
 import OrderProgress from '../components/OrderProgress.js';
 import '../styles/trackOrder.css'
 function TrackOrder() {
@@ -14,15 +12,14 @@ function TrackOrder() {
   return (
     <ReactModal isOpen={displayTrackOrder} 
     overlayClassName='overlay_dark'
-    className='trackOrder'
+    className='trackOrder track-order-main-container'
     
     >
     
-    <div  className='track-order-main-container'>
-      <TrackOrderHeader/>
+       <TrackOrderHeader/>
       <YourRider/>
       <OrderProgress/>
-    </div>
+  
 
  
 

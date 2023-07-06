@@ -1,6 +1,6 @@
 .track-order-heading{
     display:flex;
-    flex-direction:right;
+    justify-content: space-between;
     align-items: center;
     gap: 20px;
     padding-left: 20px;
@@ -13,8 +13,8 @@
 }
 
 .track-order-chat{
-    height:18px;
-    width:18px;
+    height:auto;
+    width:4rem;
 }
 
 .rating-star{
@@ -23,9 +23,12 @@
 }
 
 .track-order-main-container{
-    border: 1px solid black;
+ 
     padding-bottom: 50px;
-}
+    background-color: white;
+    width: 50rem;
+    max-width: 90%;
+  }
 
 .your-rider-container,.your-rider-right-side,.rider-rating,.your-rider-left-side{
     display: flex;
