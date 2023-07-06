@@ -4,8 +4,10 @@ import { useDispatch } from 'react-redux'
 import { Order } from '../redux/slices/orderSlice'
 function OngoingOrder() {
   const dispatch=useDispatch()
+  
   function openOrderTrack(){
     dispatch(Order("openTrackOrder"))
+    
     console.log('order')
   }
   return (
