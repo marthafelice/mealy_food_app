@@ -1,6 +1,6 @@
 import React from "react";
 import RestaurantCard from "../components/RestaurantCard";
-import Restuarant5 from "../images/rest5.png";
+import Restuarant5 from "../images/rest5.svg";
 import Monogram1 from "../images/monogram1.png";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";

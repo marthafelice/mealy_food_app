@@ -4,7 +4,7 @@ import cart from "../images/bluecart.svg";
 import "../styles/LandingPage.css";
 import Elipse from "../images/Group 203Elipse.png";
 import AboutFood from "../images/aboutfood.svg";
-import Restuarant5 from "../images/rest5.png";
+import Restuarant5 from "../images/rest5.svg";
 import Monogram1 from "../images/monogram1.png";
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";

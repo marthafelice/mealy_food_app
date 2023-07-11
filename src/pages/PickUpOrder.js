@@ -4,7 +4,7 @@ import RestaurantCard from "../components/RestaurantCard";
 import Monogram1 from "../images/monogram1.png";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
-import Restuarant5 from "../images/rest4.png"
+import Restuarant5 from "../images/rest4.svg"
 import star from "../images/star.svg"
 function PickUpOrder() {
   const restaurants=useLoaderData()
