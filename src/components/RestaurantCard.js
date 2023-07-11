@@ -9,7 +9,7 @@ function RestaurantCard({ name, rating, price, Monogram, Food,StarImg }) {
     <Link to="/menu" className="restaurant-card">
       <div className=" restaurant-card_top-section">
         <div className="restaurant-name-container">
-          <img src={Monogram} alt="a small restaurant" className="restaurant-logo"/>
+          <div className="restaurant-logo-container"><img src={Monogram} alt="a small restaurant" className="restaurant-logo"/></div>
           <p className="restaurant-name">{name}</p>
         </div>
         <BsThreeDotsVertical />

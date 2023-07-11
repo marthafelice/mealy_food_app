@@ -1,8 +1,8 @@
 import RestaurantCard from "../components/RestaurantCard";
 import "../styles/categories.css";
-import Monogram from "../images/monogram.svg";
 
-import Restuarant1 from "../images/rest1.png";
+
+import Restuarant1 from "../images/rest1.svg";
 import Restuarant2 from '../images/rest2.svg';
 import Restuarant3 from '../images/rest3.svg';
 import Restuarant4 from '../images/rest4.svg';
@@ -46,16 +46,18 @@ function DeliveryOrder() {
       <div className="order-category_restaurant-cards">
         
          {restaurants.map((restaurant,i)=>(
-           <RestaurantCard key={restaurant._id} StarImg={star} name={restaurant.name} price="$400" Food={restaurantImages[i]} Monogram={Monogram} rating={4.6}/>
+           <RestaurantCard key={restaurant._id} StarImg={star} name={restaurant.name} price="$400" Food={restaurantImages[i]} Monogram={restaurantImages[i]} rating={4.6}/>
          ))}
-         <RestaurantCard StarImg={star} name='African Kitchen' price='$100' Food={Restuarant2} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='Platters Couch' price='$400' Food={Restuarant3} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='Golden Tulip' price='$260' Food={Restuarant4} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='African Pub' price='$170' Food={Restuarant5} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='Iya Moria' price='$500' Food={Restuarant6} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='Nana Buka' price='$200' Food={Restuarant7} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='7 Loaves Africa' price='$100' Food={Restuarant8} Monogram={Monogram} rating={4.7}/>
-         <RestaurantCard StarImg={star} name='Martha Kitchen' price='$200' Food={Restuarant9} Monogram={Monogram} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='Breakfast Hub' price='$100' Food={Restuarant1} Monogram={Restuarant1} rating={4.7}/>
+        
+         <RestaurantCard StarImg={star} name='African Kitchen' price='$100' Food={Restuarant2} Monogram={Restuarant2} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='Platters Couch' price='$400' Food={Restuarant3} Monogram={Restuarant3} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='Golden Tulip' price='$260' Food={Restuarant4} Monogram={Restuarant4} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='African Pub' price='$170' Food={Restuarant5} Monogram={Restuarant5} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='Iya Moria' price='$500' Food={Restuarant6} Monogram={Restuarant6} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='Nana Buka' price='$200' Food={Restuarant7} Monogram={Restuarant7} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='7 Loaves Africa' price='$100' Food={Restuarant8} Monogram={Restuarant8} rating={4.7}/>
+         <RestaurantCard StarImg={star} name='Martha Kitchen' price='$200' Food={Restuarant9} Monogram={Restuarant9} rating={4.7}/>
                  
       </div>
 
