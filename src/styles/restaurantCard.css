@@ -50,8 +50,11 @@ object-fit: cover;
 .rating {
   display: flex;
   align-items: center;
+
 }
 .star {
   margin-right: 0.4rem;
-  margin-top: -0.5rem;
+}
+.star-rating-container{
+  margin-right: 1rem;
 }

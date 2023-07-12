@@ -4,7 +4,7 @@ import Restuarant5 from "../images/rest5.svg";
 import Monogram1 from "../images/monogram1.png";
 import { useLoaderData } from "react-router-dom";
 import axios from "axios";
-import star from "../images/star.svg"
+
 function BulkOrder() {
   const restaurants=useLoaderData()
   console.log(restaurants)
@@ -13,7 +13,7 @@ function BulkOrder() {
       <h3>Featured Restaurants</h3>
       <div className="order-category_restaurant-cards">
       {restaurants.map((restaurant)=>(
-           <RestaurantCard key={restaurant._id} StarImg={star} name={restaurant.name} price="400" Food={Restuarant5} Monogram={Monogram1} rating={4.6}/>
+           <RestaurantCard key={restaurant._id} starcount={1} name={restaurant.name} price="400" Food={Restuarant5} Monogram={Monogram1} rating={4.6}/>
          ))}
    
       

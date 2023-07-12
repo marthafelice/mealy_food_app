@@ -6,13 +6,14 @@ import order from "../images/filterIcon.svg";
 
 import { useDispatch, useSelector} from "react-redux";
 import { Profile } from "../redux/slices/profileSlice";
-import { toggled } from "../redux/slices/authSlice";
+import { displayedAuthModal, toggled } from "../redux/slices/authSlice";
 import ProfileImg from "../images/unAuthProfileIcon.svg";
 import AuthProfileImg from "../images/authprofileIcon.svg"
 
 import LoginToolTip from "./LoginToolTip";
 import { Order } from "../redux/slices/orderSlice";
 import { NavLink } from "react-router-dom";
+import * as auth from '../redux/constants/auth'
 
 function HomepageNav() {
 
@@ -32,6 +33,9 @@ function HomepageNav() {
   }
   function openOrder(){
     dispatch(Order('openOrder'))
+}
+function showMap(){
+  dispatch(displayedAuthModal(auth.map))
 }
    
 
@@ -55,7 +59,7 @@ function HomepageNav() {
             className="nav-section_location-icon"
           />
           <p className="address">
-            {authUser ? "32, Kingston street" : "Add Address"}
+            {authUser ? <p onClick={showMap}>32, Kingston street </p>: "Add Address"}
           </p>
           <img
             src={ArrowDown}

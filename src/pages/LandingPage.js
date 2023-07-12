@@ -4,25 +4,20 @@ import cart from "../images/bluecart.svg";
 import "../styles/LandingPage.css";
 import Elipse from "../images/Group 203Elipse.png";
 import AboutFood from "../images/aboutfood.svg";
-import Restuarant5 from "../images/rest5.svg";
-import Monogram1 from "../images/monogram1.png";
+import Restuarant1 from "../images/rest1.svg";
+import Restuarant2 from '../images/rest2.svg';
+import Restuarant3 from '../images/rest3.svg';
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
-import star from "../images/star.svg"
 import Footer from "../components/Footer";
 import { NavLink } from "react-router-dom";
 import RestaurantCard from "../components/RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggled } from "../redux/slices/authSlice";
-
-
-
-
 import "../styles/activation.css"
 import SignUp from "../modals/SignUp";
-
 import DeliveryAddress from "../components/DeliveryAddress";
 import ForgotPassword from "../modals/ForgotPassword";
 import NewPassword from "../modals/NewPassword";
@@ -125,27 +120,10 @@ const LandingPage = () => {
         </h2>
 
         <div className="popular-section_food">
-          <RestaurantCard
-            name="Breakfast Hub"
-            rating="4.6"
-            Monogram={Monogram1}
-            Food={Restuarant5}
-            StarImg={star}
-          />{" "}
-          <RestaurantCard
-            name="Gory's Cafe"
-            rating="4.6"
-            Monogram={Monogram1}
-            Food={Restuarant5}
-            StarImg={star}
-          />{" "}
-          <RestaurantCard
-            name="Breakfast Hub"
-            rating="4.6"
-            Monogram={Monogram1}
-            Food={Restuarant5}
-            StarImg={star}
-          />
+        <RestaurantCard starcount={4} name='Breakfast Hub'  Food={Restuarant1} Monogram={Restuarant1} rating={4.6}/> 
+        <RestaurantCard starcount={4} name='African Kitchen'  Food={Restuarant2} Monogram={Restuarant2} rating={4.5}/>
+        <RestaurantCard starcount={4} name='Platters Couch'  Food={Restuarant3} Monogram={Restuarant3} rating={4.8}/>
+       
         </div>
       </div>
 
