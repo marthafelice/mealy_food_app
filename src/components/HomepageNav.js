@@ -19,6 +19,8 @@ function HomepageNav() {
 
   let dispatch = useDispatch();
   const {authUser}=useSelector((state)=>state.auth)
+  const {userAddress}=useSelector((state)=>state.userData)
+
   console.log(authUser)
  
  
@@ -58,9 +60,9 @@ function showMap(){
             alt="location icon"
             className="nav-section_location-icon"
           />
-          <p className="address">
-            {authUser ? <p onClick={showMap}>32, Kingston street </p>: "Add Address"}
-          </p>
+          <div className="address" onClick={showMap}>
+            {userAddress ? <p>{userAddress} </p>: "Add Address"}
+          </div>
           <img
             src={ArrowDown}
             alt="arrow icon"
