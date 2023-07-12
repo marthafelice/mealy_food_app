@@ -10,6 +10,7 @@ const initialState={
         password:undefined,
     },
     userAddress:'',
+    location2:[null,null]
 }
 
 
@@ -35,11 +36,17 @@ export const  userDataSlice=createSlice({
         },
         Address:(state,action)=>{
             state.userAddress=action.payload
+        },
+        Lat:(state,action)=>{
+            state.location2[0]=action.payload
+        },
+        Long:(state,action)=>{
+            state.location2[1]=action.payload
         }
     }
 })
 
 export default userDataSlice.reducer
 
-export const { tokenGenerated, idGenerated, Name, Email, Password ,Address} = userDataSlice.actions;
+export const { tokenGenerated, idGenerated, Name, Email, Password ,Address,Lat,Long} = userDataSlice.actions;
 

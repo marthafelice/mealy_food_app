@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/mapAddress.css"
 import RoundLocation from "../images/locationround.svg";
@@ -8,13 +8,16 @@ import { closedAuthModal, toggled } from "../redux/slices/authSlice";
 import Map from "./Map";
 import axios from "axios";
 
-import { Address } from "../redux/slices/userData";
+import { Address} from "../redux/slices/userData";
 
 
 const DeliveryAddress = () => {
   const dispatch=useDispatch(); 
   const { displayDeliveryMap } = useSelector((state) => state.auth);
   const {userAddress}=useSelector((state)=>state.userData)
+  const [lat,setLat]=useState(null)
+  const [lng,setLng]=useState(null)
+
 
 
   function closeMapModal(){
@@ -26,10 +29,12 @@ const DeliveryAddress = () => {
     Geolocation.getCurrentPosition(async(location)=>{
       const long=location.coords.longitude
       const lat=location.coords.latitude
+      setLat(lat)
+      setLng(long)
       console.log(lat,long);
       try{
         const response=await axios.get(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${long}`)
-        console.log(response.data.address)
+     
         const data=response.data.address
         const {road,village,city}=data
      
@@ -41,6 +46,7 @@ const DeliveryAddress = () => {
       }
     })
   }
+ 
   const handleInputChange = (event) => {
     dispatch(Address(event.target.value));
   };
@@ -73,7 +79,7 @@ const DeliveryAddress = () => {
       </div>
 
       <div className="map-section">
-        <Map/>
+        <Map currentlat={lat} currentlng={lng}/>
       </div>
     </ReactModal>
   );
