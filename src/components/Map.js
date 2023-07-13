@@ -42,11 +42,12 @@ function LocationMarker({mylat,mylng}) {
         
             const response = await axios.get(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${lat}&lon=${lng}`);
             const data = response.data.address;
-            const { road, village, city } = data;
-            const address = `${road}, ${village}, ${city}`;
+            const { road, village, city ,county,country} = data;
+            const address = `${road?`${road},`:''}${village?`${village},`:''}${city?`${city},`:''}${county?`${county},`:''}${country?`${country}`:''}`;
             // Dispatch the address or perform any action with the address
             dispatch(Address(address))
-            console.log(address);
+            console.log(data);
+            //couty,state,country
           } catch (error) {
             console.error('Error getting address:', error);
           }
@@ -72,10 +73,8 @@ function LocationMarker({mylat,mylng}) {
     } else {
       console.error('Geolocation is not supported by your browser');
     }
-    if(mylat&&mylng){
-      map.flyTo([mylat, mylng], 13);
-    }
-  }, [map,mylat,mylng]);
+   
+  }, [map]);
 
   console.log(location)
     return location === null ? null : <Marker position={location} draggable={true} ></Marker>
