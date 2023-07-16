@@ -1,20 +1,18 @@
 .checkout-container{
     position: relative;
     margin-top: 8rem;
-   
 }
-
+.checkout-content{
+    padding: 0 10%;
+}
 .checkout-nav{
     height: 5rem;
-    background-color: red;
     position: fixed;
     width: 100%;
     top: 0;
 }
 
-.checkout-content{
-    padding: 0 8rem;
-}
+
 .back{
     margin-right: 1rem;
     width: 1.5rem;
@@ -22,16 +20,82 @@
 .back-container{
     display: flex;
     align-items: center;
+    margin-bottom: 2rem;
 }
 .back-container p{
     font-size: 2rem;
 font-weight: bold;
 }
+
 .orders-details-container{
-background-color: pink;
 display: flex;
 justify-content: space-between;
 }
+.orders-details{
+    width: 70%;
+
+}
+.order-restaurant-name{
+
+    margin-bottom: 3rem;
+}
 .order{
     font-size: 2rem;
+}
+.order-count{
+    font-size: 2rem;
+}
+.order-lists{
+display: flex;
+justify-content: space-between;
+position: relative;
+margin-top: 2rem;
+}
+.item-update{
+    display: flex;
+    align-items: center;
+    margin-right: 1.5rem;
+    
+}
+.add-icon,.subtract-icon{
+    width: 1.5rem;
+}
+.num{
+    margin: 0 1rem;
+    font-size: 1.5rem;
+}
+.order-detail{
+    display: flex;
+    width: 80%;
+    margin-top: -1rem;
+}
+.order-food-title{
+    width:100%;
+    text-align: left;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+.food-description-text{
+text-align: left;
+font-size: 1.2rem;
+color:  #000000;
+
+}
+.order-price,.order-food-title{
+    font-size: 1.5rem;
+}
+@media(max-width:425px){
+    .orders-details-container{
+        flex-direction: column-reverse;
+    }
+    .orders-details{
+        margin-top: 2rem;
+        width: 100%;
+    }
+    .checkout-content{
+        padding: 0 2%;
+    }
+    .order-price{
+        font-size: 11rem;
+    }
 }

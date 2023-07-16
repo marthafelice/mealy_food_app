@@ -16,6 +16,8 @@ const Cart = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const dispatch = useDispatch();
   const {items} = useSelector((state) => state.newCart);
+ 
+  console.log(items)
 
   const handleRemoveFromCart = (itemId) => {
     dispatch(removeFromCart(itemId));
@@ -30,7 +32,9 @@ const Cart = () => {
     dispatch(incrementQuantity());
     dispatch(updateCartItemQuantity({ itemId, quantity: quantity + 1 }));
   };
- 
+  function addCartToLocal(){
+    console.log(items)
+  }
 
   useEffect(() => {
     const handleScroll = () => {
@@ -83,7 +87,7 @@ const Cart = () => {
                   </button>
                 </div>
             ))}
-            <NavLink to="checkout"><button>Checkout</button></NavLink>
+            <NavLink to="checkout"><button onClick={addCartToLocal}>Checkout</button></NavLink>
           </div>
         )}
       </div>
