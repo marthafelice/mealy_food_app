@@ -1,39 +1,35 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import "../styles/checkout.css"
 import '../styles/buttons.css'
 import Footer from "../components/Footer"
 import back from "../images/back.svg"
-// import { useSelector } from 'react-redux'
+import { useSelector ,useDispatch} from 'react-redux'
 import minus from '../images/minus.png'
 import plus from '../images/add.png'
 import { useNavigate } from 'react-router-dom'
 import mealy from  '../images/logodark.svg'
 import { ButtonPill } from '../components/Buttons'
+import orderlocation from '../images/order-location.svg'
+import phone from '../images/phone.svg'
+import Map from '../components/Map'
+import { Address } from '../redux/slices/userData'
 
 function Checkout() {
-  const [isScrolled, setIsScrolled] = useState(false);
+
  
-  // const {items} = useSelector((state) => state.newCart);
+const {items} = useSelector((state) => state.newCart);
   const navigate = useNavigate();
+
+  const dispatch=useDispatch(); 
   const handleGoBack = () => {
     navigate("/home/deliveryOrder");
   };
-  useEffect(() => {
-    const handleScroll = () => {
-      const scrollHeight = window.scrollY;
-      const desiredHeight =450 /* specify the desired height where the position should change */;
-
-      setIsScrolled(scrollHeight > desiredHeight);
-    };
-
-    window.addEventListener('scroll', handleScroll);
-
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
-  const items=['s','s']
-  // console.log(items) 
+  const {userAddress}=useSelector((state)=>state.userData)
+  const showAddress = (event) => {
+    dispatch(Address(event.target.value));
+  };
+  console.log(items) 
+  let price=0;
   return (
 <div className='checkout-container'>
 <nav className='checkout-nav'><img src={mealy} alt='mealy logo'/></nav>
@@ -44,16 +40,20 @@ function Checkout() {
 <div className='orders-details'>
   <p className='order-count'>{items.length} Orders from <b>breakfast hub</b></p>
   {items.map((item)=>(
+
      <div key={item.id} className='order-lists'>
      {/* <p className='order'>{item.type}</p> */}
      <div className='order-detail'>
-      <div className='item-update'><img src={minus} alt='minus symbol' className='add-icon'/><p className='num'>1</p><img src={plus}  className='subtract-icon' alt='addition symbol'/></div>
+      <div className='item-update'><img src={minus} alt='minus symbol' className='add-icon'/><p className='num'>{item.quantity}</p><img src={plus}  className='subtract-icon' alt='addition symbol'/></div>
       <div className='food-description'>
-        <p className='order-food-title'>Full Breakfast</p>
+        <p className='order-food-title'>{item.type}</p>
         <p className='food-description-text'>Croissants and a cup of coffee served with sauteed vegetables..</p>                             
       </div>
      </div>
-     <div className='order-price'>$ 3,000</div>
+     {    console.log(price+= +item.price*item.quantity)
+     
+     }
+     <div className='order-price'>$ {item.price}</div>
      
      </div>
   ))}
@@ -61,7 +61,7 @@ function Checkout() {
 
 </div>
 
-<div className={`orders-summary ${isScrolled ? 'scrolled-order' : ''}`}>
+<div className='orders-summary' >
   <p className='orders-summary_title'>Summary</p>
 
   <hr className='order-hr'></hr>
@@ -72,11 +72,31 @@ function Checkout() {
   <ButtonPill text='CONFIRM ORDER' className='order-confirm-btn'/>
 </div>
 </div>
-</section>
 
 <section className='delivery-details-container'> 
+<h3 className='delivery-details-title'>Delivery Details</h3>
+<div className='map-container'>
+  <Map/>
+<div className='order-location'> 
+<img src={orderlocation} alt='order address'/>
+<input value={userAddress} onChange={showAddress} className='order-input'>
+</input>  
+</div>
+
+<div className='order-phone-number'> 
+<img src={phone} alt='order phone'/>
+<input type='text' placeholder='Phone Number' onChange={showAddress} className='order-input'>
+</input>  
+</div>
+
+</div>
+</section>
+
+
 
 </section>
+
+
       <Footer/>
     </div>
   )

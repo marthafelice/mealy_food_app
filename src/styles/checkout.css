@@ -122,13 +122,49 @@ color:  #000000;
     font-size: 2rem;
 }
 
+.delivery-details-container{
+    width: 50%;
+}
+.delivery-details-title{
+    font-weight: bold;
+    font-size: 2.5rem;
 
-.orders-summary.scrolled-order{
-    position: fixed;
-    top:5rem;
+}
+.map-container{
+    width: 100%;
+    height: 30rem;
+    background-color: red;
+    margin: 3rem 0;
+}
+.map-container img{
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
 
-    
-    }
+}
+.order-location,.order-phone-number{
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    justify-content: space-between;
+}
+.order-location img,.order-phone-number img{
+    width: 2rem;
+    height: auto;
+    margin-right: 2rem;
+}
+.order-location p{
+    position: relative;
+}
+.order-input{
+    width: 100%;
+    border: none ;
+    border-bottom: 1px solid #CFCFCF;
+    height: 4rem;
+}
+
     
 @media(max-width:600px){
     .orders-details-container{
@@ -148,4 +184,16 @@ color:  #000000;
         width: 60%;
        
     }
+    .map-container{
+        background-color: pink;
+        width: 200%;
+    }
+    
+.delivery-details-title{
+    margin-top: 2rem;
+    width: 200%;
+
+}
+    
+
 }
