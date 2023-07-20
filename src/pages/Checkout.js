@@ -98,9 +98,10 @@ const {items} = useSelector((state) => state.newCart);
 </input>  
 </div>
 {/* payment section */}
+<h3 className='payment-title'>Payment Method</h3>
 <div className='order-payment'> 
 <img src={payment} alt='payment card illustration'/>
-<input type='text' placeholder='Phone Number'  className='order-input'/>
+<input type='text' placeholder='Add a payment method'  className='order-input'/>
 <img src={options} alt='payment card illustration' className='options-arrow'/>
 
 </div>
