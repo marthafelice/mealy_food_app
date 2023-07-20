@@ -1,6 +1,7 @@
 .checkout-container{
     position: relative;
     margin-top: 8rem;
+    height: auto;
 }
 .checkout-content,.checkout-nav{
     padding: 0 10%;
@@ -127,7 +128,7 @@ color:  #000000;
 }
 .delivery-details-title{
     font-weight: bold;
-    font-size: 2.5rem;
+    font-size: 2rem;
 
 }
 .map-container{
@@ -164,7 +165,13 @@ color:  #000000;
     border-bottom: 1px solid #CFCFCF;
     height: 4rem;
 }
-
+.order-duration-btn{
+    width: 40%;
+    height: 5rem;
+    background-color: #CAC4D0;
+    text-align: left;
+    padding-left: 2rem;
+}
     
 @media(max-width:600px){
     .orders-details-container{

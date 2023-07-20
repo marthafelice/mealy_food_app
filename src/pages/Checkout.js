@@ -82,10 +82,12 @@ const {items} = useSelector((state) => state.newCart);
 <input value={userAddress} onChange={showAddress} className='order-input'>
 </input>  
 </div>
-
+<button className='order-duration-btn'>
+15-25 mins
+</button>
 <div className='order-phone-number'> 
 <img src={phone} alt='order phone'/>
-<input type='text' placeholder='Phone Number' onChange={showAddress} className='order-input'>
+<input type='text' placeholder='Phone Number'  className='order-input'>
 </input>  
 </div>
 
