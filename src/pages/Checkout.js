@@ -11,8 +11,10 @@ import mealy from  '../images/logodark.svg'
 import { ButtonPill } from '../components/Buttons'
 import orderlocation from '../images/order-location.svg'
 import phone from '../images/phone.svg'
+import payment from '../images/payment.svg'
 import Map from '../components/Map'
 import { Address } from '../redux/slices/userData'
+import options from '../images/options.svg'
 
 function Checkout() {
 
@@ -28,7 +30,12 @@ const {items} = useSelector((state) => state.newCart);
   const showAddress = (event) => {
     dispatch(Address(event.target.value));
   };
-  console.log(items) 
+  const totalPricePerItem = items.map((item) => +item.price.replace(',', '') * item.quantity);
+
+  // Calculate the overall total price of all food products
+  // const overallTotalPrice = totalPricePerItem.reduce((total, price) => total + price, 0);
+
+  console.log(totalPricePerItem) 
   let price=0;
   return (
 <div className='checkout-container'>
@@ -89,6 +96,13 @@ const {items} = useSelector((state) => state.newCart);
 <img src={phone} alt='order phone'/>
 <input type='text' placeholder='Phone Number'  className='order-input'>
 </input>  
+</div>
+{/* payment section */}
+<div className='order-payment'> 
+<img src={payment} alt='payment card illustration'/>
+<input type='text' placeholder='Phone Number'  className='order-input'/>
+<img src={options} alt='payment card illustration' className='options-arrow'/>
+
 </div>
 
 </div>
