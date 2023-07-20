@@ -17,6 +17,7 @@ import { Address } from '../redux/slices/userData'
 import options from '../images/options.svg'
 import cash from '../images/cash.png'
 import newcard from '../images/newcard.svg'
+import { Order } from '../redux/slices/orderSlice'
 
 
 function Checkout() {
@@ -36,6 +37,9 @@ const [showPayment,setShowPayment]=useState(false)
   };
   function togglePayment(){
     setShowPayment(!showPayment)
+  }
+  function showConfirmModal(){
+    dispatch(Order('openConfirmOrder'))
   }
   const totalPricePerItem = items.map((item) => +item.price.replace(',', '') * item.quantity);
 
@@ -83,7 +87,7 @@ const [showPayment,setShowPayment]=useState(false)
   <div className='order-summary orders-summary_delivery'><p>Delivery</p><p>$ 400</p></div>
   <div className='order-summary orders-summary_services'><p>Services</p><p>$ 50</p></div>
   <div className='order-summary orders-summary_total'><p>TOTAL</p><p>$ 9,450</p></div>
-  <ButtonPill text='CONFIRM ORDER' className='order-confirm-btn'/>
+  <ButtonPill text='CONFIRM ORDER' className='order-confirm-btn' onclick={showConfirmModal}/>
 </div>
 </div>
 

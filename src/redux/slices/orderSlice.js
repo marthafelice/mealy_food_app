@@ -3,7 +3,8 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState={
     displayOrder:false,
     displayTrackOrder:false,
-    displayRiderChat:false
+    displayRiderChat:false,
+    displayConfirmOrder:false
 }
 export const orderSlice=createSlice({
     name:"order",
@@ -27,6 +28,11 @@ export const orderSlice=createSlice({
         }
         if(action.payload==='closeRiderChat'){
             state.displayRiderChat=false
+        }
+        if(action.payload==='openConfirmOrder'){
+            state.displayConfirmOrder=true
+        }if(action.payload==='closeConfirmOrder'){
+            state.displayConfirmOrder=false
         }
      }
     }

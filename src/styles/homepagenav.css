@@ -52,13 +52,15 @@
 }
 .nav-section_order-icon{
   width: 3rem;
+  height: 3rem;
 }
 .auth-profile-icon {
+width: 3rem;
 height: 3rem;
 }
 .unauth-profile-icon,.unauth-profile-icon_2{
-width: 4rem;
-height: 4rem;
+width: 3rem;
+height: 3rem;
 }
 
 .address {
