@@ -26,6 +26,11 @@ button.button-pill {
    color: white;
    margin-top: 4rem;
 }
+button.order-confirm-btn{
+  color: white;
+  font-size: 1rem;
+  width: 80%;
+}
 
 @keyframes spinner {
   0% {
