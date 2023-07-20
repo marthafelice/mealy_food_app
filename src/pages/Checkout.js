@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "../styles/checkout.css"
 import '../styles/buttons.css'
 import Footer from "../components/Footer"
@@ -15,11 +15,15 @@ import payment from '../images/payment.svg'
 import Map from '../components/Map'
 import { Address } from '../redux/slices/userData'
 import options from '../images/options.svg'
+import cash from '../images/cash.png'
+import newcard from '../images/newcard.svg'
+
 
 function Checkout() {
 
  
 const {items} = useSelector((state) => state.newCart);
+const [showPayment,setShowPayment]=useState(false)
   const navigate = useNavigate();
 
   const dispatch=useDispatch(); 
@@ -30,6 +34,9 @@ const {items} = useSelector((state) => state.newCart);
   const showAddress = (event) => {
     dispatch(Address(event.target.value));
   };
+  function togglePayment(){
+    setShowPayment(!showPayment)
+  }
   const totalPricePerItem = items.map((item) => +item.price.replace(',', '') * item.quantity);
 
   // Calculate the overall total price of all food products
@@ -99,13 +106,17 @@ const {items} = useSelector((state) => state.newCart);
 </div>
 {/* payment section */}
 <h3 className='payment-title'>Payment Method</h3>
-<div className='order-payment'> 
+<div className='order-payment' onClick={togglePayment}> 
 <img src={payment} alt='payment card illustration'/>
-<input type='text' placeholder='Add a payment method'  className='order-input'/>
-<img src={options} alt='payment card illustration' className='options-arrow'/>
-
+<input type='text' placeholder='Add a payment method' className='order-input' readOnly/>
+<img src={options} alt='payment card illustration' className='options-arrow' />
 </div>
-
+{showPayment && 
+<div className='payment-options'>
+  <div className='payment-option'><img src={cash} alt='cash-illustration' className='payment-options_img' /><p>Pay with cash</p></div>
+  <div  className='payment-option'><img src={newcard} alt='new-illustration' className='payment-options_img' /><p>Add a new card</p></div>
+</div>
+}
 </div>
 </section>
 
