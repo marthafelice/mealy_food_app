@@ -1,67 +1,70 @@
+# Getting Started with Create React App
 
-# Getting Started with the mealy-app repo
-![mealy](./src/images/mealy.jpeg)
-- Clone the repo
-- Create and switch your custom branch
+This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-- run **npm install** to install neccessary dependencies
-- Make changes in your branch
-- ***git add*** and ***git commit***
-- ***git push*** your branch **git push --set-upstream origin YourBranch**
-- Make a pull request to the dev branch
+## Available Scripts
 
-## Working on your next task
+In the project directory, you can run:
 
-Dear develper,changes have been made to the dev branch because your team mates's code have been merged to it. You need to have the changes on your local machine to work with the latest changes,hence you have to **PULL** changes from the **dev branch** before starting your new task .
+### `npm start`
 
-Pulling from the dev branch **before** starting your next task helps identify code conflicts and
-you can resolve the conflicts before starting your new task
+Runs the app in the development mode.\
+Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-### pulling changes from the dev branch
+The page will reload when you make changes.\
+You may also see any lint errors in the console.
 
-- git checkout dev
-- git pull origin dev
-- git checkout YourBranch
-- git merge dev
-- resolve code conflicts if present
+### `npm test`
 
+Launches the test runner in the interactive watch mode.\
+See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
+### `npm run build`
 
+Builds the app for production to the `build` folder.\
+It correctly bundles React in production mode and optimizes the build for the best performance.
 
-## Working with the styles folder
+The build is minified and the filenames include the hashes.\
+Your app is ready to be deployed!
 
-- In the **styles** folder,create your css file with the same name as your component
+See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-**The folder structure is below**
+### `npm run eject`
 
-```
-- styles
-  
-        - Header.css
-        - Button.css
+**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
+If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-```
+Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-## Testing using React-Testing-Library and Jest
+You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-- By default, Jest comes installed with create-react-app
-- For better testing we will be using **React testing Library** to find our **components and manipulate them** while **Jest** will determine **assertions(passing and failing tests and testing coverage)** because the keywords are designed to be intuitive and self explanatory.
+## Learn More
 
-- check here for examples of [matchers](https://jestjs.io/docs/using-matchers) (used for assertions) in jest 
+You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
 
-```
-import { render, screen } from "@testing-library/react"
+To learn React, check out the [React documentation](https://reactjs.org/).
 
-import App from './App'
+### Code Splitting
 
+This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
 
-test('find  text', () => {
-    render(<App />) 
-    let myApp=screen.getByTestId("app")
-        
-    //Assertion (passing and failing tests) using jest matchers
-    expect(myApp).toHaveTextContent("THIS IS THE MASTER BRANCH")
-})
+### Analyzing the Bundle Size
 
-```
+This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+
+### Making a Progressive Web App
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+
+### Advanced Configuration
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+
+### Deployment
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+
+### `npm run build` fails to minify
+
+This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)

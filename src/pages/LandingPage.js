@@ -5,8 +5,8 @@ import "../styles/LandingPage.css";
 import Elipse from "../images/Group 203Elipse.png";
 import AboutFood from "../images/aboutfood.svg";
 import Restuarant1 from "../images/rest1.svg";
-import Restuarant2 from '../images/rest2.svg';
-import Restuarant3 from '../images/rest3.svg';
+import Restuarant2 from "../images/rest2.svg";
+import Restuarant3 from "../images/rest3.svg";
 import bike from "../images/Group 206bike.jpg";
 import clock from "../images/Group 207clock.jpg";
 import cutlery from "../images/Group 205cutlery.jpg";
@@ -16,7 +16,7 @@ import RestaurantCard from "../components/RestaurantCard";
 import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { toggled } from "../redux/slices/authSlice";
-import "../styles/activation.css"
+import "../styles/activation.css";
 import SignUp from "../modals/SignUp";
 import DeliveryAddress from "../components/DeliveryAddress";
 import ForgotPassword from "../modals/ForgotPassword";
@@ -25,29 +25,26 @@ import Login from "../modals/Login";
 import Activate from "../modals/Activate";
 
 const LandingPage = () => {
-  const [activeLink, setActiveLink] = useState('');
+  const [activeLink, setActiveLink] = useState("");
 
-  const dispatch=useDispatch()
-    function displaySignup(){
-   dispatch(toggled('signup'))
-   console.log('signup clicked')
-
+  const dispatch = useDispatch();
+  function displaySignup() {
+    dispatch(toggled("signup"));
+    console.log("signup clicked");
   }
- 
- 
+
   useEffect(() => {
-   
-      const handleHashChange = () => {
+    const handleHashChange = () => {
       const hash = window.location.hash;
       setActiveLink(hash);
     };
 
     handleHashChange(); // Set initial active link on component mount
 
-    window.addEventListener('hashchange', handleHashChange);
+    window.addEventListener("hashchange", handleHashChange);
 
     return () => {
-      window.removeEventListener('hashchange', handleHashChange);
+      window.removeEventListener("hashchange", handleHashChange);
     };
   }, []);
 
@@ -59,23 +56,28 @@ const LandingPage = () => {
       <DeliveryAddress />
       <ForgotPassword />
       <NewPassword />
-      <nav className="landing-page-nav" >
+      <nav className="landing-page-nav">
         <img src={mealy} alt="Logo" className="landing-page-nav_logo" />
 
         <div className="landing-nav-links">
-        <a href="/" className={activeLink === '' ? 'active' : ''}>
-        Home
-      </a>
-      <a href="#about" className={activeLink === '#about' ? 'active' : ''}>
-        About Us
-      </a>
-      <a href="#contact" className={activeLink === '#contact' ? 'active' : ''}>
-        Contact Us
-      </a>
-     <NavLink to="/home/deliveryOrder"><img src={cart} className="cart" alt="Cart"/></NavLink> 
+          <a href="/" className={activeLink === "" ? "active" : ""}>
+            Home
+          </a>
+          <a href="#about" className={activeLink === "#about" ? "active" : ""}>
+            About Us
+          </a>
+          <a
+            href="#contact"
+            className={activeLink === "#contact" ? "active" : ""}
+          >
+            Contact Us
+          </a>
+          <NavLink to="/home/deliveryOrder">
+            <img src={cart} className="cart" alt="Cart" />
+          </NavLink>
         </div>
       </nav>
-      <section className="hero-section " >
+      <section className="hero-section ">
         <div className="hero-text-container">
           <h1 className="hero-heading">
             Delightful Eats Delivered with
@@ -86,7 +88,9 @@ const LandingPage = () => {
             Enjoy a hassle free dining experience as we bring the best
             restaurants and dishes right to your doorstep.
           </p>
-          <button className="get-started-btn" onClick={displaySignup}>Get Started</button>
+          <button className="get-started-btn" onClick={displaySignup}>
+            Get Started
+          </button>
         </div>
 
         <div className="hero-img-container">
@@ -120,10 +124,27 @@ const LandingPage = () => {
         </h2>
 
         <div className="popular-section_food">
-        <RestaurantCard starcount={4} name='Breakfast Hub'  Food={Restuarant1} Monogram={Restuarant1} rating={4.6}/> 
-        <RestaurantCard starcount={4} name='African Kitchen'  Food={Restuarant2} Monogram={Restuarant2} rating={4.5}/>
-        <RestaurantCard starcount={4} name='Platters Couch'  Food={Restuarant3} Monogram={Restuarant3} rating={4.8}/>
-       
+          <RestaurantCard
+            starcount={4}
+            name="Breakfast Hub"
+            Food={Restuarant1}
+            Monogram={Restuarant1}
+            rating={4.6}
+          />
+          <RestaurantCard
+            starcount={4}
+            name="African Kitchen"
+            Food={Restuarant2}
+            Monogram={Restuarant2}
+            rating={4.5}
+          />
+          <RestaurantCard
+            starcount={4}
+            name="Platters Couch"
+            Food={Restuarant3}
+            Monogram={Restuarant3}
+            rating={4.8}
+          />
         </div>
       </div>
 

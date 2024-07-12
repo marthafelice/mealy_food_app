@@ -5,6 +5,7 @@
   align-items: center;
   font-size: 2rem;
   border: none;
+  border-radius: 20px;
 }
 .signup-input {
   border-top: none;
