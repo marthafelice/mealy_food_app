@@ -1,0 +1,80 @@
+
+.chat-with-rider-main-container {
+
+  padding: 2rem;
+  height: auto;
+  width: 50rem;
+  max-width: 90%;
+  background-color: white;
+  height: 75vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+}
+.chat-with-rider-header-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ 
+}
+.arrow-driver-container{
+  display: flex;
+  align-items: center;
+}
+.rider-header-image-and-name {
+  display: flex;
+  flex-direction: right;
+  align-items: center;
+  margin-left: 4rem;
+}
+
+.chat-with-rider-image img {
+  width: 60.89px;
+  height: 60.89px;
+}
+
+.chat-with-rider-back {
+  height: 23px;
+  width: 23px;
+}
+
+.chat-with-rider-call {
+  height: 15px;
+  width: 15px;
+}
+
+.rider-details {
+  font-size: 15px;
+  font-weight: bold;
+  margin-top: 5px;
+  padding-left: 10px;
+}
+.your-rider-name{
+  font-weight: bold;
+  margin-left: 1rem;
+  font-size: 1.5rem;
+}
+
+
+
+/* .chat-with-rider-call-div{
+
+} */
+
+.chat-with-rider-message-input {
+
+  bottom: 1rem;
+  height: 40px;
+  width: 100%; 
+ 
+  
+  border-radius:8px;
+  background-image: url("../images/send-arrow.png");
+  background-repeat: no-repeat;
+  padding-left:2rem;
+  background-position: 95%;
+  background-size: 20px 20px;
+  border: 1px #6750A4 solid;
+}

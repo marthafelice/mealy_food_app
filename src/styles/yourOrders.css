@@ -1,0 +1,87 @@
+.order-container{
+    width: 90%;
+    max-width: 35rem;
+    height: 70vh;
+    background-color: white;
+    position: absolute;
+    right: 4rem;
+    padding: 2rem 2rem 7rem 2rem;
+}
+.order-title{
+    text-align: center;
+}
+.your-orders_types{
+    width: 100%;
+    height: 4rem;
+    background-color: #EBEBEB;
+    margin: 3rem 0 2rem 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.your-orders_type{
+   flex: 1;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   font-size: 1.5rem;
+   font-weight: bold;
+    
+}
+
+
+.active-order{
+    background-color: black;
+    color: white;
+}
+/* ..................styles for ongoing and complete order */
+.orders-container{
+    margin-top: 1.5rem;
+    
+}
+.ongoing-order-container,.completed-order-container{
+width: 100%;
+font-size: 1.5rem;
+
+}
+.ongoing-orders{
+position: relative;
+}
+.ongoing-orders .track-order{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    color: #6750A4;
+    font-weight:bold;
+    }
+.ongoing-order,.completed-order{
+    line-height: 2;
+}
+.ongoing-order  .order-name{
+    font-weight: bold;
+    font-size: 2rem;
+}
+/* ....................................completed order styles.............................................. */
+.completed-order{
+    display:flex ;
+    justify-content: space-between;
+    align-items: center;
+}
+.completed-order  .order-name{
+    font-weight: bold;
+    font-size: 2rem;
+}
+.completed-order .re-order{
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #6750A4;
+}
+
+@media(max-width:425px){
+    .order-container{
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+    }
+}
